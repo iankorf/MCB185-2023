@@ -1,179 +1,337 @@
 Unit 1: Basic Unix, Basic Python
 ================================
 
+## Learning Objectives ##
 
-### Terminal Basics ###
++ Environment variables
++ Absolute and relative paths
++ Injury prevention with tab-completion and up-arrow
++ Standard input, output, and error
++ Creating and modifying files
 
-Launch the terminal application (the name of this will differ from one
-operating system to another and even within a particular OS you will have
-several options). Run the `date` command by typing in the terminal and ending
-with the _return_ key.
+------------------------------------------------------------------------------
 
-	date
-
-Congratulations, you just made your first Unix statement. You type words on the
-command line (in this case just one) and then hit return to execute the
-command. `date` is but one of many Unix commands you have at your fingertips
-(literally). Like most Unix commands, `date` does more than simply output the
-current date in the format you just witnessed. You can choose any number of
-formats and even set the internal clock to a specific time. Let's explore this
-a tiny bit. Commands can take _arguments_. Let's tell the `date` program that
-we want the date to be formatted as year-month-day and with
-hours-minutes-seconds also. The syntax below will seem arcane, but the various
-abbreviations should be make sense. Type the command below and observe the
-output.
-
-	date "+%Y-%m-%d %H:%M:%S"
-
-### Manual Pages ###
-
-If you want to learn more information about what `date` can do, you can either
-look online or use the Unix built-in manual pages. For a quick refresher on a
-command, the manual pages are often easiest. But if you have no idea what the
-command does, than you might want to look for assistance online where you might
-find questions, answers, and examples. To read the manual pages for `date` you
-use the `man` command.
-
-	man date
-
-You can page through this with the space bar and exit with `q`. In the above
-statement, `man` was the command and `date` was the argument. The program that
-let you page through the documentation was another Unix command that you didn't
-intentionally invoke, it just happens automatically when you execute the `man`
-command.
-
-### Injury Prevention ###
-
-Typing is bad for your health. Seriously, if you type all day, you will end up
-with a repetitive stress injury. Don't type for hours at a time. Make sure you
-schedule breaks. Unix has several ways to save your fingers. Let's go back and
-run the `date` program again. Instead of typing it in, use the _up arrow_ on
-your keyboard to go backwards through your command history. If you scroll back
-too far, you can use the _down arrow_ to move forward through your history
-(but not into the future, Unix isn't that smart).
-
-	date "+%Y-%m-%d %H:%M:%S"
-
-You can use the _left arrow_ and _right arrow_ to position the cursor so you
-can edit the text on the command line.
-
-To see your entire history of commands in this session, use the `history`
-command.
-
-	history
-
-Probably the most important finger saver in Unix is **tab completion**. When
-you hit the tab key, the shell completes the rest of the word for you if it can
-guess what you want next. For example, instead of typing out `history` you can
-instead type `his` followed by the tab key, the rest of the word will be
-completed. If you use something less specific, you can hit the tab key a second
-time and the shell will show you the various legal words. Try typing `h` and
-then the tab key twice. Those are all the commands that begin with the letter
-h. You should use tab completion constantly. Not only does it save you key
-presses and time, it also ensures that your spelling is correct. Try
-misspelling the `history` command to observe the error it reports.
-
-	historie
-
-### Variables ###
+## Environment Variables ##
 
 The shell defines various variables which are called _shell variables_ or
 _environment variables_. For example, the `USER` variable contains your user
-name. You can examine the contents of a variable with the `printenv` command.
+name and the `HOME` variable contains the path to your home directory. You can
+examine the contents of a variable with the `printenv` command.
 
-	printenv USER
+```
+printenv USER
+printenv HOME
+```
 
-Another way to print the contents of an environment variable is to use the
-`echo` command to dereference the `$USER` variable.
+The `echo` command writes stuff to your terminal, including the contents of
+environment variables.
 
-	echo Hello $USER, your shell is $SHELL
+```
+echo Hello $USER, your home directory is: $HOME
+```
 
-We won't use variables much, but it's important to know they exist because some
-programs use them for configuration. If you want to see all your environment
-variables, you can use the `printenv` command without any arguments.
+If you want to see all your environment variables, you can use the `printenv`
+command without any arguments.
 
-	printenv
+```
+printenv
+```
 
-Don't worry if you find the topic of environment variables to be a little
-confusing at this time. We will revisit the topic a little later when it
-matters more.
+------------------------------------------------------------------------------
 
-### Setting Up Your Workspace ###
+## Focus, Absolute, and Relative Paths ##
 
-Depending on the specific flavor of your operating system, you may have various
-folders in your home directory. For example, Mac, Windows, and Linux generally
-have _Desktop_, _Documents_,  and _Downloads_ folders. These are default
-locations for your point-n-click files. Let's set up a folder to do our
-programming and bioinformatics work. Open a terminal and type the following
-command.
+When you open your terminal application, the focus of your shell is your home
+directory. You can verify this with the `pwd` command. Open a new terminal and
+run the command.
 
-	cd
+```
+pwd
+```
 
-The `cd` command is used to "change directory". If you don't give it any
-specific place to go, it will take you to your home directory. There are two
-other ways to get to your home directory: _tilde_ and `$HOME`. Both of these
-commands do the same thing.
+This command shows you the **absoute path** of your home directory. This might
+be `/home/$USER` or `/Users/$USER` or possibly something else. What makes this
+an absolute path is that it starts with a `/`. If the directory path doesn't
+start with a `/`, it's not an absolute path.
 
-	cd ~
-	cd $HOME
+You can access directories and files with absolute or relative paths. Let's try
+listing your home directory using the absolute path. Substitute
+"your_home_directory" for whatever the contens of `pwd` was. Don't forget the
+leading `/`.
 
-To examine the exact path to your home directory, use the `pwd` command, which
-stands for "print working directory".
+```
+ls /your_home_directory
+```
 
-	pwd
+Of course, we could also have used the `$HOME` variable here.
 
-To see the other files in your home directory, type the `ls` command.
+```
+ls $HOME
+```
 
-	ls
+One more option is to use the `~` key for a shortcut to your home directory.
 
-You should see your Documents, Downloads, and other folders created by default
-by the operating system. Now it's time to create a new working directory for
-all of your bioinformatics programming stuff. Let's call it _Work_.
+```
+ls ~
+```
 
-	mkdir Work
+Whether we type out the full name, use the `$HOME` environment variable or the
+`~` shortcut, all of these methods use the absolute path. Let's list the
+contents of your homework directory using absolute paths.
 
-Note that all of the directories given to you by default were a single word
-starting with a capital letter (e.g. Downloads). We followed this convention
-when we chose _Work_. However, the typical Unix world is all lowercase. So once
-we enter the Work directory, we'll follow Unix standards and go all lowercase.
-Let's make another directory inside the _Work_ directory called _bin_. Then
-`cd` to _Work_ and have a look around with the `ls` command.
+```
+ls /your_home_directory/Code/homework
+ls $HOME/Code/homework
+ls ~/Code/homework
+```
 
-	mkdir Work/bin
-	cd Work
-	ls
+A **relative path** does not begin with the `/` symbol. Instead, the path is
+relative to your current focus. Let's change focus to the homework repo and
+then list it.
 
-You should see _bin_ and nothing else. Let's create another directory in here
-called _lib_.
+```
+cd ~/Code/homework
+ls
+```
 
-	mkdir lib
-	ls
+Here, the `ls` command uses the current focus. From your homework directory,
+all of these commands do the same thing.
 
-Now you should see two things, _bin_ and _lib_. We won't be using these
-directories right away, but we will be using them soon.
+```
+ls /your_home_directory/Code/homework
+ls $HOME/Code/homework
+ls ~/Code/homework
+ls
+```
 
-### Creating and Viewing Files ###
+When using relative paths, there are two important modifiers:
 
-(For the this exercise and others that follow, it may be useful to have your
-graphical desktop displaying the contents of your Work directory. That way you
-can see that typing and clicking are related. You won't actually be using the
-mouse though.)
++ `.` means your current directory
++ `..` means your parent directory
 
-There are a number of ways to create a file. The `touch` command will create a
-file or change its modification time (Unix records when the last time a file
-was edited) if it already exists. Let's first make sure we are in our Work
-directory. Here you can see why we use the tilde to represent our home
-directory: it saves typing.
+Both of these commands do exactly the same thing:
 
-	cd ~/Work
-	touch foo
+```
+cat 00helloworld.py
+cat ./00helloworld.py
+```
 
-The file `foo` doesn't contain anything at all. It is completely empty. If your
-graphical file browser was open to your Work directory, when you typed you
-would have seen the file magically appear in the file browser. Now lets create
-a file with some content in it.
+It may seem like `.` is useless, but there are times when you want to use your
+current directory as an argument to a command. For example, if you want to copy
+a file from some other location to your current focus, you would do something
+like `cp some_path .`, where the `.` is your current focus.
 
-	ls /bin > bar
+You will find a lot more use for the `..` parent directory token. Let's say we
+want to list the contents of the Code directory when the focus is homework. All
+of these methods do the same thing.
+
+```
+ls /your_home_directory/Code
+ls $HOME/Code
+ls ~/Code
+ls ..
+```
+
+The last command used the `..` for parent directory. The Code directory is "one
+up" from the homework directory. Similalry, you could list the contents of your
+home directory from within your homework directory. Both of these commands do
+the same thing, but one uses absolute path and the other relative.
+
+```
+ls ~
+ls ../..
+```
+
+------------------------------------------------------------------------------
+
+## Injury Prevention ##
+
+Typing is bad for your health. Seriously, if you type all day, you will end up
+with a repetitive stress injury. Don't type for hours at a time. Make sure you
+schedule breaks. Unix has several ways to save your fingers.
+
+Probably the most important finger saver in Unix is **tab completion**. When
+you hit the tab key, the shell completes the rest of the word for you if it can
+guess what you want next. Try typing `h` and then the tab (you may need to hit
+it twice depeding on your flavor of shell). Those are all the commands that
+begin with the letter h. Now type `i` and hit tab again. Those are all the
+commands that begin with `hi`. Add an `s` and run the `history` command. This
+shows you the last commands you typed.
+
+Isntead of re-typing long commands, you can go backwards through your command
+history with the up-arrow. Trying hitting the up-arrow several times and you'll
+see all the commands you've typed for some time. You can use the left and right
+arrows to position the cursor if you want to edit parts of the line. To get out
+of this, and many other situations, type Control-C. That is, hit the control
+key and then the letter c. This sends an "interrupt" signal to the shell.
+
+You should use tab completion constantly. Not only does it save you key
+presses and time, it also ensures that your spelling is correct.
+
+------------------------------------------------------------------------------
+
+## Standard Input, Output, and Error ##
+
+When you issue commands like `cat`, the output that is sent to your terminal is
+called Standard Output (stdout). Sometimes that output is really long and hard
+to read quickly. 
+
+```
+cat ~/Code/MCB185-2023/README.md
+```
+
+In these cases, we often use a pager program like `less` to capture the stdout
+and let us read it page-by-page. Let's try that. In order for `less` to get the output from `cat` we connect them with a pipe `|`.
+
+```
+cat ~/Code/MCB185-2023/README.md | less
+```
+
+It happens that `less`, and many other Linux programs, can read Standard Input
+(stdin) from pipes as well as files. So you could have had a very similar
+experience doing the following:
+
+```
+less ~/Code/MCB185-2023/README.md
+```
+
+So what's the difference? In one case, `less` reads the file off the
+filesystem. In the other case, it reads a stream of stdout from `cat` into its
+own stdin. Despite seeming similar, they are very different things. To make
+this more clear, let's put in another pipe.
+
+```
+cat ~/Code/MCB185-2023/README.md | grep the | less
+```
+
+Here, the `cat` program streams stdout to the stdin of `grep`. This keeps every
+line with the word "the" and streams that out to stdout. `less` captures that
+as stdin and lets us page through it. However, maybe we want to send that on to
+another program like `wc` to count the number of lines. That's simple:
+
+```
+cat ~/Code/MCB185-2023/README.md | grep the | wc
+```
+
+This is the simple power of Unix CLI tools. It's easy to chain them together
+via stdin and stdout. In addition to the pipe `|` symbol, you can also
+re-direct stdout to a file using the greater than sign `>`.
+
+```
+cat ~/Code/MCB185-2023/README.md | grep the | wc > foo
+```
+
+Now the file "foo" contains the output of that chain of commands. You can also
+redirect stdin using the `<` sign, but that is not as common.
+
+In addition to stdin and stdout, there is
+
+
+
+
+
+Whenever you type at the keyboard, you are creating something called Standard
+Input (stdin). Anything reported to your terminal is Standard Output (stdout).
+Well, there is also Standard Error, but that's a topic for another day. Many
+Unix programs can input stdin and output stdout. For example, the word count
+program `wc` reads from stdin and writes to stdout.
+
+
+
+
+------------------------------------------------------------------------------
+
+## Creating, Modifying, and Viewing Files ##
+
+For the this exercise in this section, it may be useful to have your graphical
+desktop displaying the contents of your home directory. That way you can see
+that the CLI does the same things as pointing and clicking.
+
+
+### touch ###
+
+There are a number of ways to create a file. The `touch` command, which we saw
+last unit, will create a file or change its modification time (Unix records
+when the last time a file was edited) if it already exists. Let's first make
+sure we are in our home directory.
+
+```
+cd
+touch emtpy
+```
+
+If your graphical file browser was open to your home directory, when you hit
+the return key, you would have seen the file magically appear in the file
+browser. The file "empty" doesn't contain anything at all. To verify this, try
+`ls -l`, which creates a listing with a long format. You'll see a zero in one
+of the columns. That's the file size in bytes. 
+
+### nano ###
+
+
+Lets add some content to the empty file. Most of the time when you create,
+edit, and save files, you'll be using your favorite text editor. But there are
+also terminal-based editors that you may find useful for remote logins. Let's
+use `nano` to change the contents.
+
+```
+nano emtpy
+```
+
+Your terminal is now a text editor with some menus at the bottom. Type some
+stuff. Try navigating around the document with arrow keys. Write some poetry.
+When you're done, hit ^O to write the changes and then ^X to exit. What the
+heck are those keys? ^O is shorthand for Control-O. Just like when we hit
+Control-C before, hold the control key and then hit the o key. Despite the
+capital letters, we don't use the shift key.
+
+### mv ###
+
+Now that "empty" is no longer empty, let's rename it. Weirdly the command used
+to rename files is also the command to move them.
+
+```
+mv empty full
+```
+
+If you had your graphical file browser open, you would see that the name
+changed. Try a long listing of the file now: `ls -l full`. We're going to make
+a bunch of files, so let's create a directory to keep everything tidy.
+
+```
+mkdir Stuff
+```
+
+Again, if you were watching your file browser, you now have a new directory
+called "Stuff" in your home directory. Let's move the "full" file to the Stuff
+directory.
+
+```
+mv full Stuff
+```
+
+
+
+
+
+
+
+### Standard Input, Standard Output, and Redirection ###
+
+Whenever you type at the keyboard, you are creating something called Standard
+Input (stdin). Anything reported to your terminal is Standard Output (stdout).
+Well, there is also Standard Error, but that's a topic for another day. Many
+Unix programs can input stdin and output stdout. For example, the word count
+program `wc` reads from stdin and writes to stdout.
+
+
+The `>` symbol is used to redirect output from standard output to a file. 
+
+
+
+```
+ls /bin > bar
+```
 
 This command listed the `/bin` directory and **redirected** the output to a
 file named `bar`. The greater-than sign allows you to send a stream of
@@ -181,7 +339,9 @@ characters to a file. Those characters can be streamed from the `ls` command as
 was done here, or you could type them at the keyboard. Let's try putting some
 content into `foo` with the keyboard.
 
-	cat > foo
+```
+cat > foo
+```
 
 After you type the line above, the shell appears to hang. It's waiting for you
 to start typing. Go ahead and write a few lines of poetry. To close the stream
@@ -195,16 +355,20 @@ The most useful ways to view a file are with `head`, `tail`, `more`, and
 the last 10. Of course there are command line options to change the number of
 lines. Let's try them out.
 
-	head foo
-	tail foo
-	head -5 bar
-	tail -5 bar
+```
+head foo
+tail foo
+head -5 bar
+tail -5 bar
+```
 
 If you want to view a whole file you can do that with `cat` or `less`. We just
 saw how `cat` could be used to create a file, but it can also be used to view
 them.
 
-	cat bar
+```
+cat bar
+```
 
 This isn't very useful for viewing large files unless you're a speed reader. A
 more useful way to look at files is with a _pager_. The `more` and `less`
@@ -215,13 +379,19 @@ done, hit _q_ to quit. `more` and `less` do more or less the same thing, but
 oddly enough `less` does more than `more`. There are a lot of silly jokes in
 Unix culture.
 
-	less bar
+```
+less bar
+```
 
-### Editing Files ###
+## Editing Files ##
 
-Let's try editing a file with `nano`, which is a terminal-based editor.
+Most of the time, you will be using your programming editor to create, modify,
+and save files. But there are terminal-based editors too. Let's try editing a
+file with `nano`.
 
-	nano foo
+```
+nano foo
+```
 
 This changes the entire look of your terminal. No longer are you typing
 commands at a prompt. Now you're editing a file and can change the random text
@@ -230,8 +400,7 @@ typing. Remove some text with the delete key. At the bottom, you can see a menu
 that uses control keys. To save the file you hit the ^O key (control and then
 the letter o). You will then be prompted for the file name, at which point you
 can overwrite the current file (bar) or make a new file with a different name.
-To exit nano, hit ^X. Note, you don't need to give nano a file name when you
-start it up.
+To exit nano, hit ^X.
 
 Unix file names often have the following properties:
 
@@ -239,24 +408,44 @@ Unix file names often have the following properties:
 * no spaces in the name (use underscores or dashes instead)
 * an extension such as .txt
 
-### Navigating Directories ###
+## Navigating the Filesystem ##
 
-Whenever you are using a terminal, the shell's command line is focused on a
-particular directory. The files you just created above were in a specific
-directory (~/Work). To determine what directory you are currently in, use the
-`pwd` command (print working directory). Let's make sure you're in your home
-directory and examine its path.
+In the Unix filesystem, all paths are either _absolute_ or _relative_. An
+absolute path begins with a `/` while a relative path does not. While this may
+seem like a small difference, it is actually very important.
 
-	cd
-	pwd
+The path `/bin`, which we used before with the `cat` command, is an absolute
+path. The command `ls /bin` literally means "go to the root of the entire
+filesystem and list the contents of the `bin` directory. Let's try that again
+now, but first we will make sure the focus of the terminal is your home
+directory.
 
-Your home directory should be listed below based on your operating
-system.
+```
+cd
+ls /bin
+```
 
-* MacOS -  `/Users/your_name`
-* Ubuntu - `/home/your_name`
-* Lubuntu - `/home/your_name`
-* WSL - `/home/your_name`
+If we remove the `/` from the start, the command has a **very** different
+meaning. It now says "in the current directory, list the contents of the `bin`
+directory". We might not even have a `bin` directory in our home directory. And
+if we did, surely the contents would be different from the root of the
+filesystem, which contains programs critical to the operating system.
+
+Let's make sure this is absolutely clear. Change focus to your `Code` directory
+and list its contents.
+
+```
+cd ~/Code
+ls
+```
+
+That should show you your homework and MCB185-2023 repos. Now that our focus is
+the `Code` directory, let's list the contenst of our home directory using both
+absolute and relative paths.
+
+
+
+
 
 A path that begins with a `/` is called an _absolute path_ (we saw this before
 when we did `ls /bin`). Your location also has a _relative path_, which is
@@ -267,8 +456,15 @@ other people, I can use an absolute or relative path. "Mario Takechi Korf"
 describes my brother in absolute terms while "twin brother" describes him in
 relative terms.
 
+
+
+
 If you want to know what files are in your home directory, you can do that with
-an absolute path regardless of where your shell is currently focused. You can
+an absolute path regardless of where your shell is currently focused.
+
+
+
+ You can
 type out the path you found above, or you can dereference the `HOME`
 environment variable.
 
@@ -1136,3 +1332,9 @@ your files and directories uses.
 | `top`     | `top`         | display processes running on your system
 | `touch`   | `touch f`     | update file f modification time (create if needed)
 | `wc`      | `wc f`        | count the lines, words, and characters in file f
+
+
+
+
++ Use tab-completion
++ Use the up-arrow

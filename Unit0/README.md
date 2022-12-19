@@ -11,6 +11,8 @@ Unit 0: Tools of the Trade
 + Write documentation with Markdown
 + Write your first Python program
 
+------------------------------------------------------------------------------
+
 ## Unix/Linux ##
 
 Most professional bioinformatics is done in a Unix/Linux environment. You don't
@@ -226,15 +228,16 @@ seems to work okay, but I expect there will be some issues with precompiled
 binaries as there are with the other cellphone-chip-based solutions (Pi,
 Chromebook).
 
-
+------------------------------------------------------------------------------
 
 ## Unix CLI: Terminal & Shell ##
 
 There are many terminal applications. Generally, it doesn't matter which one
 you use. It's sort of like choosing between Firefox and Chrome: they look a
-little different, but both let you navigate the Internet. Find a terminal
-application and create a shortcut in your dock/launchbar so you can access it
-quickly.
+little different, but both let you navigate the Internet. Fubd a terminal
+application on your computer. The name might be 'Terminal', 'xterm', 'Qterm' or
+something with 'term' in it somewhere. Create a shortcut in your dock/launchbar
+so you can access it quickly.
 
 The terminal is the application where you use the command line interface (CLI)
 to make things happen.
@@ -254,6 +257,8 @@ by the return key:
 printenv SHELL
 echo $SHELL
 ```
+
+------------------------------------------------------------------------------
 
 ## Programming Editor ##
 
@@ -287,10 +292,33 @@ Another useful technology we won't be using is Jupyter. Notebook computing is
 very useful, but it doesn't lend itself to creating distributable software. It
 also isolates you from Unix.
 
+### Editor Customization ###
+
+Every source code editor has a lot of options. Make sure your editor is set up
+for the following:
+
++ Syntax highlighting for Python
++ Displays line numbers
++ Tab key inserts tab character (not spaces)
++ Shows 80-column gutter
+
+------------------------------------------------------------------------------
+
 ## Home Directory ##
 
-When you open a terminal, the focus is usually your home directory. There are
-several ways to get back to your home directory.
+The CLI always has a **focus**. When you first start up your terminal, the
+focus is your home directory. If you change directories, the focus of your
+terminal will change to that directory. To find out where your focus is, use
+the `pwd` command to "print working directory".
+
+```
+pwd
+```
+
+Like many Unix commands `pwd` is a shortcut to a longer word or phrase.
+Programs generally have short names to save you from having to do a lot of
+typing. If you want to set your focus to your home directory, do any of these
+commands.
 
 ```
 cd
@@ -351,6 +379,7 @@ thematically different from other directories. All the contents should be
 shared, read-only, and not indexed. For now, we'll keep it in our home
 directory but later you might want to move it.
 
+
 ### Filenaming Conventions ###
 
 + Don't put spaces or punctuation in your file names
@@ -358,6 +387,7 @@ directory but later you might want to move it.
 + Use lowercase in general
 + Use Uppercase for directories in your home directory (e.g. `Code`)
 
+------------------------------------------------------------------------------
 
 ## Git ##
 
@@ -465,6 +495,23 @@ MCB185-2023 and I haven't invited you as a collaborator, so you won't be able
 to make changes to my repo. You can edit the files all you want on your
 computer, you just can't change the files on the website.
 
+Let's get one more repository and put this in our `DATA` directory. Note that
+most of the time data isn't managed by git. It's usually too large. But in this
+case, the data is small enough that it's okay.
+
+```
+cd ~/DATA
+git clone https://github.com/iankorf/E.coli
+```
+
+As the name suggests, this is some data from the E. coli genome. There are 5
+files inside.
+
+```
+ls ~/DATA/E.coli
+```
+
+
 ### Git Commands ###
 
 Enter your homework repository and check its status.
@@ -531,7 +578,7 @@ the contents from GitHub. The general workflow with `git` is the following.
 + Use `git pull` to update local repos from GitHub
 + Use `git push` to save local changes to GitHub
 
-
+------------------------------------------------------------------------------
 
 ## Markdown and Text Files ##
 
@@ -703,20 +750,37 @@ of asterixes and underscores clearly show emphasis. Follow a few simple
 Markdown rules and you'll end up with beautiful documents that are easy to
 write and a pleasure to read as text, HTML, PDF, etc.
 
-
+------------------------------------------------------------------------------
 
 ## Python: Hello World ##
 
-It's time to write your first Python program (for this course anyway). Open
-your editor and write the following one-liner.
+It's time to write your first Python program (for this course anyway). Change
+directory to your homework repo and create a file with the `touch` command.
+
+```
+cd ~/Code/homework
+touch 00helloworld.py
+```
+
+Open your editor, find this file using the GUI, and write the following
+one-liner.
 
 ```
 print('hello world')
 ```
 
-Save this in your `homework` repo in a file named `00helloworld.py`. `git
-status` will show that this is currently not tracked. So let's `add` it, create
-a `commit` message, and then `push` it back to the website.
+Save the file. Now run the program.
+
+```
+python3 00hellworld.py
+```
+
+If all goes well, you should see your welcome message in the terminal. If this
+doesn't work, get help now!
+
+Now let's add your program to your homework repo. `git status` will show that
+this is currently not tracked. So let's `add` it, create a `commit` message,
+and then `push` it back to the website.
 
 ```
 git add 00helloworld.py
@@ -735,3 +799,53 @@ git allows multiple developers to work simultaneously on the same project
 without destroying each others work. We aren't using those advanced features
 yet. Right now, our focus is on backing up our code and logging our programming
 activity to the GitHub website.
+
+------------------------------------------------------------------------------
+
+## Final Checklist ##
+
++ Unix/Linux working
+	+ PC - VM or other recommended solution (not WSL)
+	+ Mac - make sure you download command line development tools
++ Editor set up properly
+	+ Syntax highlighting for Python
+	+ Displays line numbers
+	+ Tab key inserts tab character (not spaces)
+	+ Shows 80-column gutter
++ Directories with appropriate files
+	+ Code
+		+ homework
+			+ 00helloworld.py
+			+ LICENSE
+			+ README.md
+		+ MCB185-2023
+			+ various files...
+	+ DATA
+		+ E.coli
+			+ GCF_000005845.2_ASM584v2_genomic.fna.gz
+			+ GCF_000005845.2_ASM584v2_genomic.gbff.gz
+			+ GCF_000005845.2_ASM584v2_genomic.gff.gz
+			+ GCF_000005845.2_ASM584v2_protein.faa.gz
+			+ README.md
++ GitHub
+	+ homework repo on GitHub has the same files as your local repo
+
+
+Let's make sure your directories and files look right. Change directory to your
+home directory and then list the various directories.
+
+```
+cd
+ls Code
+ls Code/homework
+ls Code/MCB185-2023
+ls DATA
+ls DATA/E.coli
+```
+
+You can also do this in one command using the `-R` flag to recursively descend
+into each directory.
+
+```
+ls -R Code DATA
+```
