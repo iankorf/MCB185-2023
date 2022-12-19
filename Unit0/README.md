@@ -1,15 +1,15 @@
-Unit 0
-======
+Unit 0: Tools of the Trade
+==========================
 
 ## Learning Objectives ##
 
-+ Install Linux if you need to
++ Install Linux
++ Explore the Unix CLI with the Terminal and Shell
 + Choose a programming editor
-+ Using the Unix CLI with the Terminal and Shell
-+ Organizing your home directory
-+ Managing documents with Git
-+ Writing documentation with Markdown
-+ Your first Python program
++ Organize your home directory
++ Manage documents with Git
++ Write documentation with Markdown
++ Write your first Python program
 
 ## Unix/Linux ##
 
@@ -55,13 +55,16 @@ disadvantages, which are described in more detail below.
 
 + Virtual machine - recommended
 + Install Linux on a PC - best if you have a spare PC
-+ Windows Subsystem for Linux - official Microsoft solution
 + Cygwin - may be useful for advanced users
 + Git bash - may be useful for advanced users
++ Windows Subsystem for Linux - official Microsoft solution but not recommended
++ Chromebook - inexpensive and works okay
++ Raspberry Pi - fun little gizmo
++ Remote login - a little inconvenient at times
 
 ### Virtual Machine ###
 
-This is the current recommendation for Linux on a Windows computer.
+This is the current recommendation for Linux on a PC.
 
 A virtual machine (VM) is a _fictional_ computer running inside your normal
 Windows operating system. The virtualization _host_ software (e.g. VirtualBox)
@@ -103,7 +106,7 @@ than the GUI, so I don't concern myself too much with what the desktop looks
 like. Here are some recommendations for setting up your VM.
 
 + Linux: Lubuntu
-+ VM Memory: 2 GB
++ VM Memory: 2-4 GB but make sure your host OS has at least 6 GB
 + Disk: use default types, 40G is a good amount
 
 Make sure you read the installation directions fully. There are some
@@ -114,12 +117,11 @@ post-install customizations you might need to do. On VirtualBox these include:
 + Set up a shared folder if you want Linux and Windows to share files
 + Set up shared clipboard if you want to copy-paste between host and VM
 
-If you're having problems with the install or post-install, ask help from the
-instructor or TA.
+If you're having problems with the install or post-install, ask for help.
 
 ### Install Linux on PC ###
 
-This is the best way to run Linux, but it may change your PC permanently.
+This is the native way to run Linux, but it may change your PC permanently.
 
 There are a variety of ways you can install Linux on a hard disk. This could be
 an external hard disk you plug in when you want to run Linux (e.g. a flash
@@ -138,7 +140,7 @@ MacOS, but both continue to work flawlessly as Linux machines.
 
 ### Cygwin on Windows ###
 
-Cygwin is a terminal with Unix commands. In use, it feels similar to WSL.
+Cygwin is a terminal with Unix commands.
 
 Cygwin is not an entire operating system but rather a terminal with POSIX
 commands (POSIX is a standard for portable Unix). It does not come
@@ -200,8 +202,8 @@ editor (unless you like terminal-based editors).
 The Raspberry Pi is an inexpensive ($50-100) single board computer that is
 about the size of a deck of cards. You can also get one built into a slim
 keyboard. They use Linux as their OS. You just need to provide a mouse and
-monitor. They work great as a learning platform, but can be limiting as some
-useful bioinformatics software isn't compiled for the Pi.
+monitor. They work great as a learning platform, but can be limiting later on
+as some useful bioinformatics software isn't compiled for the Pi.
 
 ### Linux on Chromebook ###
 
@@ -223,6 +225,7 @@ I don't have any experience with Linux on tablets. I've seen it done, and it
 seems to work okay, but I expect there will be some issues with precompiled
 binaries as there are with the other cellphone-chip-based solutions (Pi,
 Chromebook).
+
 
 
 ## Unix CLI: Terminal & Shell ##
@@ -254,11 +257,35 @@ echo $SHELL
 
 ## Programming Editor ##
 
-You will spend a lot of time using a text editor designed for programming.
+You will spend a lot of time using a text editor designed for programming. A
+text editor is not a word processor. We won't be using MS Word or Google Docs.
+Popular text editors include:
 
-editor vs IDE
-non-programming editors
++ Sublime Text
++ Atom
++ Notepad++ (Windows)
++ BBedit (Mac)
 
+If you're using a VM, the OS will come bundled with an acceptable editor like
+FeatherPad or gedit. However, you're encouraged to explore other editors. You
+will be spending a lot of time editing code, so you might as well use one you
+like.
+
+A lot of programmers use an IDE (integrated development environment). This is
+sort of like having your editor, terminal, and other useful stuff all in one
+application. Popular IDEs include:
+
++ Visual Studio
++ Eclipse
++ PyCharm
++ IDLE
+
+We will not be using IDEs in this class. One of the goals of the class is for
+you to become Unix savvy, so I want you using the terminal as much as possible.
+
+Another useful technology we won't be using is Jupyter. Notebook computing is
+very useful, but it doesn't lend itself to creating distributable software. It
+also isolates you from Unix.
 
 ## Home Directory ##
 
@@ -287,7 +314,7 @@ We are going to organize all of our programming efforts in a directory called
 `Code`. The lifecycle of source code (and other documents) can be very complex.
 There may be multiple authors who contribute at various times and to varying
 degrees. To manage these complex histories, we use Git (see below). Let's make
-the `Code` directory now.
+the `Code` directory in our home directory.
 
 ```
 mkdir ~/Code
@@ -297,12 +324,13 @@ mkdir ~/Code
 
 Data is very different from code. It tends to be huge and pretty stable. For
 these reasons, code and data should be managed very differently. Data belongs
-in an entirely different place, possibly not even in your home directory.
-Imagine a shared computing environment where multiple users are all accessing
-the same file (e.g. the human genome). It would be wasteful for each person to
-have a copy of a huge data file in their home directory. Large data files
-should be shared in a place where everyone can get to them (and also
-write-protected to prevent them from being changed).
+in an entirely different place, possibly not even in your home directory or
+even on your physical computer (e.g. mounted over a network). Imagine a shared
+computing environment where multiple users are all accessing the same file
+(e.g. the human genome). It would be wasteful for each person to have a copy of
+a huge data file in their home directory. Large data files should be shared in
+a place where everyone can get to them (and also write-protected to prevent
+them from being changed).
 
 Another reason to isolate data is that it shouldn't be indexed by the operating
 system. Most modern operating systems index the contents of files to enable you
@@ -319,8 +347,9 @@ mkdir ~/DATA
 ```
 
 Notice that the `DATA` directory is in all caps. Why is this? Because it's
-different from other directories. All the contents should be read-only, not
-indexed, and ideally located somewhere else in your file system.
+thematically different from other directories. All the contents should be
+shared, read-only, and not indexed. For now, we'll keep it in our home
+directory but later you might want to move it.
 
 ### Filenaming Conventions ###
 
@@ -329,14 +358,182 @@ indexed, and ideally located somewhere else in your file system.
 + Use lowercase in general
 + Use Uppercase for directories in your home directory (e.g. `Code`)
 
+
 ## Git ##
 
-+ All of your code in git
-+ All of your repos in Code
+Git is the most popular version control software. While it was designed for
+source code management, it can be used to manage all kinds of projects. Git
+allows multiple people to work on the same files without anyone over-writing
+anyone else's work. You will always know who did what and when.
+
+## GitHub Account ##
+
+GitHub is a website that lets you store you git repositories for free. There
+are several similar sites, but GitHub is the most popular. Every bioinformatics
+developer should have a GitHub account. Your repositories and activity are part
+of your CV. If you don't have a GitHub account, it's time to point your web
+browser to [https://github.com](GitHub) and create your account.
+
+Choose a username. It's okay to be clever, but don't be silly. Remember, this
+will be part of your CV. I use my full name. After setting your email and
+password, choose the free plan and then answer a few questions about your
+interests to create your account. Go to your email to verify your email
+address.
+
+### Create a Repository ###
+
+It's time to create your first repository, which we often shorten to _repo_.
+Before we begin, we need to talk a little about ownership, privacy, and
+security.
+
+When you create a repo, you own it. You can read it, write to it, or even
+delete it. Later, you can invite collaborators who can join you in your
+efforts, but by default, only you can make edits.
+
+When a repo is created, it can be either _Public_ or _Private_. A Public
+repository allows other people to download a copy of your repo. This is called
+_cloning_. There is no security risk in cloning a Public repository (unless you
+put sensitive info in there). If people modify their clones, it does not affect
+your files. If you want people to be able to edit files in your repo, you have
+to invite them as collaborators.
+
+A Private repository is invisible to everyone but you. You can add
+collaborators to Public or Private repos and specify what kinds of permissions
+each collaborator may have. As the owner, you can change a repo from Public to
+Private and back. Most of my repos are public because I believe in openly
+sharing (but hands off my sandwich).
+
+Now let's go make a repo. Go to the GitHub website and click on the green "New"
+button to create a new repo. Name this "homework" because this is where you'll
+be submitting your homework. Make it public. Does this mean that students can
+see each others' homework? Yes. Click the boxes to initialize with a README,
+add a .gitignore and add a license. Scroll through the .gitignore options until
+you get to "Python". Choose whichever license you like. I generally use MIT.
+Click the "Create Repository" and you will be transported to your new mostly
+empty repo.
+
+### Personal Access Token ###
+
+When you interact with the GitHub website, you use a username and password.
+When you interact with GitHub using the Linux CLI, you cannot use your website
+password. Instead you have to use a "personal access token" (PAT). So the first
+thing we need to do is to generate a PAT.
+
+Log into GitHub and then click on the icon in the top right corner. This will
+drop down a menu where you will find "Settings". Follow that link and you will
+get to your various account settings. Scroll down to the bottom to find
+"Developer Settings". On the next page you will see "Personal access tokens".
+Click on the link to "Generate a personal access token".
+
+In the "Note" you might put in "programming" or something. It doesn't matter.
+
+For "Expiration" you can use any of the values. If you don't want to do this
+again, use the "No expiration" option.
+
+Click on the "repo" checkbox, which will also check the subordiante boxes.
+
+Your personal access token is given to you once. Copy it and save it somewhere
+safe. You can never get to this PAT again. Ever. However, you can generate a
+new one anytime you like, so if you lose your PAT, you can just generate a new
+one. I put my PAT in a personal message to myself in Slack. I also keep it in
+a file on Dropbox.
+
+### Cloning Repos from the CLI ###
+
+Your current homework repo is located on GitHub, but not in your Linux
+computer. Type the following commands, substituting YOUR_GITHUB_HANDLE for
+whatever your GitHub user name is.
+
+```
+
+cd ~/Code
+git clone https://github.com/YOUR_GITHUB_HANDLE/homework
+```
+
+You should now see your homework directory. Also clone the MCB185-2023 repo so
+that you have all of the course content on your computer.
+
+```
+git clone https://github.com/iankorf/MCB185-2023
+ls
+```
+
+You should now see both your homework and the course repos in your Code
+directory. Since you own your homework repo, you will be able to make changes
+to it and the files on the website will change. However, you don't own
+MCB185-2023 and I haven't invited you as a collaborator, so you won't be able
+to make changes to my repo. You can edit the files all you want on your
+computer, you just can't change the files on the website.
+
+### Git Commands ###
+
+Enter your homework repository and check its status.
+
+```
+cd homework
+git status
+```
+
+You will see that git reports that your repository is up to date. Let's modify
+a file and see what happens. Edit the `README.md` file with your text editor
+and save it.
+
+After saving your changes, do another `git status`.
+
+This shows that `README.md` has been changed. In order to put those changes
+back into GitHub, you'll need to `add`, `commit`, and `push`.
+
+```
+git add README.md
+git commit -m update
+git push
+```
+
+The `add` argument tells `git` we intend to put this file in our repo. Not all
+files in your current directly need to go into your repo. For example, you may
+have some temporary program outout you were using for debugging.
+
+The `commit` tells `git` we are done with edits, and the `-m` provides a short
+message about what work was done. The message might be as simple as "update" or
+"edit" or "new", but might be more complex such as "finally squashed the
+formatting bug". If you have edited multiple files, they will all get the same
+commit message. If you want different commit tags for different files, `add`
+and `commit` them separately.
+
+Once you're done with all the `add` and `commit` work `push` tells git to
+upload all of the modified files back to GitHub.
+
+When git prompts you for your username, use your GitHub username. For the
+password, copy-paste your GitHub personal access token.
+
+If you don't like copy-pasting your PAT again and again, use the following
+commands to make git remember you. Change "username" to your GitHub username.
+
+```
+git config --global user.name "username"
+git config --global credential.helper store
+```
+
+Imagine you have two computers, one at work and one at home. You need both
+computers to have the same files. `git pull` updates your computer repo with
+the contents from GitHub. The general workflow with `git` is the following.
+
+1. Create a file
+2. `git add`
+3. `git commit -m "something"`
+4. `git push`
+5. Time passes...
+6. `git pull`
+7. Edit files
+8. Go back to step 2
+
+
++ Use `git pull` to update local repos from GitHub
++ Use `git push` to save local changes to GitHub
 
 
 
-## Markdown and Files ##
+## Markdown and Text Files ##
 
 Most of the files we work with in Linux are plain text files. Many things
 change in this world, but not the format of text files. Got some old poetry you
@@ -508,12 +705,33 @@ write and a pleasure to read as text, HTML, PDF, etc.
 
 
 
+## Python: Hello World ##
 
+It's time to write your first Python program (for this course anyway). Open
+your editor and write the following one-liner.
 
-## Customizing your login script ... ##
+```
+print('hello world')
+```
 
+Save this in your `homework` repo named `00helloworld.py`. `git status` will
+show that this is currently not tracked. So let's `add` it, create a `commit`
+message, and then `push` it back to the website.
 
-## Your first python program ##
+```
+git add 00helloworld.py
+git commit -m new
+git push
+```
 
+Check the GitHub website. You should see your `00helloworld.py`.
 
-
+It might seem like git is a lot of effor just to upload your code to a website.
+If that's all git did, it would be too much effort, but git allows you to do a
+lot more. Git tracks every change you make to a file, allowing you to rewind it
+to any point in time. Git allows you to make a _branch_ of related work and
+then later merge it back in with the main trunk if desired. More importantly,
+git allows multiple developers to work simultaneously on the same project
+without destroying each others work. We aren't using those advanced features
+yet. Right now, our focus is on backing up our code and logging our programming
+activity to the GitHub website.
