@@ -714,9 +714,9 @@ your editor and write the following one-liner.
 print('hello world')
 ```
 
-Save this in your `homework` repo named `00helloworld.py`. `git status` will
-show that this is currently not tracked. So let's `add` it, create a `commit`
-message, and then `push` it back to the website.
+Save this in your `homework` repo in a file named `00helloworld.py`. `git
+status` will show that this is currently not tracked. So let's `add` it, create
+a `commit` message, and then `push` it back to the website.
 
 ```
 git add 00helloworld.py

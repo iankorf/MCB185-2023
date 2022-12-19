@@ -14,7 +14,7 @@ your code, you can feel proud rather than ashamed.
 Some students come to the class with previous programming experience. Some
 students learn programming concepts faster than others. Some students have more
 time to study than others. For these reasons, not every student will start or
-end at the same place. Your grade will be determined as much by your journey as
+end at the same place. Your grade will be determined more by your journey than
 your destination. How exactly does that work? Please focus on the journey, not
 the destination.
 
