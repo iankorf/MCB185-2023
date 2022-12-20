@@ -24,11 +24,12 @@ Your development as a programmer will not be linear. Some concepts will be easy
 and others will be hard. In order to become a high level programmer, you need
 to understand about 100 new concepts. Each of these concepts will make you
 pause for between 1 minute and forever (seriously, I know programmers who still
-don't understand pointer arithmetic). How long you get stuck is partly up to
-you. You might not be able to get to the next level of understanding by
-yourself. The solution is to **ask for help**. If you find yourself stuck for
-more than 30 minutes, stop banging your head against a wall and ask someone for
-help! Every time you ask someone for help, two people win.
+don't understand pointer arithmetic - incidentally, not part of this course).
+How long you get stuck is partly up to you. You might not be able to get to the
+next level of understanding by yourself. The solution is to **ask for help**.
+If you find yourself stuck for more than 30 minutes, stop banging your head
+against a wall and ask someone for help! Every time you ask for help, two
+people win.
 
 Unlike most of your other classes, there is no penalty for working with another
 student. In fact, you're encouraged to do so. Programming *should* be done in
@@ -46,9 +47,9 @@ solve a problem but to learn how to solve a problem. For this reason, it's
 important for you to write your own code. Even when you work in a small group,
 everyone should write their own code.
 
-Resist copy-paste. Typing words helps you remember what you did the next time.
+Resist copy-paste. Typing words helps you remember what you did later.
 Copy-paste is one of the worst ways to learn how to program. Also, copy-paste
-is one of the greatest sources of silent programming errors.
+is one of the greatest sources of silent programming errors. No copy-paste!
 
 There will be times you get stuck and decide to search Stack Overflow or some
 other generally useful site. Resist this temptation. All of the programming
@@ -71,8 +72,8 @@ Why is this a rule?
 
 ## Getting Started ##
 
-Start with Unit0 and work your way up to Unit9. What if you don't get all the
-way to Unit9? FFS journey, not destination.
+Start with the `README.md` in Unit0 and work your way up to Unit9. What if you
+don't get all the way to Unit9? FFS journey, not destination.
 
 + Unit 0: Tools of the Trade
 + Unit 1: Basic Unix, Basic Python
@@ -84,3 +85,9 @@ way to Unit9? FFS journey, not destination.
 + Unit 7: Dictionaries
 + Unit 8: Regex
 + Unit 9: Final Project
+
+## Getting Help ##
+
+Asking questions in the Discord channel will get you the fastest response. The
+instructor and TA monitor the course Discord server. You may get answers from
+other students even sooner. Email will also work.

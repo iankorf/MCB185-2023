@@ -24,7 +24,8 @@ printenv HOME
 ```
 
 The `echo` command writes stuff to your terminal, including the contents of
-environment variables.
+environment variables. Put a `$` on the front of the variable name to
+dereference its contents.
 
 ```
 echo Hello $USER, your home directory is: $HOME
@@ -42,8 +43,7 @@ printenv
 ## Focus, Absolute, and Relative Paths ##
 
 When you open your terminal application, the focus of your shell is your home
-directory. You can verify this with the `pwd` command. Open a new terminal and
-run the command.
+directory. You can verify this with the `pwd` command.
 
 ```
 pwd
@@ -91,11 +91,13 @@ then list it.
 
 ```
 cd ~/Code/homework
+pwd
 ls
 ```
 
-Here, the `ls` command uses the current focus. From your homework directory,
-all of these commands do the same thing.
+Here, the `ls` command uses the current focus, which is your homework
+directory. From your homework directory, all of these commands do the same
+thing.
 
 ```
 ls /your_home_directory/Code/homework
@@ -106,8 +108,8 @@ ls
 
 When using relative paths, there are two important modifiers:
 
-+ `.` means your current directory
-+ `..` means your parent directory
++ `.` means the current directory
++ `..` means the parent directory
 
 Both of these commands do exactly the same thing:
 
@@ -132,10 +134,11 @@ ls ~/Code
 ls ..
 ```
 
-The last command used the `..` for parent directory. The Code directory is "one
-up" from the homework directory. Similalry, you could list the contents of your
-home directory from within your homework directory. Both of these commands do
-the same thing, but one uses absolute path and the other relative.
+The last command used the `..` for parent directory. The Code directory is
+hierarchically "one above" the homework directory. Similalry, you could list
+the contents of your home directory from within your homework directory. Both
+of these commands do the same thing, but one uses absolute path and the other
+relative.
 
 ```
 ls ~
@@ -153,8 +156,8 @@ schedule breaks. Unix has several ways to save your fingers.
 Probably the most important finger saver in Unix is **tab completion**. When
 you hit the tab key, the shell completes the rest of the word for you if it can
 guess what you want next. Try typing `h` and then the tab (you may need to hit
-it twice depeding on your flavor of shell). Those are all the commands that
-begin with the letter h. Now type `i` and hit tab again. Those are all the
+it twice depeding on your flavor of shell). You should see are all the commands
+that begin with the letter h. Now type `i` and hit tab again. Those are all the
 commands that begin with `hi`. Add an `s` and run the `history` command. This
 shows you the last commands you typed.
 
@@ -172,8 +175,30 @@ presses and time, it also ensures that your spelling is correct.
 
 ## Standard Input, Output, and Error ##
 
-When you issue commands like `cat`, the output that is sent to your terminal is
-called Standard Output (stdout). Sometimes that output is really long and hard
+When you issue commands like `ls`, the output that is sent to your terminal is
+called Standard Output (stdout). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STOPPED HERE
+
+
+
+
+
+Sometimes that output is really long and hard
 to read quickly. 
 
 ```
