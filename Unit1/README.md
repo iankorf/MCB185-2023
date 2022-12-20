@@ -4,18 +4,21 @@ Unit 1: Basic Unix, Basic Python
 ## Learning Objectives ##
 
 + Environment variables
++ Viewing files
 + Absolute and relative paths
-+ Injury prevention with tab-completion and up-arrow
++ Injury prevention shortcuts
 + Standard input, output, and error
 + Creating and modifying files
 
 ------------------------------------------------------------------------------
 
+
 ## Environment Variables ##
 
-The shell defines various variables which are called _shell variables_ or
-_environment variables_. For example, the `USER` variable contains your user
-name and the `HOME` variable contains the path to your home directory. You can
+The shell defines various variables which are called _shell variables_ or 
+_environment variables_. For example, the `USER` variable contains your user 
+name, `HOME` contains the path to your home directory, `SHELL` contains the 
+path to your shell, and `PWD` contains the focus of your terminal. You can 
 examine the contents of a variable with the `printenv` command.
 
 ```
@@ -24,15 +27,16 @@ printenv HOME
 ```
 
 The `echo` command writes stuff to your terminal, including the contents of
-environment variables. Put a `$` on the front of the variable name to
+environment variables. Put a `$` on the front of the variable names to
 dereference their contents.
 
 ```
 echo Hello $USER, your home directory is: $HOME
 ```
 
-If you want to see all your environment variables, you can use the `printenv`
-command without any arguments.
+If you want to see all your environment variables, you can use the `printenv` 
+command without any arguments. We won't be using environment variables much in 
+this course.
 
 ```
 printenv
@@ -40,118 +44,112 @@ printenv
 
 ------------------------------------------------------------------------------
 
-## Focus, Absolute, and Relative Paths ##
+## Viewing Files ##
 
-When you open your terminal application, the focus of your shell is your home
-directory. You can verify this with the `pwd` command.
+The most common programs for viewing files are these:
+
++ `cat` - dump the contents of files
++ `head` - print the first 10 lines of a file
++ `tail` - print the last 10 lines of a file
++ `more` - page through a file
++ `less` - page through a file with more control
++ `zless` - like `less` but works with compressed files
+
+Let's give them a test drive.
+
+```
+cd ~/Code/MCB1850-2023/Unit1
+cat README.md
+head README.md
+tail README.md
+head -5 README.md
+tail -15 README.md
+```
+
+To read a file one page at a time, use `more` or `less`. Use the "f" and "b" 
+keys to move forward or backward one page. You can also use the spacebar to 
+move forward one page. To quit the program, use the "q" key.
+
+```
+more README.md
+less REAMDE.md
+zless ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz
+```
+
+Most Unix programs have descriptive names or initialisms. `cat` is short for 
+catenate. `head` and `tail` are self-explanatory. `more` shows you more of a 
+file. `less` does more than `more` because sometimes less is more. If you have 
+a choice between a pun and something actually useful, always choose the pun.
+
+------------------------------------------------------------------------------
+
+## Absolute, and Relative Paths ##
+
+When you open a terminal application, the focus of your shell begins in  your 
+home directory. Let's verify this. Open a new terminal.
 
 ```
 pwd
 ```
 
-This command shows you the **absoute path** of your home directory. This might
-be `/home/$USER` or `/Users/$USER` or possibly something else. What makes this
-an absolute path is that it starts with a `/`. If the directory path doesn't
-start with a `/`, it's not an absolute path.
-
-You can access directories and files with absolute or relative paths. Let's try
-listing your home directory using the absolute path. Substitute
-"your_home_directory" for whatever the contents of `pwd` was. Don't forget the
-leading `/`.
+When you change directories, your focus will change.
 
 ```
-ls /your_home_directory
-```
-
-Of course, we could also have used the `$HOME` variable here.
-
-```
-ls $HOME
-```
-
-One more option is to use the `~` key for a shortcut to your home directory.
-
-```
-ls ~
-```
-
-Whether we type out the full name, use the `$HOME` environment variable or the
-`~` shortcut, all of these methods use the absolute path. Let's list the
-contents of your homework directory using absolute paths.
-
-```
-ls /your_home_directory/Code/homework
-ls $HOME/Code/homework
-ls ~/Code/homework
-```
-
-A **relative path** does not begin with the `/` symbol. Instead, the path is
-relative to your current focus. Let's change focus to the homework repo and
-then list it.
-
-```
-cd ~/Code/homework
+cd Code/MCB185-2023/Unit1
 pwd
-ls
 ```
 
-Here, the `ls` command uses the current focus, which is your homework
-directory. From your homework directory, all of these commands do the same
-thing.
+Note that in both cases, the output of `pwd` was a directory path that started 
+with the `/` character. Any path that begins with the `/` is an **absolute 
+path**. An absolute path always begins at the filesystem root, which is `/`. 
+It's sort of like specifying your address and including your country, state, 
+street, and house number. In contrast, a relative path assumes some prior 
+knowledge. For example, within a city, you might want to get to 112 Main Street 
+and it would be silly to specify country, and state. Any path that does not 
+begin with the `/` character is a **relative path**.
+
++ any path that begins with the filesystem root `/` is an absolute path
++ any other path is a relative path
+
+In addition to the various named directories on your filesystem, you also have 
+`.` and `..`. The single dot `.` is a relative path to your current directory. 
+The double dot `..` is a relative path to the parent directory.
+
++ `/bin` absolute path
++ `$HOME/Code` absolute path (the `/` is in the variable)
++ `~/DATA` absolute path (`~` is an absolute path)
++ `REAMDE.md` relative path to file in current directory
++ `./README.md` also relative path to file in current directory
++ `../README.md` relative path to file in parent directory
+
+Let's get some practice using absolute and relative paths. Inside the Unit1 
+directory you will see another directory called `project`. This is some 
+fictious project that involves some document, image, and source files. List
+the contents of the directory using absolute and relative paths.
 
 ```
-ls /your_home_directory/Code/homework
-ls $HOME/Code/homework
-ls ~/Code/homework
-ls
+ls $HOME/Code/MCB185-2023/Unit1/project
+ls project
 ```
 
-When using relative paths, there are two important modifiers:
-
-+ `.` means the current directory
-+ `..` means the parent directory
-
-Both of these commands do exactly the same thing:
+In this case, it was a lot simpler to use the relative path than the absolute 
+path. That's not always the case. Try listing the filesystem root using both
+absolute and relative paths
 
 ```
-cat 00helloworld.py
-cat ./00helloworld.py
-```
-
-It may seem like `.` is useless, but there are times when you want to use your
-current directory as an argument to a command. For example, if you want to copy
-a file from some other location to your current focus, you would do something
-like `cp some_path .`, where the `.` is your current focus.
-
-You will find a lot more use for the `..` parent directory token. Let's say we
-want to list the contents of the Code directory when the focus is homework. All
-of these methods do the same thing.
-
-```
-ls /your_home_directory/Code
-ls $HOME/Code
-ls ~/Code
-ls ..
-```
-
-The last command used the `..` for parent directory. The Code directory is
-hierarchically "one above" the homework directory. Similarly, you could list
-the contents of your home directory from within your homework directory. Both
-of these commands do the same thing, but one uses absolute path and the other
-relative.
-
-```
-ls ~
-ls ../..
+ls /
+ls ../../../../..
 ```
 
 ------------------------------------------------------------------------------
 
-## Injury Prevention ##
+## Injury Prevention Shortcuts ##
 
 Typing is bad for your health. Seriously, if you type all day, you will end up
 with a repetitive stress injury. Don't type for hours at a time. Make sure you
 schedule breaks. Unix has several ways to save your fingers.
+
+### Tab Completion ###
 
 Probably the most important finger saver in Unix is **tab completion**. When
 you hit the tab key, the shell completes the rest of the word for you if it can
@@ -160,6 +158,8 @@ it twice depeding on your flavor of shell). You should see all the commands
 that begin with the letter h. Now type `i` and hit tab again. Those are all the
 commands that begin with `hi`. Add an `s` and run the `history` command. This
 shows you the last commands you typed.
+
+### Up Arrow ###
 
 Instead of re-typing long commands, you can go backwards through your command
 history with the up-arrow. Trying hitting the up-arrow several times and you'll
@@ -170,6 +170,66 @@ key and then the letter c. This sends an "interrupt" signal to the shell.
 
 You should use tab completion constantly. Not only does it save you key
 presses and time, it also ensures that your spelling is correct.
+
+### Wildcards ###
+
+One of the most useful time-saving tricks in the shell is the use of the `*` 
+character as a wildcard. The `*` character matches missing characters if it 
+can. Inside the Unit1 directory, there is only one thing that starts with the 
+letter "p". The `*` will fill in the rest. So here are three ways of doing the 
+same thing.
+
+```
+ls project
+ls p*
+ls p "hit the tab key"
+```
+
+The `*` isn't limited to filling in a single word. If you look inside the 
+`project/img` directory, you will see 3 files. Two of them have png extensions 
+while the other is jpg. We can list just the png files as follows:
+
+
+```
+ls project/img/*.png
+```
+
+Here are some more examples:
+
+```
+ls project/*
+cat project/doc/*
+```
+
+### Symbolic Links ###
+
+Long path names are sometimes laborious to look at. Let's make a shortcut to 
+the E.coli genome in DATA using a symbolic link, which is also called a 
+soft-link.
+
+```
+ln -s ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz ./ecoli.fa.gz
+```
+
+Please tell me you used tab-completion for that and didn't actually type it 
+out! Now, we have a file called `ecoli.fa.gz` that appears exactly like the 
+original file except that it's just a shortcut.
+
+```
+zless ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz
+zless ecoli.fa.gz
+```
+
+How can you tell the difference between a normal file and a symbolic link? The 
+`-F` option gives `ls` some extra formatting. Symbolic links are shown with an 
+`@` symbol. Also, if you're using a color terminal, it will have a different 
+color.
+
+```
+ls -F
+```
+
+------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------
 
@@ -236,7 +296,7 @@ In addition to stdin and stdout, there is another stream of data called
 Standard Error (stderr). This is meant to be used for error messages or logging
 messages rather than data.
 
-Let's remove the "foo" and "bar" files.
+Let's be tidy and remove the "foo" and "bar" files with the `rm` command.
 
 ```
 rm foo bar
@@ -244,37 +304,7 @@ rm foo bar
 
 ------------------------------------------------------------------------------
 
-## Viewing Files ##
 
-The most common file viewing tools are these:
-
-+ `cat` - dump the entire contents of a file to stdout
-+ `head` - print the first 10 lines of a file
-+ `tail` - print the last 10 lines of a file
-+ `more` - page through a file
-+ `less` - page through a file with more control
-
-Let's give them a test drive. Here's a file with a bunch of content in it (it's
-the one you're reading of course).
-
-```
-cat ~/Code/MCB185-2023/Unit1/README.md
-```
-
-Now try `head` and `tail`. In both of these programs, you can specify the
-number of lines you want to display.
-
-```
-cd ~/Code/MCB1850-2023/Unit1
-head README.md
-head -5 README.md
-tail README.md
-tail -15 README.md
-```
-
-To read a file one page at a time, use `more` or `less`. Use the "f" and "b"
-keys to move forward or backward one page. You can also use the spacebar to
-move forward one page. To quit the program, use the "q" key.
 
 ------------------------------------------------------------------------------
 
@@ -349,29 +379,6 @@ rm Stuff/full
 rmdir Stuff
 ```
 
-### Wildcards ###
-
-One of the most useful time-saving tricks in the shell is the use of the `*`
-character as a wildcard. The `*` character matches missing characters if it
-can. Let's make a bunch of files to observe the power of wildcard expansion.
-
-```
-touch a.fa b.fa c.fa a.gff b.gff c.gff
-```
-
-These files are all empty, of course, but let's just imagine that they contain
-sequences in FASTA and annotations in GFF. Here's how we list the files that
-begin with "a"
-
-```
-ls a*
-```
-
-More usefully, we might want to list all the fasta files.
-
-```
-ls *.fa
-```
 
 
 STOPPED HERE
@@ -690,3 +697,5 @@ your files and directories uses.
 | `touch`   | `touch f`     | update file f modification time (create if needed)
 | `wc`      | `wc f`        | count the lines, words, and characters in file f
 | `zcat`    | `zcat f.gz`   | stream compressed file f.gz to stdout
+
+

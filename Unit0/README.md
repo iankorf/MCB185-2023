@@ -303,10 +303,14 @@ for the following:
 
 ## Home Directory ##
 
-The CLI always has a **focus**. When you first start up your terminal, the
-focus is your home directory. If you change directories, the focus of your
-terminal will change to that directory. To find out where your focus is, use
-the `pwd` command to "print working directory".
+The CLI always has a **focus**. When you first start up your terminal, the 
+focus is your home directory. Your home directory is so important that there is 
+a simple shortcut to get to it, the tilde key `~`. If you've never used this 
+before, it's probably at the top left of your keyboard.
+
+If you change directories, the focus of your terminal will change to that 
+directory. To find out where your focus is, use the `pwd` command to "print 
+working directory".
 
 ```
 pwd
@@ -315,7 +319,7 @@ pwd
 Like many Unix commands `pwd` is a shortcut to a longer word or phrase.
 Programs generally have short names to save you from having to do a lot of
 typing. If you want to set your focus to your home directory, do any of these
-commands.
+commands (the last one will be described next unit).
 
 ```
 cd
