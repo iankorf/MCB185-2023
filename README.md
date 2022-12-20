@@ -4,10 +4,9 @@ MCB185 (2023 version)
 ## Intent ##
 
 A lot of the software written by biologists is so poorly written, documented,
-and tested, that it is frankly embarassing. The reason for this is that nobody
+and tested, that it is frankly embarrassing. The reason for this is that nobody
 told them there was a right way to do things. In this course, you will learn
-the right way to engineer software, and as a consequence, when you distribute
-your code, you can feel proud rather than ashamed.
+how to write software that you won't be ashamed to distribute.
 
 ## Experience, Aptitude, and Grading ##
 
@@ -77,7 +76,7 @@ don't get all the way to Unit9? FFS journey, not destination.
 
 + Unit 0: Tools of the Trade
 + Unit 1: Basic Unix, Basic Python
-+ Unit 2: More Unix, Loops and Conditionals
++ Unit 2: Loops and Conditionals
 + Unit 3: More Loops and Conditionals
 + Unit 4: Lists
 + Unit 5: Functions

@@ -16,18 +16,18 @@ Unit 0: Tools of the Trade
 ## Unix/Linux ##
 
 Most professional bioinformatics is done in a Unix/Linux environment. You don't
-have to love Unix/Linux, but you do have to be good at it.
+have to love Unix/Linux, but you do have to be proficient at it.
 
 ### What's the deal with Unix vs. Linux? ###
 
-Most people about to embark on an adventure in bioinformatics programming will
-be using some flavor of Linux (e.g. Debian, Fedora, LinuxLite, Mint, Ubuntu,
-etc.) and not actually Unix. Is there a difference between Linux and Unix?
-Practically, no, but philisophically, yes. Linux was designed to behave just
-like Unix, so they are supposed to be very similar. However, Unix has its roots
-as a commercial product and Linux has its roots in open source free software.
-In this document, the terms _Linux_ and _Unix_ are used somewhat
-interchangeably.
+Most people about to embark on an adventure in bioinformatics programming will 
+be using some flavor of Linux (e.g. Debian, Fedora, LinuxLite, Mint, Ubuntu, 
+etc.) and not actually Unix. Is there a difference between Linux and Unix? Unix 
+has been around a long time, and is a commerical product. Linux was developed 
+as a free alternative to Unix. Linux is designed to behave very much like Unix. 
+From a practical standpoint, they are essentially the same. Philosophically, 
+they are very different. In this document, the terms _Linux_ and _Unix_ are 
+used somewhat interchangeably.
 
 ### Where do I get Linux? ###
 
@@ -42,10 +42,11 @@ get to that, you need Linux.
 
 ### Unix on Mac ###
 
-If your computer is a Mac, you already have Unix installed, and your specific
-flavor of Unix is called Darwin. You can get to the CLI with the _Terminal_
-application. However, you might not have `git` and other developer tools
-installed by default. To install these, type the following in your terminal:
+If your computer is a Mac, you already have Unix installed, and your specific 
+flavor of Unix is called Darwin. You can get to the CLI with the _Terminal_ 
+application. However, you might not have `git` and other developer tools 
+installed by default. To install these, type the following in your terminal and 
+follow the instructions:
 
 	xcode-select --install
 
@@ -80,25 +81,25 @@ VirtualBox is free software that works very well. Other popular virtualization
 products include VMware and Parallels. If you want commercial support, you may
 like those.
 
-The downside of a VM is that your virtual machines will take up some RAM, CPU,
-and storage. RAM is the most critical resource because it isn't easily shared.
-If you have 8 GB RAM, you could set up your VM with half. But that means both
-your real and virtual machines are running on 4 GB each. Computers run more
-efficiently with more RAM, especially if you're the type of person to have 20
-browser tabs open. Adding more RAM to your computer will improve your VM
-experience. You can also run a VM with less RAM if you use a lightweight Linux
-distribution like Lubuntu or LinuxLite.
+The downside of a VM is that your virtual machines will take up some RAM, CPU, 
+and storage away from your host OS. RAM is the most critical resource because 
+it isn't easily shared. If you have 8 GB RAM, you could set up your VM with 
+half. But that means both your real and virtual machines are running on 4 GB 
+each. Computers run more efficiently with more RAM, especially if you're the 
+type of person to have 20 browser tabs open. Adding more RAM to your computer 
+will improve your VM experience. You can also run a VM with less RAM if you use 
+a lightweight Linux distribution like Lubuntu or LinuxLite.
 
 On the CPU side, your programs running in a VM will run slower than they could.
 The difference is pretty negligible though. We're talking 1-10% slower. You
 will also have to dedicate about 20 GB of hard disk space. Even with the
 downsides, VMs are a great way to run Linux on your PC.
 
-One additional complication is that your BIOS might need to be modified to run
-virtual machines. Some manufacturers ship their products with virtualization
-disabled. This is easily changed by entering BIOS on startup (hold down the F10
-key - or sometimes it's F1, F2, F12, or DEL), navigating to CPU or security,
-and enabling virtualization.
+One additional complication is that your BIOS might need to be modified to run 
+virtual machines. Some manufacturers ship their products with virtualization 
+disabled. This is easily changed by in BIOs. Hold down the F10 key - or 
+sometimes it's F1, F2, F12, or DEL to enter BIOS. Navigate to CPU or security. 
+Enable virtualization.
 
 There are many distributions of Linux. The most obvious differences among them
 is the desktop Graphical User Interface (GUI). Some look like old-school
@@ -120,6 +121,9 @@ post-install customizations you might need to do. On VirtualBox these include:
 + Set up shared clipboard if you want to copy-paste between host and VM
 
 If you're having problems with the install or post-install, ask for help.
+
+Mac users can also install VMs, but the experience is sometimes not as good as 
+PC users.
 
 ### Install Linux on PC ###
 
@@ -167,16 +171,17 @@ is slightly more complex.
 
 ### Windows Subsystem for Linux ###
 
-The official Microsoft solution for running Linux is called the Windows
-Subsystem for Linux (WSL). There are two types of WSL, Type 1 and Type 2. Type
-1 is older. It is also compatible with virtual machines like VirtualBox. If you
-want to run both WSL and VBox on the same machine, you should use WSL Type 1.
+The official Microsoft solution for running Linux is called the Windows 
+Subsystem for Linux (WSL). There are two types of WSL, Type 1 and Type 2. Type 
+1 is older. It is also compatible with virtual machines like VirtualBox. If you 
+want to run both WSL and VirtualBox on the same machine, you should use WSL 
+Type 1.
 
-If you want to be more up-to-date, then use WSL Type 2. Unfortunately,
-installing WSL2 will stop VirtualBox from running. You can have WSL2 and VBox
-on the same computer, but not running at the same time; you will have to edit
-some settings and restart to switch between the two. This is a pain, so don't
-do it.
+If you want to be more up-to-date, then use WSL Type 2. Unfortunately, 
+installing WSL2 will stop VirtualBox from running. You can have WSL2 and 
+VirtualBox on the same computer, but not running at the same time; you will 
+have to edit some settings and restart to switch between the two. This is a 
+pain, so don't do it.
 
 The upside of WSL is that it is the official Microsoft product. Most of the
 time it works great. It uses less resources than a VM, so your actual and
@@ -189,23 +194,6 @@ don't recommend it.
 
 From WSL, your Windows C drive is conveniently mounted at `/mnt/c`. Finding
 your Linux filesystem root from Windows is not so easy.
-
-### Remote Login ###
-
-Another way to work with Linux is to use your computer as a terminal to another
-computer located somewhere on the Internet. This might be part of a larger
-cloud computing service (e.g. Google, Amazon, etc.) or a computer located at
-your school. The downside here is that you'll need a network connection and
-you'll need to figure out how to edit remote files from your favorite desktop
-editor (unless you like terminal-based editors).
-
-### Raspberry Pi ###
-
-The Raspberry Pi is an inexpensive ($50-100) single board computer that is
-about the size of a deck of cards. You can also get one built into a slim
-keyboard. They use Linux as their OS. You just need to provide a mouse and
-monitor. They work great as a learning platform, but can be limiting later on
-as some useful bioinformatics software isn't compiled for the Pi.
 
 ### Linux on Chromebook ###
 
@@ -221,6 +209,23 @@ I don't really recommend Chromebooks because it's not a popular platform for
 professional bioinformatics work. However, if that's all you have, it will work
 fine for this course.
 
+### Raspberry Pi ###
+
+The Raspberry Pi is an inexpensive ($50-100) single board computer that is
+about the size of a deck of cards. You can also get one built into a slim
+keyboard. They use Linux as their OS. You just need to provide a mouse and
+monitor. They work great as a learning platform, but can be limiting later on
+as some useful bioinformatics software isn't compiled for the Pi.
+
+### Remote Login ###
+
+Another way to work with Linux is to use your computer as a terminal to another
+computer located somewhere on the Internet. This might be part of a larger
+cloud computing service (e.g. Google, Amazon, etc.) or a computer located at
+your school. The downside here is that you'll need a network connection and
+you'll need to figure out how to edit remote files from your favorite desktop
+editor (unless you like terminal-based editors).
+
 ### Linux on Tablet ###
 
 I don't have any experience with Linux on tablets. I've seen it done, and it
@@ -232,11 +237,11 @@ Chromebook).
 
 ## Unix CLI: Terminal & Shell ##
 
-There are many terminal applications. Generally, it doesn't matter which one
-you use. It's sort of like choosing between Firefox and Chrome: they look a
-little different, but both let you navigate the Internet. Fubd a terminal
-application on your computer. The name might be 'Terminal', 'xterm', 'Qterm' or
-something with 'term' in it somewhere. Create a shortcut in your dock/launchbar
+There are many terminal applications. Generally, it doesn't matter which one 
+you use. It's sort of like choosing between Firefox and Chrome: they look a 
+little different, but both let you navigate the Internet. Find a terminal 
+application on your computer. The name might be 'Terminal', 'xterm', 'Qterm' or 
+something with 'term' in it somewhere. Create a shortcut in your dock/launchbar 
 so you can access it quickly.
 
 The terminal is the application where you use the command line interface (CLI)
@@ -249,14 +254,6 @@ shell interprets what you type on the command line. For example, when you type
 `ls` program. The shell is actually a programming language. The various flavors
 of shell are like different dialects. We won't be using many features of shell
 programming in this course, so the choice of shell doesn't really matter.
-
-To determine which shell you are using, type either of these commands followed
-by the return key:
-
-```
-printenv SHELL
-echo $SHELL
-```
 
 ------------------------------------------------------------------------------
 
@@ -288,9 +285,9 @@ application. Popular IDEs include:
 We will not be using IDEs in this class. One of the goals of the class is for
 you to become Unix savvy, so I want you using the terminal as much as possible.
 
-Another useful technology we won't be using is Jupyter. Notebook computing is
-very useful, but it doesn't lend itself to creating distributable software. It
-also isolates you from Unix.
+Another useful technology we won't be using is Jupyter. Notebook computing is 
+very powerful and intuitive, but it doesn't lend itself to creating 
+distributable software. It also isolates you from Unix.
 
 ### Editor Customization ###
 
@@ -339,7 +336,7 @@ Downloads, as well as other directories that depend on your operating system.
 ### Code Directory ###
 
 We are going to organize all of our programming efforts in a directory called
-`Code`. The lifecycle of source code (and other documents) can be very complex.
+`Code`. The life cycle of source code (and other documents) can be very complex.
 There may be multiple authors who contribute at various times and to varying
 degrees. To manage these complex histories, we use Git (see below). Let's make
 the `Code` directory in our home directory.
@@ -380,7 +377,7 @@ shared, read-only, and not indexed. For now, we'll keep it in our home
 directory but later you might want to move it.
 
 
-### Filenaming Conventions ###
+### File-naming Conventions ###
 
 + Don't put spaces or punctuation in your file names
 + Use underscores to separate words (e.g. `human_genome.fa.gz`)
@@ -398,11 +395,11 @@ anyone else's work. You will always know who did what and when.
 
 ## GitHub Account ##
 
-GitHub is a website that lets you store you git repositories for free. There
-are several similar sites, but GitHub is the most popular. Every bioinformatics
-developer should have a GitHub account. Your repositories and activity are part
-of your CV. If you don't have a GitHub account, it's time to point your web
-browser to [https://github.com](GitHub) and create your account.
+GitHub is a website that lets you store you git repositories for free. There 
+are several similar sites, but GitHub is the most popular. Every bioinformatics 
+developer should have a GitHub account. Your repositories and activity are part 
+of your CV. If you don't have a GitHub account, it's time to point your web 
+browser to [https://github.com](GitHub) and create an account.
 
 Choose a username. It's okay to be clever, but don't be silly. Remember, this
 will be part of your CV. I use my full name. After setting your email and
@@ -433,14 +430,15 @@ each collaborator may have. As the owner, you can change a repo from Public to
 Private and back. Most of my repos are public because I believe in openly
 sharing (but hands off my sandwich).
 
-Now let's go make a repo. Go to the GitHub website and click on the green "New"
-button to create a new repo. Name this "homework" because this is where you'll
-be submitting your homework. Make it public. Does this mean that students can
-see each others' homework? Yes. Click the boxes to initialize with a README,
-add a .gitignore and add a license. Scroll through the .gitignore options until
-you get to "Python". Choose whichever license you like. I generally use MIT.
-Click the "Create Repository" and you will be transported to your new mostly
-empty repo.
+Now let's go make a repo. Go to the GitHub website and click on the green "New" 
+button to create a new repo. Name this "homework" because this is where you'll 
+be submitting your homework. Make it **public**. Does this mean that students 
+can see each others' homework? Yes. You're actually encouraged to work with 
+other students in this class. Click the boxes to initialize with a README, add 
+a .gitignore and add a license. Scroll through the .gitignore options until you 
+get to "Python". Choose whichever license you like. I generally use MIT. Click 
+the "Create Repository" and you will be transported to your new mostly empty 
+repo.
 
 ### Personal Access Token ###
 
@@ -460,7 +458,7 @@ In the "Note" you might put in "programming" or something. It doesn't matter.
 For "Expiration" you can use any of the values. If you don't want to do this
 again, use the "No expiration" option.
 
-Click on the "repo" checkbox, which will also check the subordiante boxes.
+Click on the "repo" checkbox, which will also check the subordinate boxes.
 
 Your personal access token is given to you once. Copy it and save it somewhere
 safe. You can never get to this PAT again. Ever. However, you can generate a
@@ -511,13 +509,19 @@ files inside.
 ls ~/DATA/E.coli
 ```
 
++ GCF_000005845.2_ASM584v2_genomic.fna.gz - genome in FASTA
++ GCF_000005845.2_ASM584v2_genomic.gbff.gz - annotation in GFF
++ GCF_000005845.2_ASM584v2_genomic.gff.gz - genome and annotation in GenBank
++ GCF_000005845.2_ASM584v2_protein.faa.gz - proteins in FASTA
++ README.md - notes about the data
+
 
 ### Git Commands ###
 
 Enter your homework repository and check its status.
 
 ```
-cd homework
+cd ~/Code/homework
 git status
 ```
 
@@ -538,7 +542,7 @@ git push
 
 The `add` argument tells `git` we intend to put this file in our repo. Not all
 files in your current directly need to go into your repo. For example, you may
-have some temporary program outout you were using for debugging.
+have some temporary program output you were using for debugging.
 
 The `commit` tells `git` we are done with edits, and the `-m` provides a short
 message about what work was done. The message might be as simple as "update" or
@@ -561,22 +565,30 @@ git config --global user.name "username"
 git config --global credential.helper store
 ```
 
-Imagine you have two computers, one at work and one at home. You need both
-computers to have the same files. `git pull` updates your computer repo with
-the contents from GitHub. The general workflow with `git` is the following.
+Now let's go to the GitHub website. Look at your `README.md` there and verify 
+that the text has chagned. If it has not, you didn't do something right. Ask 
+for help and go back and fix it.
 
-1. Create a file
-2. `git add`
-3. `git commit -m "something"`
-4. `git push`
-5. Time passes...
-6. `git pull`
-7. Edit files
-8. Go back to step 2
+You can also edit files directly on GitHub. Click the edit button for the 
+`README.md` file and make some changes. Scroll to the bottom of the page and 
+click the green button to commit changes.
+
+At this point, your local repository in Linux is not up to date with the repo 
+on GitHub. To get the latest documents you have to pull them into your local 
+repo. Make sure you're in your homework repo and the do a `git pull`.
+
+```
+cd ~/Code/homework
+git pull
+```
+
+Your local repo now has the changes you made on the website. If you're working
+on multiple computers, your git activity cycle will look like this:
 
 
-+ Use `git pull` to update local repos from GitHub
-+ Use `git push` to save local changes to GitHub
+1. `git pull` at the start of your session
+2. edit files
+3. `git push` at the end of your session
 
 ------------------------------------------------------------------------------
 
@@ -595,14 +607,15 @@ etc.
 There are two main types of files you will encounter: text and binary. You can
 view text files with `less` and edit them with `nano`, for example. All of the
 programs we will write will be text files. You can also view and edit binary
-files but they look like gobledygook, not English. If you want to see what a
+files but they look like gobbledygook, not English. If you want to see what a
 binary file looks like, try the following.
 
-	less /bin/ls
+```
+less /bin/ls
+```
 
-You're looking at the machine code for the `ls` program. It's not meant to be
-human-readable. These are machine-specific instructions designed for machines,
-not humans. So what makes a file text or binary? To answer that, we need to
+You're looking at the machine code for the `ls` program. It's not meant to be 
+human-readable. So what makes a file text or binary? To answer that, we need to 
 delve into the world of bits and bytes.
 
 ### Bits, Bytes, and ASCII ###
@@ -622,10 +635,10 @@ it's not base-10. Prepending the numerals with "0b" tells people "I'm using
 binary". So "0b10000000" means 128 and not ten million.
 
 We actually use the "byte" more frequently than you might guess. However, when
-we do so, it's usually in _hexidecimal_ notation. In base 2, there are 2
+we do so, it's usually in _hexadecimal_ notation. In base 2, there are 2
 symbols: 0 and 1. In base 10 (ordinary decimal) there are 10 symbols: 0, 1, 2,
-3, 4, 5, 6, 7, 8 , and 9. In base 16 (hexidecimal), there are 16 symbols: 0, 1,
-2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, and F. So the symbol "B" in hexidecimal
+3, 4, 5, 6, 7, 8 , and 9. In base 16 (hexadecimal), there are 16 symbols: 0, 1,
+2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, and F. So the symbol "B" in hexadecimal
 means "11" in decimal. To specify that a number is in hex, it is proceeded with
 "0x". Therefore "0x10" is 16 (1 value in the 16s and nothing in the 1s).
 
@@ -634,14 +647,14 @@ what those 4 numbers are? Each one is a byte. So each one can have a value from
 "0b00000000" to "0b11111111". In other words, each value can be from "0x00" to
 "0xFF". Or more familiarly, from 0 to 255. These same byte notations are used
 all over the place in computers. For example, you may have had to dig up the
-MAC (media access control) address of your network adapater, which may have
+MAC (media access control) address of your network adapter, which may have
 looked like "f0:18:98:e9:f2:be". Each of those number-like things separated by
 a colon is a byte in the range of 00-ff (upper and lowercase don't matter in
-hexidecimal).
+hexadecimal).
 
 ### Colorspace ###
 
-Another place you may have seen hexidecimal notation is to represent colors. In
+Another place you may have seen hexadecimal notation is to represent colors. In
 a computer, color is made by mixing three colors of light: red, green, and
 blue. Each of those colors can have an intensity from 0 to 255, which in hex is
 00-FF. For example, if you want to make bright red, you use FF in the red
@@ -694,12 +707,12 @@ or "0x80" or 128 are outside the ACSII space. Any file using values outside of
 ASCII is binary.
 
 In a plain text file, every symbol (e.g letter or punctuation) has a
-corresponding value in the range of 0-127. For example, captial "A" is
+corresponding value in the range of 0-127. For example, capital "A" is
 "0b01000001" or "0x41" or 65 (decimal). Similarly, capital "B" is "0b01000010"
 or "0x42" or 66. The numbers from 0-9 are in ASCII slots 48-57, the capital
 letters are 65-90, the lowercase letters are 97-122, and other symbols are in
-various places (32-47, 58-64, 91-96, 123-127). Everything below 32 is
-invisible.
+various places (32-47, 58-64, 91-96, 123-127). Everything below 32 is an
+invisible control character of some kind.
 
 At this point you may be wondering about other alphabets and how they get
 encoded in a computer. Surely you can't fit all of the symbols in known human
@@ -746,7 +759,7 @@ Here are some of the things I'm working on this week.
 As you can see, even without the use of headings, font sizes, type faces,
 rulers, etc. we are able to communicate document structure and emphasis. "To Do
 List" is clearly the title. The plus signs are clearly a bulleted list. The use
-of asterixes and underscores clearly show emphasis. Follow a few simple
+of asterisks and underscores clearly show emphasis. Follow a few simple
 Markdown rules and you'll end up with beautiful documents that are easy to
 write and a pleasure to read as text, HTML, PDF, etc.
 
@@ -788,9 +801,10 @@ git commit -m new
 git push
 ```
 
-Check the GitHub website. You should see your `00helloworld.py`.
+Check the GitHub website. Your `00helloworld.py` file should now be in the 
+repo. If it is not, refresh the page or get help it that's not the problem.
 
-It might seem like git is a lot of effor just to upload your code to a website.
+It might seem like git is a lot of effort just to upload your code to a website.
 If that's all git did, it would be too much effort, but git allows you to do a
 lot more. Git tracks every change you make to a file, allowing you to rewind it
 to any point in time. Git allows you to make a _branch_ of related work and
