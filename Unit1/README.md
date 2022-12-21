@@ -15,10 +15,10 @@ Unit 1: Basic Unix, Basic Python
 
 ## Environment Variables ##
 
-The shell defines various variables which are called _shell variables_ or 
-_environment variables_. For example, the `USER` variable contains your user 
-name, `HOME` contains the path to your home directory, `SHELL` contains the 
-path to your shell, and `PWD` contains the focus of your terminal. You can 
+The shell defines various variables which are called _shell variables_ or
+_environment variables_. For example, the `USER` variable contains your user
+name, `HOME` contains the path to your home directory, `SHELL` contains the
+path to your shell, and `PWD` contains the focus of your terminal. You can
 examine the contents of a variable with the `printenv` command.
 
 ```
@@ -34,8 +34,8 @@ dereference their contents.
 echo Hello $USER, your home directory is: $HOME
 ```
 
-If you want to see all your environment variables, you can use the `printenv` 
-command without any arguments. We won't be using environment variables much in 
+If you want to see all your environment variables, you can use the `printenv`
+command without any arguments. We won't be using environment variables much in
 this course.
 
 ```
@@ -66,8 +66,8 @@ head -5 README.md
 tail -15 README.md
 ```
 
-To read a file one page at a time, use `more` or `less`. Use the "f" and "b" 
-keys to move forward or backward one page. You can also use the spacebar to 
+To read a file one page at a time, use `more` or `less`. Use the "f" and "b"
+keys to move forward or backward one page. You can also use the spacebar to
 move forward one page. To quit the program, use the "q" key.
 
 ```
@@ -76,16 +76,16 @@ less REAMDE.md
 zless ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz
 ```
 
-Most Unix programs have descriptive names or initialisms. `cat` is short for 
-catenate. `head` and `tail` are self-explanatory. `more` shows you more of a 
-file. `less` does more than `more` because sometimes less is more. If you have 
+Most Unix programs have descriptive names or initialisms. `cat` is short for
+catenate. `head` and `tail` are self-explanatory. `more` shows you more of a
+file. `less` does more than `more` because sometimes less is more. If you have
 a choice between a pun and something actually useful, always choose the pun.
 
 ------------------------------------------------------------------------------
 
 ## Absolute, and Relative Paths ##
 
-When you open a terminal application, the focus of your shell begins in  your 
+When you open a terminal application, the focus of your shell begins in  your
 home directory. Let's verify this. Open a new terminal.
 
 ```
@@ -99,31 +99,31 @@ cd Code/MCB185-2023/Unit1
 pwd
 ```
 
-Note that in both cases, the output of `pwd` was a directory path that started 
-with the `/` character. Any path that begins with the `/` is an **absolute 
-path**. An absolute path always begins at the filesystem root, which is `/`. 
-It's sort of like specifying your address and including your country, state, 
-street, and house number. In contrast, a relative path assumes some prior 
-knowledge. For example, within a city, you might want to get to 112 Main Street 
-and it would be silly to specify country, and state. Any path that does not 
+Note that in both cases, the output of `pwd` was a directory path that started
+with the `/` character. Any path that begins with the `/` is an **absolute
+path**. An absolute path always begins at the filesystem root, which is `/`.
+It's sort of like specifying your address and including your country, state,
+street, and house number. In contrast, a relative path assumes some prior
+knowledge. For example, within a city, you might want to get to 112 Main Street
+and it would be silly to specify country, and state. Any path that does not
 begin with the `/` character is a **relative path**.
 
 + any path that begins with the filesystem root `/` is an absolute path
 + any other path is a relative path
 
-In addition to the various named directories on your filesystem, you also have 
-`.` and `..`. The single dot `.` is a relative path to your current directory. 
+In addition to the various named directories on your filesystem, you also have
+`.` and `..`. The single dot `.` is a relative path to your current directory.
 The double dot `..` is a relative path to the parent directory.
 
 + `/bin` absolute path
 + `$HOME/Code` absolute path (the `/` is in the variable)
-+ `~/DATA` absolute path (`~` is an absolute path)
++ `~/DATA` absolute path (`~` is an absolute path to your home directory)
 + `REAMDE.md` relative path to file in current directory
 + `./README.md` also relative path to file in current directory
 + `../README.md` relative path to file in parent directory
 
-Let's get some practice using absolute and relative paths. Inside the Unit1 
-directory you will see another directory called `project`. This is some 
+Let's get some practice using absolute and relative paths. Inside the Unit1
+directory you will see another directory called `project`. This is some
 fictious project that involves some document, image, and source files. List
 the contents of the directory using absolute and relative paths.
 
@@ -132,7 +132,7 @@ ls $HOME/Code/MCB185-2023/Unit1/project
 ls project
 ```
 
-In this case, it was a lot simpler to use the relative path than the absolute 
+In this case, it was a lot simpler to use the relative path than the absolute
 path. That's not always the case. Try listing the filesystem root using both
 absolute and relative paths
 
@@ -173,10 +173,10 @@ presses and time, it also ensures that your spelling is correct.
 
 ### Wildcards ###
 
-One of the most useful time-saving tricks in the shell is the use of the `*` 
-character as a wildcard. The `*` character matches missing characters if it 
-can. Inside the Unit1 directory, there is only one thing that starts with the 
-letter "p". The `*` will fill in the rest. So here are three ways of doing the 
+One of the most useful time-saving tricks in the shell is the use of the `*`
+character as a wildcard. The `*` character matches missing characters if it
+can. Inside the Unit1 directory, there is only one thing that starts with the
+letter "p". The `*` will fill in the rest. So here are three ways of doing the
 same thing.
 
 ```
@@ -185,8 +185,8 @@ ls p*
 ls p "hit the tab key"
 ```
 
-The `*` isn't limited to filling in a single word. If you look inside the 
-`project/img` directory, you will see 3 files. Two of them have png extensions 
+The `*` isn't limited to filling in a single word. If you look inside the
+`project/img` directory, you will see 3 files. Two of them have png extensions
 while the other is jpg. We can list just the png files as follows:
 
 
@@ -203,16 +203,16 @@ cat project/doc/*
 
 ### Symbolic Links ###
 
-Long path names are sometimes laborious to look at. Let's make a shortcut to 
-the E.coli genome in DATA using a symbolic link, which is also called a 
+Long path names are sometimes laborious to look at. Let's make a shortcut to
+the E.coli genome in DATA using a symbolic link, which is also called a
 soft-link.
 
 ```
 ln -s ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz ./ecoli.fa.gz
 ```
 
-Please tell me you used tab-completion for that and didn't actually type it 
-out! Now, we have a file called `ecoli.fa.gz` that appears exactly like the 
+Please tell me you used tab-completion for that and didn't actually type it
+out! Now, we have a file called `ecoli.fa.gz` that appears exactly like the
 original file except that it's just a shortcut.
 
 ```
@@ -220,9 +220,9 @@ zless ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz
 zless ecoli.fa.gz
 ```
 
-How can you tell the difference between a normal file and a symbolic link? The 
-`-F` option gives `ls` some extra formatting. Symbolic links are shown with an 
-`@` symbol. Also, if you're using a color terminal, it will have a different 
+How can you tell the difference between a normal file and a symbolic link? The
+`-F` option gives `ls` some extra formatting. Symbolic links are shown with an
+`@` symbol. Also, if you're using a color terminal, it will have a different
 color.
 
 ```
