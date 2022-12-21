@@ -4,7 +4,7 @@ Unit 0: Tools of the Trade
 ## Learning Objectives ##
 
 + Install Linux
-+ Explore the Unix CLI with the Terminal and Shell
++ Explore the Unix CLI with the terminal and shell
 + Choose a programming editor
 + Organize your home directory
 + Manage documents with Git
@@ -15,8 +15,10 @@ Unit 0: Tools of the Trade
 
 ## Unix/Linux ##
 
-Most professional bioinformatics is done in a Unix/Linux environment. You don't
-have to love Unix/Linux, but you do have to be proficient at it.
+Most professional bioinformatics is done in a Unix/Linux environment. You don't 
+have to love Unix/Linux, but you do have to be proficient at it. There is 
+`UNIX.md` quick reference in the repo that contains all of the Unix commands we 
+use in the course.
 
 ### What's the deal with Unix vs. Linux? ###
 
