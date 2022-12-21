@@ -1,5 +1,5 @@
-Unit 1: Basic Unix, Basic Python
-================================
+Unit 1: Basic Unix
+==================
 
 ## Learning Objectives ##
 

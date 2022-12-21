@@ -839,7 +839,9 @@ activity to the GitHub website.
 			+ LICENSE
 			+ README.md
 		+ MCB185-2023
-			+ various files...
+			+ README.md
+			+ Unit1, Unit2, ...
+			+ UNIX.md
 	+ DATA
 		+ E.coli
 			+ GCF_000005845.2_ASM584v2_genomic.fna.gz

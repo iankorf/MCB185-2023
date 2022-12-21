@@ -75,9 +75,9 @@ Start with the `README.md` in Unit0 and work your way up to Unit9. What if you
 don't get all the way to Unit9? FFS journey, not destination.
 
 + Unit 0: Tools of the Trade
-+ Unit 1: Basic Unix, Basic Python
-+ Unit 2: Loops and Conditionals
-+ Unit 3: More Loops and Conditionals
++ Unit 1: Basic Unix
++ Unit 2: Basic Python
++ Unit 3: Practice, practice, practice
 + Unit 4: Lists
 + Unit 5: Functions
 + Unit 6: Files and Argparse
