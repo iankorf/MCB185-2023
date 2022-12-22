@@ -84,12 +84,6 @@ of a file. `less` does more than `more` because sometimes less is more. If you
 have a choice between a pun and something actually useful, always choose the 
 pun. Compressed files often have a "z" suffix so `zless` makes sense as a 
 variant of `less`.
-=======
-Most Unix programs have descriptive names or initialisms. `cat` is short for
-catenate. `head` and `tail` are self-explanatory. `more` shows you more of a
-file. `less` does more than `more` because sometimes less is more. If you have
-a choice between a pun and something actually useful, always choose the pun.
->>>>>>> e1fd756ff8929ce000adecc36aee16e0dbdf9100
 
 ------------------------------------------------------------------------------
 
