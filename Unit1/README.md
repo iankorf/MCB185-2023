@@ -77,7 +77,6 @@ less REAMDE.md
 zless ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz
 ```
 
-<<<<<<< HEAD
 Most Unix programs have descriptive names or initialisms. `cat` is short for 
 catenate. `head` and `tail` are pretty self-explanatory. `more` shows you more 
 of a file. `less` does more than `more` because sometimes less is more. If you 
