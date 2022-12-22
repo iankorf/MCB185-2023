@@ -76,7 +76,7 @@ don't get all the way to Unit9? FFS journey, not destination.
 
 + Unit 0: Tools of the Trade
 + Unit 1: Basic Unix
-+ Unit 2: Basic Python
++ Unit 2: Beginning Python
 + Unit 3: Practice, practice, practice
 + Unit 4: Lists
 + Unit 5: Functions

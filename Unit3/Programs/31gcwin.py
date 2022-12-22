@@ -1,4 +1,4 @@
-# 30gcwin.py
+# 31gcwin.py
 
 # Write a program that computes the GC fraction of a DNA sequence in a window
 # Window size is 11 nt
@@ -11,8 +11,9 @@
 seq = 'ACGACGCAGGAGGAGAGTTTCAGAGATCACGAATACATCCATATTACCCAGAGAGAG'
 w = 11
 
+
 """
-python3 30gcwin.py
+python3 31gcwin.py
 0 ACGACGCAGGA 0.6364
 1 CGACGCAGGAG 0.7273
 2 GACGCAGGAGG 0.7273
