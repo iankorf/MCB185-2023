@@ -2,12 +2,13 @@
 
 # Print out the numbers from 5 to less than 50 in steps of 7
 
+# Hint: use the 3 argument form of range()
 
 # your code goes here
 
 
 """
-python3 20loop.py 
+python3 20loop.py
 5
 12
 19

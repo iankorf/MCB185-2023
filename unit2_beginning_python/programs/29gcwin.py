@@ -1,9 +1,9 @@
 # 29gcwin.py
 
-# Write a program that computes the GC fraction of a DNA sequence in a window
+# Write a program that computes the GC fraction of a DNA sequence in windows
 # Window size is 11 nt
 # Output with 4 significant figures
-# Use nested loops
+# Try this with nested loops first
 
 # Also try doing it without nested loops
 # Instead, count only the first window

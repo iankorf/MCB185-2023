@@ -1,7 +1,8 @@
 # 21codons.py
 
 # Print out all the codons for the sequence below in reading frame 1
-# Use a 'for' loop
+
+# Hint: use the slice operator
 
 dna = 'ATAGCGAATATCTCTCATGAGAGGGAA'
 

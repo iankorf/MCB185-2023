@@ -5,6 +5,7 @@
 # Skip AA, CC etc.
 # Also print out how many combinations there are
 
+# Hint: if you get stuck for more than 10 minutes, get help
 
 """
 python3 28aapairs.py

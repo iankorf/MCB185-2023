@@ -6,6 +6,8 @@
 # Calculate the actual AT fraction while generating the sequence
 # Report the length, AT fraction, and sequence
 
+# Note: set random.seed() if you want repeatable random numbers
+
 
 """
 python3 25atseq.py

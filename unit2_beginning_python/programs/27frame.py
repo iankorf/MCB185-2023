@@ -1,8 +1,8 @@
 # 27frame.py
 
 # Write a program that prints out the position, frame, and letter of the DNA
-# Try coding this with a single loop
-# Try coding this with nested loops
+
+# Variation: try coding this with a single loop and nested loops
 
 dna = 'ATGGCCTTT'
 
