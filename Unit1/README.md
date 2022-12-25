@@ -11,6 +11,7 @@ Unit 1: Basic Unix
 + Creating and modifying files
 + Compression and archiving
 + Customize your shell
++ Shell scripting
 
 ------------------------------------------------------------------------------
 
@@ -35,8 +36,8 @@ dereference their contents.
 echo Hello $USER, your home directory is: $HOME
 ```
 
-If you want to see all your environment variables, you can use the `printenv` 
-command without any arguments. We won't be using environment variables much in 
+If you want to see all your environment variables, you can use the `printenv`
+command without any arguments. We won't be using environment variables much in
 this course, but they are an important part of Unix.
 
 ```
@@ -77,11 +78,11 @@ less REAMDE.md
 zless ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz
 ```
 
-Most Unix programs have descriptive names or initialisms. `cat` is short for 
-catenate. `head` and `tail` are pretty self-explanatory. `more` shows you more 
-of a file. `less` does more than `more` because sometimes less is more. If you 
-have a choice between a pun and something actually useful, always choose the 
-pun. Compressed files often have a "z" suffix so `zless` makes sense as a 
+Most Unix programs have descriptive names or initialisms. `cat` is short for
+catenate. `head` and `tail` are pretty self-explanatory. `more` shows you more
+of a file. `less` does more than `more` because sometimes less is more. If you
+have a choice between a pun and something actually useful, always choose the
+pun. Compressed files often have a "z" suffix so `zless` makes sense as a
 variant of `less`.
 
 ------------------------------------------------------------------------------
@@ -102,16 +103,6 @@ cd Code/MCB185-2023/Unit1
 pwd
 ```
 
-<<<<<<< HEAD
-Note that in both cases, the output of `pwd` was a directory path that started 
-with the `/` character. Any path that begins with the `/` is an **absolute 
-path**. An absolute path always begins at the filesystem root, which is `/`. An 
-absolute path is like specifying your address and including your country, 
-state, street, and house number. In contrast, a relative path assumes some 
-prior knowledge. For example, within a city, you might want to get to 112 Main 
-Street and it would be silly to specify what country you were in. Any path that 
-does not begin with the `/` character is a **relative path**.
-=======
 Note that in both cases, the output of `pwd` was a directory path that started
 with the `/` character. Any path that begins with the `/` is an **absolute
 path**. An absolute path always begins at the filesystem root, which is `/`.
@@ -120,7 +111,7 @@ street, and house number. In contrast, a relative path assumes some prior
 knowledge. For example, within a city, you might want to get to 112 Main Street
 and it would be silly to specify country, and state. Any path that does not
 begin with the `/` character is a **relative path**.
->>>>>>> e1fd756ff8929ce000adecc36aee16e0dbdf9100
+
 
 + any path that begins with the filesystem root `/` is an absolute path
 + any other path is a relative path
@@ -131,15 +122,6 @@ The double dot `..` is a relative path to the parent directory.
 
 + `/bin` absolute path
 + `$HOME/Code` absolute path (the `/` is in the variable)
-<<<<<<< HEAD
-+ `~/DATA` absolute path (`~` is an absolute path)
-+ `REAMDE.md` relative path to a file in current directory
-+ `./README.md` also relative path to the same file above
-+ `../README.md` relative path to a different file in parent directory
-
-Let's get some practice using absolute and relative paths. List your current
-directory using absolute and relative paths.
-=======
 + `~/DATA` absolute path (`~` is an absolute path to your home directory)
 + `REAMDE.md` relative path to file in current directory
 + `./README.md` also relative path to file in current directory
@@ -149,7 +131,6 @@ Let's get some practice using absolute and relative paths. Inside the Unit1
 directory you will see another directory called `project`. This is some
 fictious project that involves some document, image, and source files. List
 the contents of the directory using absolute and relative paths.
->>>>>>> e1fd756ff8929ce000adecc36aee16e0dbdf9100
 
 ```
 ls $HOME/Code/MCB185-2023/Unit1
@@ -203,7 +184,7 @@ can. Inside the Unit1 directory, there is only one thing that starts with the
 letter "p". The `*` will fill in the rest. So here are three ways of doing the
 same thing.
 
-For the exercises that follow, we will be using the "project" subdirectory, 
+For the exercises that follow, we will be using the "project" subdirectory,
 which contains several subdirectories and files.
 
 ```
@@ -221,8 +202,8 @@ while the other is jpg. We can list just the png files as follows:
 ls project/img/*.png
 ```
 
-To view multiple files in succession, send them all to `less`. Use Control-N to 
-get to the next file and Control-P to go to the previous file. Use the "q" key 
+To view multiple files in succession, send them all to `less`. Use Control-N to
+get to the next file and Control-P to go to the previous file. Use the "q" key
 to quit.
 
 ```
@@ -243,15 +224,9 @@ ls project/*
 
 ### Symbolic Links ###
 
-<<<<<<< HEAD
-Long path names are sometimes laborious to type or even to look at. Let's make 
-a shortcut to the E.coli genome in DATA using a symbolic link, which is also 
+Long path names are sometimes laborious to type or even to look at. Let's make
+a shortcut to the E.coli genome in DATA using a symbolic link, which is also
 called a soft-link.
-=======
-Long path names are sometimes laborious to look at. Let's make a shortcut to
-the E.coli genome in DATA using a symbolic link, which is also called a
-soft-link.
->>>>>>> e1fd756ff8929ce000adecc36aee16e0dbdf9100
 
 ```
 ln -s ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz ./ecoli.fa.gz
@@ -343,8 +318,8 @@ messages rather than data.
 
 ## Creating and Modifying Files ##
 
-For the exercises in this section, it may be useful to have your graphical 
-desktop displaying the contents of your Unit1 directory. That way you can see 
+For the exercises in this section, it may be useful to have your graphical
+desktop displaying the contents of your Unit1 directory. That way you can see
 that the CLI does the same things as pointing and clicking.
 
 There are a number of ways to create a file. The `touch` command, which we saw
@@ -357,10 +332,10 @@ cd ~/Code/MCB185-2023/Unit1
 touch empty
 ```
 
-If your graphical file browser was open to your Unit1 directory, when you hit 
-the return key, you would have seen the file magically appear in the file 
-browser. The file "empty" doesn't contain anything at all. To verify this, try 
-`ls -l`, which creates a listing with a long format. You'll see a zero in one 
+If your graphical file browser was open to your Unit1 directory, when you hit
+the return key, you would have seen the file magically appear in the file
+browser. The file "empty" doesn't contain anything at all. To verify this, try
+`ls -l`, which creates a listing with a long format. You'll see a zero in one
 of the columns. That's the file size in bytes.
 
 Lets add some content to the empty file. Most of the time when you create,
@@ -372,10 +347,10 @@ use `nano` to change the contents.
 nano emtpy
 ```
 
-Your terminal is now a text editor with some menus at the bottom. Type some 
-stuff. Try navigating around the document with arrow keys. Write some poetry. 
-When you're done, hit ^O to write the changes and then ^X to exit. What the 
-heck are those keys? ^O is shorthand for Control-O. Just like when we hit 
+Your terminal is now a text editor with some menus at the bottom. Type some
+stuff. Try navigating around the document with arrow keys. Write some poetry.
+When you're done, hit ^O to write the changes and then ^X to exit. What the
+heck are those keys? ^O is shorthand for Control-O. Just like when we hit
 Control-C before, hold the control key and then hit the "o" key.
 
 Now that "empty" is no longer empty, let's rename it. Weirdly the command used
@@ -386,7 +361,7 @@ mv empty full
 ```
 
 If you had your graphical file browser open, you would see that the name
-changed. Try a long listing of the file now: `ls -l full`. 
+changed. Try a long listing of the file now: `ls -l full`.
 
 To copy a file, use the `cp` command.
 
@@ -394,9 +369,9 @@ To copy a file, use the `cp` command.
 cp full f2
 ```
 
-If you do a long listing, you will see that the two files have the same size. 
-To check if they have the same contents, you can do a `sum`. This will do a 
-checksum on each file, and if they have the same value, they are very likely to 
+If you do a long listing, you will see that the two files have the same size.
+To check if they have the same contents, you can do a `sum`. This will do a
+checksum on each file, and if they have the same value, they are very likely to
 have the exact same contents.
 
 ```
@@ -415,9 +390,9 @@ sum full f2
 diff full f2
 ```
 
-Let's tidy up a bit by making a directory with `mkdir` and then moving the two 
-files into that directory. Notice that the `mv` command can take multiple 
-arguments. The last argument is the directory and the previous ones are files. 
+Let's tidy up a bit by making a directory with `mkdir` and then moving the two
+files into that directory. Notice that the `mv` command can take multiple
+arguments. The last argument is the directory and the previous ones are files.
 This works for moving files but not renaming them (recall that `mv` does both).
 
 ```
@@ -433,7 +408,7 @@ anyway.
 rmdir Stuff
 ```
 
-Let's empty the directory using a wildcard. Note the use of `.` to mean "this 
+Let's empty the directory using a wildcard. Note the use of `.` to mean "this
 directory".
 
 ```
@@ -447,21 +422,21 @@ Now the `rmdir` will work.
 rmdir Stuff
 ```
 
-To delete files, use the `rm` command. Using wildcards with `rm` is potentially 
-dangerous. While the intent of `rm * .txt` looks like you want to remove all 
-text files in the current directory, there is a space between the `*` and the 
-`.txt`. What this literally means is to delete all files (the wildcard) and 
+To delete files, use the `rm` command. Using wildcards with `rm` is potentially
+dangerous. While the intent of `rm * .txt` looks like you want to remove all
+text files in the current directory, there is a space between the `*` and the
+`.txt`. What this literally means is to delete all files (the wildcard) and
 then the file called `.txt`, which probably doesn't even exist.
 
 ------------------------------------------------------------------------------
 
 ## Compression and Archiving ##
 
-Text files tend to be very wasteful of disk space. For starters, they only use 
-7 of the 8 possible bits of every byte. This means they are about 2 times 
-larger than they need to be. In addition, they tend to be highly repetitive, 
-often using the same patterns of characters several times. Taken together, text 
-files of genome data can typically be compressed 3-fold or more. The most 
+Text files tend to be very wasteful of disk space. For starters, they only use
+7 of the 8 possible bits of every byte. This means they are about 2 times
+larger than they need to be. In addition, they tend to be highly repetitive,
+often using the same patterns of characters several times. Taken together, text
+files of genome data can typically be compressed 3-fold or more. The most
 common compression program in Linux is `gzip`. Let's try it.
 
 ```
@@ -484,26 +459,26 @@ gzip -k README.md
 ls
 ```
 
-If you want to compress an entire directory, you have to first make an archive 
-out of it with the `tar` command (short for "tape archive"). We often call tar 
-files tarballs. So let's make a tarball out of the project directory. You must 
-pass the `-c` option to "create" and the `-f` option to name the "file". Like 
+If you want to compress an entire directory, you have to first make an archive
+out of it with the `tar` command (short for "tape archive"). We often call tar
+files tarballs. So let's make a tarball out of the project directory. You must
+pass the `-c` option to "create" and the `-f` option to name the "file". Like
 other Unix options, you can put the two letters together.
 
 ```
 tar -cf project.tar project
 ```
 
-It is common to compress tarballs with gzip. Compressed archives are so common 
-that the `tar` command allows you to do both steps at once if you add the `-z` 
+It is common to compress tarballs with gzip. Compressed archives are so common
+that the `tar` command allows you to do both steps at once if you add the `-z`
 option.
 
 ```
 tar -zcf p.tar.gz project
 ```
 
-To extract from a tarball, you use `-x` instead of `-c`. The project directory 
-already exists, so let's delete it and then recreate it. The first command here 
+To extract from a tarball, you use `-x` instead of `-c`. The project directory
+already exists, so let's delete it and then recreate it. The first command here
 is really dangerous because it deletes the directory and everything beneath it.
 
 ```
@@ -513,15 +488,15 @@ tar -xf project.tar
 ls project/*
 ```
 
-Earlier we used `zless` to examine the contents of a compressed file (or a 
+Earlier we used `zless` to examine the contents of a compressed file (or a
 symbolic link to the actual file).
 
 ```
 zless ecoli.fa.gz
 ```
 
-What if we want to do `wc` the file? Do we have to decompress it? No, and we 
-shouldn't because then it will take up a lot more space. You can often leave 
+What if we want to do `wc` the file? Do we have to decompress it? No, and we
+shouldn't because then it will take up a lot more space. You can often leave
 compressed files as is, and uncompress their contents on the fly. These two
 commands are the same:
 
@@ -534,8 +509,8 @@ zcat ecoli.fa.gz | wc
 
 ## Customize Your Shell ##
 
-In order to simplify a few things, you should customize your login script. 
-First, we have to figure out which shell you're running. Your shell is in your 
+In order to simplify a few things, you should customize your login script.
+First, we have to figure out which shell you're running. Your shell is in your
 SHELL environment variable. Here are two ways of seeing that.
 
 ```
@@ -543,14 +518,14 @@ printenv SHELL
 echo $SHELL
 ```
 
-If your shell is `/bin/bash` then check if you have a file called `.profile` or 
-`.bash_profile` or `.bashrc` in your home directory. If not, create a 
+If your shell is `/bin/bash` then check if you have a file called `.profile` or
+`.bash_profile` or `.bashrc` in your home directory. If not, create a
 `.profile` with `touch`.
 
-If your shell is `/bin/zsh` then check if you have a file called `.zshrc`. If 
+If your shell is `/bin/zsh` then check if you have a file called `.zshrc`. If
 not, create it with `touch`.
 
-Whichever file you have from above is your login script. Open the file in your 
+Whichever file you have from above is your login script. Open the file in your
 favorite editor, add these lines at the end, and save.
 
 ```
@@ -560,9 +535,44 @@ alias ..="cd .."
 alias rm="rm -f"
 ```
 
-Now `ls` always does `ls -F`. Meaning, you will always be able to tell a 
-directory or symbolic link from the character at the end of the name. You will 
-be changing to parent directories a lot so `..` is a nice convenience. Since 
-`rm` is a dangerous command, the `-i` option is always added to enter 
-interactive mode (you always have to confirm your decisions). We will add more 
+Now `ls` always does `ls -F`. Meaning, you will always be able to tell a
+directory or symbolic link from the character at the end of the name. You will
+be changing to parent directories a lot so `..` is a nice convenience. Since
+`rm` is a dangerous command, the `-i` option is always added to enter
+interactive mode (you always have to confirm your decisions). We will add more
 customizations later.
+
+------------------------------------------------------------------------------
+
+## Shell Scripting ##
+
+The interactive shell you're using is a programming language, just not a very
+good one. However, it is very convenient sometimes. All the commands you've
+been using can be put in a file and used later.
+
+Using your favorite editor, create the following file and save it to your
+homework repo as `10hello.sh`.
+
+```
+echo "Hello $USER, your home is $HOME, and your shell is $SHELL"
+ls $HOME/Code/*
+ls $HOME/DATA
+```
+
+Run the shell script and re-direct the output to a file called `11output.txt`.
+Add both files to your homework repo.
+
+```
+sh 10hello.sh > 11output.txt
+git add 10hello.sh 11output.txt
+git commit -m new
+git push
+```
+
+## Homework ##
+
+To get full credit for your homework, make sure your repo contains both of
+these files:
+
++ 10hello.sh
++ 11output.txt

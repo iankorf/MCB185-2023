@@ -27,8 +27,8 @@ don't understand pointer arithmetic - incidentally, not part of this course).
 How long you get stuck is partly up to you. You might not be able to get to the
 next level of understanding by yourself. The solution is to **ask for help**.
 If you find yourself stuck for more than 30 minutes, stop banging your head
-against a wall and ask someone for help! Every time you ask for help, two
-people win.
+against a wall and ask someone for help! Every time you ask for help, at least
+two people win.
 
 Unlike most of your other classes, there is no penalty for working with another
 student. In fact, you're encouraged to do so. Programming *should* be done in
@@ -56,6 +56,10 @@ problems can be solved with the information in the tutorials. Every time you
 Google something instead of thinking for yourself or asking for help, brain
 cells die.
 
+In this course, you are not allowed to use any library that hasn't been
+previously introduced in this course. Since numpy and pandas are never
+introduced, you are not allowed to use them.
+
 ## Tabs Mandatory ##
 
 In this course, you must use tabs for left-side indentation. No spaces are
@@ -78,7 +82,7 @@ don't get all the way to Unit9? FFS journey, not destination.
 + Unit 1: Basic Unix
 + Unit 2: Beginning Python
 + Unit 3: Practice, practice, practice
-+ Unit 4: Lists
++ Unit 4: Tuples and Lists
 + Unit 5: Functions
 + Unit 6: Files and Argparse
 + Unit 7: Dictionaries

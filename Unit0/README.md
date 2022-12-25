@@ -15,20 +15,20 @@ Unit 0: Tools of the Trade
 
 ## Unix/Linux ##
 
-Most professional bioinformatics is done in a Unix/Linux environment. You don't 
-have to love Unix/Linux, but you do have to be proficient at it. There is 
-`UNIX.md` quick reference in the repo that contains all of the Unix commands we 
+Most professional bioinformatics is done in a Unix/Linux environment. You don't
+have to love Unix/Linux, but you do have to be proficient at it. There is
+`UNIX.md` quick reference in the repo that contains all of the Unix commands we
 use in the course.
 
 ### What's the deal with Unix vs. Linux? ###
 
-Most people about to embark on an adventure in bioinformatics programming will 
-be using some flavor of Linux (e.g. Debian, Fedora, LinuxLite, Mint, Ubuntu, 
-etc.) and not actually Unix. Is there a difference between Linux and Unix? Unix 
-has been around a long time, and is a commerical product. Linux was developed 
-as a free alternative to Unix. Linux is designed to behave very much like Unix. 
-From a practical standpoint, they are essentially the same. Philosophically, 
-they are very different. In this document, the terms _Linux_ and _Unix_ are 
+Most people about to embark on an adventure in bioinformatics programming will
+be using some flavor of Linux (e.g. Debian, Fedora, LinuxLite, Mint, Ubuntu,
+etc.) and not actually Unix. Is there a difference between Linux and Unix? Unix
+has been around a long time, and is a commerical product. Linux was developed
+as a free alternative to Unix. Linux is designed to behave very much like Unix.
+From a practical standpoint, they are essentially the same. Philosophically,
+they are very different. In this document, the terms _Linux_ and _Unix_ are
 used somewhat interchangeably.
 
 ### Where do I get Linux? ###
@@ -44,10 +44,10 @@ get to that, you need Linux.
 
 ### Unix on Mac ###
 
-If your computer is a Mac, you already have Unix installed, and your specific 
-flavor of Unix is called Darwin. You can get to the CLI with the _Terminal_ 
-application. However, you might not have `git` and other developer tools 
-installed by default. To install these, type the following in your terminal and 
+If your computer is a Mac, you already have Unix installed, and your specific
+flavor of Unix is called Darwin. You can get to the CLI with the _Terminal_
+application. However, you might not have `git` and other developer tools
+installed by default. To install these, type the following in your terminal and
 follow the instructions:
 
 	xcode-select --install
@@ -83,13 +83,13 @@ VirtualBox is free software that works very well. Other popular virtualization
 products include VMware and Parallels. If you want commercial support, you may
 like those.
 
-The downside of a VM is that your virtual machines will take up some RAM, CPU, 
-and storage away from your host OS. RAM is the most critical resource because 
-it isn't easily shared. If you have 8 GB RAM, you could set up your VM with 
-half. But that means both your real and virtual machines are running on 4 GB 
-each. Computers run more efficiently with more RAM, especially if you're the 
-type of person to have 20 browser tabs open. Adding more RAM to your computer 
-will improve your VM experience. You can also run a VM with less RAM if you use 
+The downside of a VM is that your virtual machines will take up some RAM, CPU,
+and storage away from your host OS. RAM is the most critical resource because
+it isn't easily shared. If you have 8 GB RAM, you could set up your VM with
+half. But that means both your real and virtual machines are running on 4 GB
+each. Computers run more efficiently with more RAM, especially if you're the
+type of person to have 20 browser tabs open. Adding more RAM to your computer
+will improve your VM experience. You can also run a VM with less RAM if you use
 a lightweight Linux distribution like Lubuntu or LinuxLite.
 
 On the CPU side, your programs running in a VM will run slower than they could.
@@ -97,10 +97,10 @@ The difference is pretty negligible though. We're talking 1-10% slower. You
 will also have to dedicate about 20 GB of hard disk space. Even with the
 downsides, VMs are a great way to run Linux on your PC.
 
-One additional complication is that your BIOS might need to be modified to run 
-virtual machines. Some manufacturers ship their products with virtualization 
-disabled. This is easily changed by in BIOs. Hold down the F10 key - or 
-sometimes it's F1, F2, F12, or DEL to enter BIOS. Navigate to CPU or security. 
+One additional complication is that your BIOS might need to be modified to run
+virtual machines. Some manufacturers ship their products with virtualization
+disabled. This is easily changed by in BIOs. Hold down the F10 key - or
+sometimes it's F1, F2, F12, or DEL to enter BIOS. Navigate to CPU or security.
 Enable virtualization.
 
 There are many distributions of Linux. The most obvious differences among them
@@ -124,7 +124,7 @@ post-install customizations you might need to do. On VirtualBox these include:
 
 If you're having problems with the install or post-install, ask for help.
 
-Mac users can also install VMs, but the experience is sometimes not as good as 
+Mac users can also install VMs, but the experience is sometimes not as good as
 PC users.
 
 ### Install Linux on PC ###
@@ -173,16 +173,16 @@ is slightly more complex.
 
 ### Windows Subsystem for Linux ###
 
-The official Microsoft solution for running Linux is called the Windows 
-Subsystem for Linux (WSL). There are two types of WSL, Type 1 and Type 2. Type 
-1 is older. It is also compatible with virtual machines like VirtualBox. If you 
-want to run both WSL and VirtualBox on the same machine, you should use WSL 
+The official Microsoft solution for running Linux is called the Windows
+Subsystem for Linux (WSL). There are two types of WSL, Type 1 and Type 2. Type
+1 is older. It is also compatible with virtual machines like VirtualBox. If you
+want to run both WSL and VirtualBox on the same machine, you should use WSL
 Type 1.
 
-If you want to be more up-to-date, then use WSL Type 2. Unfortunately, 
-installing WSL2 will stop VirtualBox from running. You can have WSL2 and 
-VirtualBox on the same computer, but not running at the same time; you will 
-have to edit some settings and restart to switch between the two. This is a 
+If you want to be more up-to-date, then use WSL Type 2. Unfortunately,
+installing WSL2 will stop VirtualBox from running. You can have WSL2 and
+VirtualBox on the same computer, but not running at the same time; you will
+have to edit some settings and restart to switch between the two. This is a
 pain, so don't do it.
 
 The upside of WSL is that it is the official Microsoft product. Most of the
@@ -239,11 +239,11 @@ Chromebook).
 
 ## Unix CLI: Terminal & Shell ##
 
-There are many terminal applications. Generally, it doesn't matter which one 
-you use. It's sort of like choosing between Firefox and Chrome: they look a 
-little different, but both let you navigate the Internet. Find a terminal 
-application on your computer. The name might be 'Terminal', 'xterm', 'Qterm' or 
-something with 'term' in it somewhere. Create a shortcut in your dock/launchbar 
+There are many terminal applications. Generally, it doesn't matter which one
+you use. It's sort of like choosing between Firefox and Chrome: they look a
+little different, but both let you navigate the Internet. Find a terminal
+application on your computer. The name might be 'Terminal', 'xterm', 'Qterm' or
+something with 'term' in it somewhere. Create a shortcut in your dock/launchbar
 so you can access it quickly.
 
 The terminal is the application where you use the command line interface (CLI)
@@ -287,8 +287,8 @@ application. Popular IDEs include:
 We will not be using IDEs in this class. One of the goals of the class is for
 you to become Unix savvy, so I want you using the terminal as much as possible.
 
-Another useful technology we won't be using is Jupyter. Notebook computing is 
-very powerful and intuitive, but it doesn't lend itself to creating 
+Another useful technology we won't be using is Jupyter. Notebook computing is
+very powerful and intuitive, but it doesn't lend itself to creating
 distributable software. It also isolates you from Unix.
 
 ### Editor Customization ###
@@ -305,13 +305,13 @@ for the following:
 
 ## Home Directory ##
 
-The CLI always has a **focus**. When you first start up your terminal, the 
-focus is your home directory. Your home directory is so important that there is 
-a simple shortcut to get to it, the tilde key `~`. If you've never used this 
+The CLI always has a **focus**. When you first start up your terminal, the
+focus is your home directory. Your home directory is so important that there is
+a simple shortcut to get to it, the tilde key `~`. If you've never used this
 before, it's probably at the top left of your keyboard.
 
-If you change directories, the focus of your terminal will change to that 
-directory. To find out where your focus is, use the `pwd` command to "print 
+If you change directories, the focus of your terminal will change to that
+directory. To find out where your focus is, use the `pwd` command to "print
 working directory".
 
 ```
@@ -401,10 +401,10 @@ anyone else's work. You will always know who did what and when.
 
 ## GitHub Account ##
 
-GitHub is a website that lets you store you git repositories for free. There 
-are several similar sites, but GitHub is the most popular. Every bioinformatics 
-developer should have a GitHub account. Your repositories and activity are part 
-of your CV. If you don't have a GitHub account, it's time to point your web 
+GitHub is a website that lets you store you git repositories for free. There
+are several similar sites, but GitHub is the most popular. Every bioinformatics
+developer should have a GitHub account. Your repositories and activity are part
+of your CV. If you don't have a GitHub account, it's time to point your web
 browser to [https://github.com](GitHub) and create an account.
 
 Choose a username. It's okay to be clever, but don't be silly. Remember, this
@@ -436,14 +436,14 @@ each collaborator may have. As the owner, you can change a repo from Public to
 Private and back. Most of my repos are public because I believe in openly
 sharing (but hands off my sandwich).
 
-Now let's go make a repo. Go to the GitHub website and click on the green "New" 
-button to create a new repo. Name this "homework" because this is where you'll 
-be submitting your homework. Make it **public**. Does this mean that students 
-can see each others' homework? Yes. You're actually encouraged to work with 
-other students in this class. Click the boxes to initialize with a README, add 
-a .gitignore and add a license. Scroll through the .gitignore options until you 
-get to "Python". Choose whichever license you like. I generally use MIT. Click 
-the "Create Repository" and you will be transported to your new mostly empty 
+Now let's go make a repo. Go to the GitHub website and click on the green "New"
+button to create a new repo. Name this "homework" because this is where you'll
+be submitting your homework. Make it **public**. Does this mean that students
+can see each others' homework? Yes. You're actually encouraged to work with
+other students in this class. Click the boxes to initialize with a README, add
+a .gitignore and add a license. Scroll through the .gitignore options until you
+get to "Python". Choose whichever license you like. I generally use MIT. Click
+the "Create Repository" and you will be transported to your new mostly empty
 repo.
 
 ### Personal Access Token ###
@@ -571,16 +571,16 @@ git config --global user.name "username"
 git config --global credential.helper store
 ```
 
-Now let's go to the GitHub website. Look at your `README.md` there and verify 
-that the text has chagned. If it has not, you didn't do something right. Ask 
+Now let's go to the GitHub website. Look at your `README.md` there and verify
+that the text has chagned. If it has not, you didn't do something right. Ask
 for help and go back and fix it.
 
-You can also edit files directly on GitHub. Click the edit button for the 
-`README.md` file and make some changes. Scroll to the bottom of the page and 
+You can also edit files directly on GitHub. Click the edit button for the
+`README.md` file and make some changes. Scroll to the bottom of the page and
 click the green button to commit changes.
 
-At this point, your local repository in Linux is not up to date with the repo 
-on GitHub. To get the latest documents you have to pull them into your local 
+At this point, your local repository in Linux is not up to date with the repo
+on GitHub. To get the latest documents you have to pull them into your local
 repo. Make sure you're in your homework repo and the do a `git pull`.
 
 ```
@@ -620,8 +620,8 @@ binary file looks like, try the following.
 less /bin/ls
 ```
 
-You're looking at the machine code for the `ls` program. It's not meant to be 
-human-readable. So what makes a file text or binary? To answer that, we need to 
+You're looking at the machine code for the `ls` program. It's not meant to be
+human-readable. So what makes a file text or binary? To answer that, we need to
 delve into the world of bits and bytes.
 
 ### Bits, Bytes, and ASCII ###
@@ -807,8 +807,8 @@ git commit -m new
 git push
 ```
 
-Check the GitHub website. Your `00helloworld.py` file should now be in the 
-repo. If it is not, refresh the page or get help it that's not the problem.
+Check the GitHub website. Your `00helloworld.py` file should now be in the
+repo. If it is not, refresh the page or get help if that's not the problem.
 
 It might seem like git is a lot of effort just to upload your code to a website.
 If that's all git did, it would be too much effort, but git allows you to do a
@@ -820,54 +820,9 @@ without destroying each others work. We aren't using those advanced features
 yet. Right now, our focus is on backing up our code and logging our programming
 activity to the GitHub website.
 
-------------------------------------------------------------------------------
+## Homework ##
 
-## Final Checklist ##
+To get full credit for your homework, submit the following:
 
-+ Unix/Linux working
-	+ PC - VM or other recommended solution (not WSL)
-	+ Mac - make sure you download command line development tools
-+ Editor set up properly
-	+ Syntax highlighting for Python
-	+ Displays line numbers
-	+ Tab key inserts tab character (not spaces)
-	+ Shows 80-column gutter
-+ Directories with appropriate files
-	+ Code
-		+ homework
-			+ 00helloworld.py
-			+ LICENSE
-			+ README.md
-		+ MCB185-2023
-			+ README.md
-			+ Unit1, Unit2, ...
-			+ UNIX.md
-	+ DATA
-		+ E.coli
-			+ GCF_000005845.2_ASM584v2_genomic.fna.gz
-			+ GCF_000005845.2_ASM584v2_genomic.gbff.gz
-			+ GCF_000005845.2_ASM584v2_genomic.gff.gz
-			+ GCF_000005845.2_ASM584v2_protein.faa.gz
-			+ README.md
-+ GitHub
-	+ homework repo on GitHub has the same files as your local repo
-
-
-Let's make sure your directories and files look right. Change directory to your
-home directory and then list the various directories.
-
-```
-cd
-ls Code
-ls Code/homework
-ls Code/MCB185-2023
-ls DATA
-ls DATA/E.coli
-```
-
-You can also do this in one command using the `-R` flag to recursively descend
-into each directory.
-
-```
-ls -R Code DATA
-```
++ URL of your homework repository
++ 00helloworld.py in your repo

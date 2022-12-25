@@ -50,39 +50,31 @@ print(txt, num)
 # For example, what if we want exactly 3 decimal places?
 # There are 3 distinct ways to format strings in python
 
-# Method 1: printf-style formatting
-# printf() is the name of an old C function, but not Python
-# The syntax is well-known among old-school programmers
-
-print('%s %.3f' % (txt, num))                # %s string, %f float
-print('%s %.3f %d %e' % (txt, num, 2.1, .1)) # %d integer, %e scientific
-
-# Method 2: str.format()
-# Strings are objects with built-in functions (which are called methods)
-# upper() and lower() are some simple examples of string methods
-# When using object syntax, the function comes after the variable
-
-print(txt.upper(), txt.lower())
-
-# The format() method is a powerful way to control string formatting
-
-print('{} {}'.format(txt, num))
-print('{} {:.3f}'.format(txt, num))
-
-# Method 3: f-strings
+# Method 1: f-strings, the best way
 # f-strings are the newest and best way to format strings
 # f-strings interpolate variables and other statements inside curly brackets
 
 print(f'{txt} {num}')
-print(f'{txt} {num:.3f}')
+print(f'{txt} {num:.3f}') # 3 digits of accuracy
 
 # You can even interpolate python code
 
 print(f'{2+2} {1/7:.5f} {len(txt)}')
 
 # The examples here are but the tip of a very large iceberg
-# Each formatting method has many more options
-# Check documentation online for more information
-# Use f-strings instead of the other methods
+# There are lots of formatting options!
+# Use f-strings instead of the other methods below (included for completeness)
+
+#---------------------------------------------------
+
+# Method 2: printf-style formatting
+
+print('%s %.3f' % (txt, num))                # %s string, %f float
+print('%s %.3f %d %e' % (txt, num, 2.1, .1)) # %d integer, %e scientific
+
+# Method 3: str.format()
+
+print('{} {}'.format(txt, num))
+print('{} {:.3f}'.format(txt, num))
 
 """
