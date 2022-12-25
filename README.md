@@ -76,7 +76,7 @@ Why is this a rule?
 
 ## Getting Started ##
 
-Start with the `README.md` in Unit0 and work your way up. What if you don't get
+Start with the `README.md` in unit0 and work your way up. What if you don't get
 all the way to the end? FFS journey, not destination.
 
 + Unit 0: Tools of the Trade
@@ -85,7 +85,9 @@ all the way to the end? FFS journey, not destination.
 + Unit 3: Tuples and Lists
 + Unit 4: Functions and Files
 + Unit 5: Advanced Linux
-
++ Unit 6: Dictionaries and Regex
++ Unit 7: Data Structures
++ Unit 8: Final Projects
 
 ## Getting Help ##
 

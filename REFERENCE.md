@@ -19,7 +19,7 @@ These are all of Unix commands we use in the course.
 | `<`   | send a file as stdin
 
 
-| Command   | Example       | Intent                        
+| Command   | Example       | Intent
 |:----------|:--------------|:------------------------------------------------
 | `cat`     | `cat > f`     | create file f and wait for keyboard (see ^D)
 |           | `cat f`       | stream contents of file f to STDOUT
@@ -75,3 +75,9 @@ These are all of Unix commands we use in the course.
 | `wc`      | `wc f`        | count the lines, words, and characters in file f
 | `zcat`    | `zcat f.gz`   | stream compressed file f.gz to stdout
 | `zless`   | `zless f.gz`  | page through compressed file f.gz
+
+
+Python Quick Reference
+======================
+
+These are all the programming concepts used in the course...
