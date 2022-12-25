@@ -1,11 +1,32 @@
-Unit 3: Practice, practice, practice
-====================================
+Unit 4: Strings, Tuples, Lists
+==============================
 
 ## Learning Objectives ##
 
-+ Practice using loops and conditionals
++ Methods - learn about method syntax
++ Tuples - immutable containers
++ Lists - mutable containers
 
-There are no tutorials this time, just lots more practice with loops and
-conditionals. Your homework problems are in the Programs directory (as always).
+------------------------------------------------------------------------------
 
-Some of these programs are inspired from Dungeons & Dragons 5e rules.
+## Tutorials ##
+
+Each of the files in the Tutorials directory is a Python program most of the
+code contained in a giant triple-quoted string. To "play" the tutorial, move
+the triple quotes farther down the file and run the program again. Each time
+you move the quotes, you will see new output. People who just read the tutorial
+don't learn the information very well. Experiment by changing some of the lines
+and see what happens.
+
+## Programs ##
+
+The files in the Programs directory are your homework problems. Copy them to
+your homework repo and edit them there.
+
+## Homework ##
+
++ stats
++ entropy
++ xcoverage
++ birthday
+

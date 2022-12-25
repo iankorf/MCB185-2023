@@ -1,4 +1,4 @@
-# 36treasure.py
+# dnd5-fire.py
 
 # D&D themed problem...
 
@@ -11,7 +11,7 @@
 
 
 """
-python3 36treasure.py
+python3 dnd5-fire.py
 1 1.0000 1.0000
 2 0.9975 1.0000
 3 0.9900 1.0000

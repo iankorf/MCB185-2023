@@ -81,12 +81,12 @@ don't get all the way to Unit9? FFS journey, not destination.
 + Unit 0: Tools of the Trade
 + Unit 1: Basic Unix
 + Unit 2: Beginning Python
-+ Unit 3: Practice, practice, practice
-+ Unit 4: Tuples and Lists
-+ Unit 5: Functions
-+ Unit 6: Files and Argparse
-+ Unit 7: Dictionaries
-+ Unit 8: Regex
++ Unit 3: Tuples and Lists
++ Unit 4: Functions
++ Unit 5: Files, CLI, I/O
++ Unit 6: Dictionaries
++ Unit 7: Regex
++ Unit 8:
 + Unit 9: Final Project
 
 ## Getting Help ##

@@ -1,4 +1,4 @@
-# 42lists.py
+# 32lists.py
 
 # Move the triple quotes downward to uncover each segment of code
 

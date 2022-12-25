@@ -5,6 +5,12 @@
 # Output with 4 significant figures
 # Use nested loops
 
+# Also try doing it without nested loops
+# Instead, count only the first window
+# Then 'move' the window by adding 1 letter on one side
+# And subtracting 1 letter from the other side
+# Consider the pros/cons of this algorithm vs. nested loops
+
 seq = 'ACGACGCAGGAGGAGAGTTTCAGAGATCACGAATACATCCATATTACCCAGAGAGAG'
 w = 11
 
