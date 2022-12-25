@@ -2,7 +2,10 @@
 
 # Write a program that computes typical stats
 # Count, Min, Max, Mean, Std. Dev, Median
-# You are only allowed to import the sys library
+
+# Hint: use sys.argv to get the values from the command line
+
+# Note: you are not allowed to import any library except sys
 
 
 """

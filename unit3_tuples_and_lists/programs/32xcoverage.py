@@ -1,13 +1,16 @@
 # 32xcoverage.py
 
 # Write a program that simulates a shotgun resequencing project
-# Generate reads randomly over a genome
 # How uniformly do the reads "pile up" on a chromosome?
 # How much of that depends on sequencing depth?
 
 # Report min, max, and average coverage
 # Make variables for genome size, read number, read length
 # Input values from the command line
+
+# Hint: make the problem smaller, so it's easier to visualize and debug
+
+# Hint: if you don't understand the context of the problem, ask for help
 
 
 """
