@@ -61,5 +61,5 @@ git push
 
 ## Homework ##
 
-Your homework includes 10 programs plus a few Dungeons & Dragons themed
-practice problems.
+Your homework includes 10 programs plus a few optional practice problems
+derived from Dungeons & Dragons 5e.
