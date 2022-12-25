@@ -1,9 +1,11 @@
 # 36errors.py
 
-# Move the triple quotes downward to uncover each segment of code
-
 import math
 import sys
+
+# Move the triple quotes downward to uncover each segment of code
+
+"""
 
 # Once you start interacting with users, you will get erroneous input
 
@@ -22,7 +24,8 @@ print(sum(probs))
 # Instead, make sure the numbers are close enough
 
 probs = [0.1, 0.2, 0.3, 0.400000000001]
-assert(math.isclose(sum(probs), 1.0)) # close enough
+assert(math.isclose(sum(probs), 1.0)) # using default tolerance
+assert(math.isclose(sum(probs), 1.0), abs_tol=0.01) # choose your tolerance
 
 # To check if something works, use "try"
 # If the trial fails, the "except" clause is executed
@@ -45,3 +48,5 @@ sys.stderr.write('this is also stderr\n')
 # It looks the same in your termal, but try re-directing or piping
 
 # python3 36errors.py | wc
+
+"""

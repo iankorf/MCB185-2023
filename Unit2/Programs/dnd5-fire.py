@@ -1,13 +1,10 @@
 # dnd5-fire.py
 
-# D&D themed problem...
-
 # Your party has just defeated an evil dragon and it's your time to pick loot.
 # You can either have the ring of fire protection, which gives advantage on
 # all fire saving throws, or the cloak of fire protection, which gives +3
 # versus all fire saving throws. Which one is better? Make a program that
 # simulates saving throw success at various DCs (1-20) for ring and cloak.
-
 
 
 """

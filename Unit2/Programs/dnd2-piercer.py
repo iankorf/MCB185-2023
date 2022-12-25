@@ -1,7 +1,5 @@
 # dnd2-piercer.py
 
-# D&D themed problem...
-
 # If you have the "Piercer" feat, you may re-roll a damage die. You must
 # take the new roll regardless if it was lower than the previous roll. Assume
 # you have a weapon that does 1d8 damage. Clearly, you should re-roll any die
@@ -10,8 +8,6 @@
 # What is the optimal strategy? Simulate it.
 # Make a table showing reroll threshold and average damage.
 
-
-import random
 
 """
 python3 dnd2-piercer.py

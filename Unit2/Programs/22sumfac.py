@@ -7,7 +7,6 @@
 
 n = 5
 
-# your code goes here
 
 """
 python3 22sumfac.py

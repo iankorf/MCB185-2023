@@ -1,8 +1,5 @@
 # 25atseq.py
 
-import random
-random.seed(1) # comment-out this line to change sequence each time
-
 # Write a program that stores random DNA sequence in a string
 # The sequence should be 30 nt long
 # On average, the sequence should be 60% AT

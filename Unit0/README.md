@@ -299,7 +299,7 @@ for the following:
 + Syntax highlighting for Python
 + Displays line numbers
 + Tab key inserts tab character (not spaces)
-+ Shows 80-column gutter
++ Shows 80-column gutter (we follow the 80-column rule)
 
 ------------------------------------------------------------------------------
 

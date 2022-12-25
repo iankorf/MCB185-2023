@@ -1,7 +1,5 @@
 # dnd4-deathsaves.py
 
-# D&D themed problem...
-
 # Death saves are a little different than normal saving throws. If your
 # health drops to 0 or below, you are unconscious and may die. Each time it
 # is your turn, roll a d20 to determine if you get closer to life or fall
@@ -12,7 +10,6 @@
 # If you're lucky and roll a 20, you gain 1 health and have "revived".
 # Write a program that simulates death saves. What is the probability one
 # dies, stabilizes, or revives?
-
 
 
 """

@@ -5,6 +5,7 @@
 
 dna = 'ACTGAAAAAAAAAAA'
 
+
 """
 python3 26anti.py
 TTTTTTTTTTTCAGT

@@ -9,8 +9,6 @@
 # Make variables for genome size, read number, read length
 # Input values from the command line
 
-import sys
-import random
 
 """
 python3 32xcoverage.py 1000 100 100

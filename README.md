@@ -57,8 +57,8 @@ Google something instead of thinking for yourself or asking for help, brain
 cells die.
 
 In this course, you are not allowed to use any library that hasn't been
-previously introduced in this course. Since numpy and pandas are never
-introduced, you are not allowed to use them.
+previously introduced. Since numpy and pandas are never introduced, you are not
+allowed to use them.
 
 ## Tabs Mandatory ##
 
@@ -71,26 +71,23 @@ Why is this a rule?
 
 + Helps discourage copy-paste from Internet sources
 + Indentation errors are annoying
++ Sometimes in life you have to follow arbitrary rules
 + The reasons for using spaces are not very convincing
 
 ## Getting Started ##
 
-Start with the `README.md` in Unit0 and work your way up to Unit9. What if you
-don't get all the way to Unit9? FFS journey, not destination.
+Start with the `README.md` in Unit0 and work your way up. What if you don't get
+all the way to the end? FFS journey, not destination.
 
 + Unit 0: Tools of the Trade
 + Unit 1: Basic Unix
 + Unit 2: Beginning Python
 + Unit 3: Tuples and Lists
-+ Unit 4: Functions
-+ Unit 5: Files, CLI, I/O
-+ Unit 6: Dictionaries
-+ Unit 7: Regex
-+ Unit 8:
-+ Unit 9: Final Project
++ Unit 4: Functions & Files
+
 
 ## Getting Help ##
 
-Asking questions in the Discord channel will get you the fastest response. The
-instructor and TA monitor the course Discord server. You may get answers from
-other students even sooner. Email will also work.
+The instructor and TA monitor the course Discord server, so asking questions in
+the #mcb185 Discord channel will get you the fastest response. You may get
+answers from other students even sooner. Email will also work.

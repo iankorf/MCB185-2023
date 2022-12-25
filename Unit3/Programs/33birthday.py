@@ -13,9 +13,6 @@
 # Once you have stored all birthdays, check to see if any have the same day
 # Do this for many trials to see what the probability of sharing a birthday is
 
-import random
-
-
 
 """
 python3 33birthday.py

@@ -7,6 +7,7 @@ dna = 'ATAGCGAATATCTCTCATGAGAGGGAA'
 
 # your code goes here
 
+
 """
 python3 21codons.py
 ATA

@@ -1,8 +1,5 @@
 # dnd3-savingthrow.py
 
-# D&D themed problem...
-
-
 # One of the core mechanics of D&D is the "saving throw". When certain
 # events happen, you need to roll a d20 to figure out if you succeed or not.
 # For example, you are walking across a frozen lake and it begins to crack
@@ -19,10 +16,10 @@
 # you to stumble forward. In this case, you have "disadvantage" and must take
 # the lower of two d20 rolls.
 
-
 # Write a program that simulates saving throws against DCs of 5, 10, and 15.
 # What is the probability of success normally or with advantage/disadvantage?
 # Make a table showing the results.
+
 
 """
 python3 dnd3-savingthrow.py

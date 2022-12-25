@@ -7,10 +7,6 @@
 # Make sure the probabilities sum to 1.0
 # Put the probabilities into a new list before doing the computation
 
-import math
-import sys
-
-
 
 """
 python3 31entropy.py 0.1 0.2 0.3 0.4

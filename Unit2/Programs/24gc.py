@@ -6,8 +6,6 @@
 
 dna = 'ACAGAGCCAGCAGATATACAGCAGATACTAT'
 
-# Your code goes here
-
 
 """
 python3 24gc.py
