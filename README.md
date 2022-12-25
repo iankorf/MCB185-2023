@@ -83,7 +83,8 @@ all the way to the end? FFS journey, not destination.
 + Unit 1: Basic Unix
 + Unit 2: Beginning Python
 + Unit 3: Tuples and Lists
-+ Unit 4: Functions & Files
++ Unit 4: Functions and Files
++ Unit 5: Advanced Linux
 
 
 ## Getting Help ##
