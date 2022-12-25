@@ -61,5 +61,5 @@ git push
 
 ## Homework ##
 
-Your homework includes 10 programs. For full credit, make sure all of them are
-in your repo.
+Your homework includes 10 programs plus a few Dungeons & Dragons themed
+practice problems.

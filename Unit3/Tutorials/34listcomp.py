@@ -1,4 +1,4 @@
-# 35listcomp.py
+# 34listcomp.py
 
 # Move the triple quotes downward to uncover each segment of code
 
@@ -6,7 +6,7 @@
 #    Looks elegant
 #    Can be slightly confusing
 #    Is common in Python - so you must know it when you see it
-#    Isn't found in most languages, and isn't necessary
+#    Isn't found in most languages, so consider it optional
 
 """
 

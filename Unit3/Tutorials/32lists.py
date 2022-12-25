@@ -33,7 +33,9 @@ print(arr)
 # Many lists contain numbers, like the following probability distribution
 
 p = [0.2, 0.1, 0.4, 0.3]
-print(p, sum(p))
+
+# There are some convenient functions for working with lists: sum, min, max
+print(p, sum(p), min(p), max(p))
 
 # sorting is done with the sort() function
 p.sort()

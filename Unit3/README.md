@@ -1,5 +1,5 @@
-Unit 4: Strings, Tuples, Lists
-==============================
+Unit 3: Methods, Tuples, and Lists
+==================================
 
 ## Learning Objectives ##
 
