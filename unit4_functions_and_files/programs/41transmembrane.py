@@ -16,15 +16,23 @@
 #	Signal peptide is 8 aa long, KD > 2.5, first 30 aa
 #	Hydrophobic region is 11 aa long, KD > 2.0, after 30 aa
 
-# Hint: use the fasta reader in mcb185.py
+# Hint: copy the fasta reader in mcb185.py to your homework repo
 # Hint: create a function for KD calculation
 # Hint: create a function for hydrophobic alpha-helix
 # Hint: use the same function for both signal peptide and transmembrane
 
+
 """
 python3 41transmembrane.py ~/DATA/E.coli/GCF_000005845.2_ASM584v2_protein.faa.gz
-
-
-
-
+NP_414560.1 Na(+):H(+) antiporter NhaA [Escherichia coli str. K-12 substr. MG1655]
+NP_414568.1 lipoprotein signal peptidase [Escherichia coli str. K-12 substr. MG1655]
+NP_414582.1 L-carnitine:gamma-butyrobetaine antiporter [Escherichia coli str. K-12 substr. MG1655]
+NP_414607.1 DedA family protein YabI [Escherichia coli str. K-12 substr. MG1655]
+NP_414609.1 thiamine ABC transporter membrane subunit [Escherichia coli str. K-12 substr. MG1655]
+NP_414653.1 protein AmpE [Escherichia coli str. K-12 substr. MG1655]
+NP_414666.1 quinoprotein glucose dehydrogenase [Escherichia coli str. K-12 substr. MG1655]
+NP_414695.1 iron(III) hydroxamate ABC transporter membrane subunit [Escherichia coli str. K-12 substr. MG1655]
+NP_414699.1 PF03458 family protein YadS [Escherichia coli str. K-12 substr. MG1655]
+NP_414717.2 CDP-diglyceride synthetase [Escherichia coli str. K-12 substr. MG1655]
+...
 """
