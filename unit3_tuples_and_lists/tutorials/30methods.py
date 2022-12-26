@@ -24,16 +24,25 @@ print(s.isupper())  # method syntax
 # Note that all of these methods return a new string
 # That is, they don't change the original object
 
-# lstrip(), rstrip), and strip() remove characters at the ends of strings
-# by default this is whitespace, but can be multiple characters
 s = '>>>>>ACGT<<<<<'
 print(s)
+
+# count() returns the number of times it finds a substring
+print(s.count('>'))
+print(s.count('>>'))
+
+# lstrip(), rstrip), and strip() remove characters at the ends of strings
+# by default this is whitespace, but can be multiple characters
+
 print(s.lstrip('>'))
 print(s.rstrip('<'))
 print(s.strip('<>'))
 
 # replace() exchanges characters or strings
 print(s.replace('>>', '.'))
+
+
+
 
 # upper() and lower() convert case
 # isupper() and islower() check for case

@@ -44,6 +44,10 @@ for i in range(length):
 	else:        print('T', end='')
 print()
 
+# While on the subject of the random library, let's explore a little bit
+print(random.random()) # a random floating point from 0 <= X < 1
+print(random.choice('AAAAACGT')) # chooses a random letter (mostly A)
+
 # The Boolean operators are 'and', 'or', and 'not'
 
 # Print out all the positions that are A or T

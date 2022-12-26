@@ -3,9 +3,11 @@ Unit 4: Functions & Files
 
 ## Learning Objectives ##
 
-+ Methods - learn about method syntax
-+ Tuples - immutable containers
-+ Lists - mutable containers
++ create your own functions
++ open files for reading and writing
++ use generator functions to save memory
++ use named parameters with default values
++ create your own function libraries
 
 ------------------------------------------------------------------------------
 
@@ -13,20 +15,10 @@ Unit 4: Functions & Files
 
 Each of the files in the Tutorials directory is a Python program most of the
 code contained in a giant triple-quoted string. To "play" the tutorial, move
-the triple quotes farther down the file and run the program again. Each time
-you move the quotes, you will see new output. People who just read the tutorial
-don't learn the information very well. Experiment by changing some of the lines
-and see what happens.
+the triple quotes farther down the file and run the program again.
 
 ## Programs ##
 
 The files in the Programs directory are your homework problems. Copy them to
 your homework repo and edit them there.
 
-### 40aacomp.py ##
-
-The progam prompt
-
-## Homework ##
-
-+ 40

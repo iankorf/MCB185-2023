@@ -81,7 +81,7 @@ These are all of Unix commands we use in the course.
 Python Concepts
 ===============
 
-Summary of programming concepts by Unit
+Summary of Python programming concepts by Unit
 
 ## Unit 2: Beginning Python ##
 
@@ -91,7 +91,7 @@ Variable types
 None    a non-value, useful for debugging
 int     integers
 float   numbers with decimal points
-str     text
+str     'text' in single or double quotes
 bool    False, True
 ```
 
@@ -139,9 +139,9 @@ float()         converts to floating point number
 str()           converts to string
 len()           returns the length of an argument
 range()         creates a sequence of numbers
-range(a)          from 0 to a, not including a
-range(a, b)       from a to b, not including b
-range(a, b, c)    from a to b, not including b, with step size c
+range(a)        from 0 to a, not including a
+range(a, b)     from a to b, not including b
+range(a, b, c)  from a to b, not including b, with step size c
 ```
 
 Slice syntax
@@ -184,6 +184,8 @@ Random library
 
 ```
 random.randint(a, b)  generates a random number from a to b (inclusive)
+random.random()       generates a random number 0 <= X < 1
+random.choice()       chooses a random value from a container
 ```
 
 Loops
@@ -201,66 +203,96 @@ while (logic):             iterates as long as logic is True
 
 ## Unit 3: Tuples and Lists ##
 
-len
-
 String methods
 
 ```
-str.strip()
-str.lstrip()
-str.rstrip()
-str.replace()
-str.find()
-str.rfind()
-str.upper()
-str.lower()
-str.isupper()
-str.islower()
-str.startswith()
-str.endswith()
+str.count()         counts the occurances of substrings
+str.strip()         replaces characters at the ends (defaults to whitespace)
+str.lstrip()        left-hand strip
+str.rstrip()        right-hand strip, used frequently to remove newline
+str.replace()       find and replace substrings
+str.find()          report index of substring
+str.rfind()         as above but from the right
+str.upper()         convert to uppercase
+str.lower()         convert to lowercase
+str.isupper()       True if everything is uppercase
+str.islower()       True if everything is lowercase
+str.startswith()    True if starts with substring
+str.endswith()      True if ends with substring
 ```
 
-List functions and methods
+List operators
 
 ```
-sum()
-min()
-max()
-list.sort()
-list.append()
++          concatenates lists
+*          initializes all elements of a list
+in         checks for elements in a list (or other containers)
 ```
 
-To concenate lists, you can use `+`
+List functions
 
-split
-join
+```
+sum()         return the sum of all elements
+min()         return the minimum value
+max()         return the maximum value
+list()        convert a string into a list
+enumerate()   iterates through a list with a tuple of (index, value)
+zip()         iterates through multiple lists simultaneously
+```
 
-list
-chars = list('ABC')
-empty list
+List methods
 
-enumerate()
-zip()
+```
+list.sort()     changes the order of the list
+list.append()   adds an element to the end of a list
+list.pop()      removes the last element and returns it
+list.insert()   inserts values at any position
+```
 
-* to initialize lists
+Command line and checking
 
-sys.argv
-
-assert
-math.isclose
-try
-except
-raise
+```
+sys.argv        list of arguments, program name is sys.argv[0]
+assert()        demands a condition or exits
+math.isclose()  tests floating point bounds
+try             sets up a test condition
+except          evalutes when 'try' fails
+raise           throws an error
+```
 
 
 ## Unit 4: Functions and Files ##
 
-in -- not covered
+Keywords
 
+```
+def             define a new function
+return          return values from a function
+with .. as ..   construct for opening and closing files
+yield           briefly return values from a function
+```
 
+File functions
 
+```
+open()          create a file pointer
+gzip.open()     create a file pointer to a compressed file
+```
 
-add these?
-random.random()
-random.choice()
-random.seed()
+File methods
+
+```
+file.read()       read entire file into variable - not actually covered
+file.readline()   read one line from a file
+file.readlines()  iterate through all lines in a file
+file.write()      write to a file
+file.close()      close file pointer
+```
+
+Miscellany
+
+```
+os.getenv()          get environment variable contents
+mcb185.read_fasta()  iterate through a fasta file
+```
+

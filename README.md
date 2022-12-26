@@ -93,6 +93,13 @@ get all the way to the end? FFS journey, not destination.
 + Unit 7: Data Structures
 + Unit 8: Final Projects
 
+## Getting Good ##
+
+One of the best ways to practice programming is to write the same program over
+and over. We call this a ground-zero re-write. Practice is just as important in
+programming as it is in something like music or sports. Doing a ground-zero
+re-write of your homework exercises will make you a much better programmer.
+
 ## Getting Help ##
 
 The instructor and TA monitor the course Discord server, so asking questions in

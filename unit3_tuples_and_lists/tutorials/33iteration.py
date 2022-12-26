@@ -32,4 +32,11 @@ animals = ('ant', 'bat', 'cat', 'dog')
 for a, b, c  in zip(p, string, animals):
 	print(a, b, c)
 
+# the "in" keyword is used for iteration
+# it is also used to check for elements in a container (string, tuple, list)
+
+if 'a' in string: print(f'a is in {string}')
+if 'bat' in animals: print(f'bat is in {animals}')
+if 0.3 in p: print(f'0.3 is in {p}')
+
 """
