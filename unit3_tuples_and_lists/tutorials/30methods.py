@@ -15,9 +15,9 @@ s = 'ACGT'
 print(len(s))       # function syntax
 print(s.isupper())  # method syntax
 
-# We have seen a few case of "dots" before but these weren't methods
+# We have seen a few case of "dots" before but these weren't object methods
 # However, they were object syntax
-# math.log2()        # a class method
+# math.log2()        # a class function
 # math.e constant    # a class constant
 
 # Let's get some practice using method syntax with strings

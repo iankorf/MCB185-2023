@@ -51,7 +51,7 @@ stuff = p + strings
 print(stuff)
 
 # lists with mixed types don't sort though
-stuff.sort()
+#stuff.sort()
 
 # Strings can be split into lists
 t = 'the quick brown fox jumps over the lazy dog'
@@ -61,5 +61,19 @@ print(words)
 # Lists can be joined into strings
 t = '-'.join(words)
 print(t)
+
+# Strings can be split into letters
+dna = 'ACGT'
+nts = list(dna)
+print(dna, nts)
+
+# Lists are often initialized empty
+todo = []
+todo.append('laundry')
+print(todo)
+
+# Lists are often initialized with a bunch of zeros
+count = [0] * 20
+print(count)
 
 """

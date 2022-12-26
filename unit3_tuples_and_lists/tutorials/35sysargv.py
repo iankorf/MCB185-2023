@@ -3,11 +3,11 @@
 import sys
 
 # This tutorial is a little different from the others
-# Try running this first as: python3 34sysargv.py
+# Try running this first as: python3 35sysargv.py
 
 print(sys.argv) # the program name is the first item in the list
 
-# Now run this as: python3 34sysargv.py 1 2 3.14
+# Now run this as: python3 35sysargv.py 1 2 3.14
 # ['34sysargv.py', '1', '2', '3.14']
 # All of the other things on the command line are in the sys.argv list
 
@@ -32,7 +32,7 @@ for val in sys.argv[1:]:
 	total += float(val)
 print(total)
 
-# Why is the total 6.140000000000001 and not 6.14?
-# If you don't know, ask
+# Why is the total of (1, 2, 3.14) 6.140000000000001 and not 6.14?
+# Floating point numbers have limited precision
 
 """

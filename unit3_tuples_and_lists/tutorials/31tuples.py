@@ -13,7 +13,7 @@ tup = 1, 2, 3
 print(tup)      # all three values are contained in a single varible
 
 tup = (1, 2, 3)
-print(tup)      # same thing as above, parenthese optional
+print(tup)      # same thing as above, parentheses optional
 
 # Tuples can contain a mixture of variable types
 # Note the output formatting

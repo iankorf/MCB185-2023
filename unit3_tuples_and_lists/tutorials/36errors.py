@@ -25,28 +25,26 @@ print(sum(probs))
 
 probs = [0.1, 0.2, 0.3, 0.400000000001]
 assert(math.isclose(sum(probs), 1.0)) # using default tolerance
-assert(math.isclose(sum(probs), 1.0), abs_tol=0.01) # choose your tolerance
+assert(math.isclose(sum(probs), 1.0, abs_tol=0.01)) # choose your tolerance
 
 # To check if something works, use "try"
 # If the trial fails, the "except" clause is executed
-# Don't use try-except for conditionals!
+# Note: errors and warnings are generally sent to stderr
 
 probs = [0.1, 0.2, 0.3, 'zero point 4']
 for val in probs:
 	try:
 		p = float(val)
 	except:
-		print(f'cannot convert {val} to a number')
-		# sys.exit() # if you want the program to end now
+		print(f'cannot convert {val} to a number', file=sys.stderr)
 
-# Error messages often go to stderr instead of stdout
 
-print('this is stdout')
-print('this is stderr', file=sys.stderr)
-sys.stderr.write('this is also stderr\n')
+# If you want the program to terminate, you can raise an error
 
-# It looks the same in your termal, but try re-directing or piping
-
-# python3 36errors.py | wc
+for val in probs:
+	try:
+		p = float(val)
+	except:
+		raise ValueError(f'cannot convert {val} to a number')
 
 """
