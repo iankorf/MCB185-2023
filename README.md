@@ -42,7 +42,7 @@ This is foremost a course about *how* to program. When faced with a homework
 problem, such as "compute the descriptive statistics for a set of numbers", you
 could very easily `import statistics` instead of writing the code yourself. In
 a professional setting, you *should* do that. However, the goal here isn't to
-solve a problem but to learn how to solve a problem. For this reason, it's
+solve a problem but to learn *how* to solve a problem. For this reason, it's
 important for you to write your own code. Even when you work in a small group,
 everyone should write their own code.
 
@@ -52,20 +52,21 @@ is one of the greatest sources of silent programming errors. No copy-paste!
 
 There will be times you get stuck and decide to search Stack Overflow or some
 other generally useful site. Resist this temptation. All of the programming
-problems can be solved with the information in the tutorials. Every time you
-Google something instead of thinking for yourself or asking for help, brain
-cells die.
+problems can be solved with the information in the tutorials. If you get stuck,
+ask a classmate or instructor for help. Every time you Google something instead
+of thinking for yourself or asking for help, brain cells die.
 
-In this course, you are not allowed to use any library that hasn't been
-previously introduced. Since numpy and pandas are never introduced, you are not
-allowed to use them.
+In this course, you are not allowed to use any concept unless it has been
+introduced in a previous or current unit. You already know how to use
+dictionaries? Good for you, but you aren't allowed to use them until Unit 6.
+Want to use numpy or pandas? Sorry, we don't use those in this course. The
+`REFERENCE.md` file has a chronological description of Python concepts.
 
-## Tabs Mandatory ##
+## Style ##
 
 In this course, you must use tabs for left-side indentation. No spaces are
 allowed on the left (but you should use them to align text on the right). Your
 editor may be set up to insert 2 or 4 spaces instead of tabs. Turn that off.
-Programs with spaces on the left get an automatic F.
 
 Why is this a rule?
 
@@ -74,10 +75,13 @@ Why is this a rule?
 + Sometimes in life you have to follow arbitrary rules
 + The reasons for using spaces are not very convincing
 
+There is a historic convention that source code lines shouldn't be longer than
+80 characters. We follow the 80-column rule in this course (most of the time).
+
 ## Getting Started ##
 
-Start with the `README.md` in unit0 and work your way up. What if you don't get
-all the way to the end? FFS journey, not destination.
+Start with the `README.md` in Unit 0 and work your way up. What if you don't
+get all the way to the end? FFS journey, not destination.
 
 + Unit 0: Tools of the Trade
 + Unit 1: Basic Unix
@@ -94,3 +98,13 @@ all the way to the end? FFS journey, not destination.
 The instructor and TA monitor the course Discord server, so asking questions in
 the #mcb185 Discord channel will get you the fastest response. You may get
 answers from other students even sooner. Email will also work.
+
+## Rules ##
+
+It's worth re-stating some rules of the course.
+
++ No programming constructs more advanced than the current unit
++ No importing libraries unless they have been previously introduced
++ Use tabs for left-side indentation only
++ Follow the 80-column rule
++ No penalty for working with other students

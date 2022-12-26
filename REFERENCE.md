@@ -77,7 +77,190 @@ These are all of Unix commands we use in the course.
 | `zless`   | `zless f.gz`  | page through compressed file f.gz
 
 
-Python Quick Reference
-======================
 
-These are all the programming concepts used in the course...
+Python Concepts
+===============
+
+Summary of programming concepts by Unit
+
+## Unit 2: Beginning Python ##
+
+Variable types
+
+```
+None    a non-value, useful for debugging
+int     integers
+float   numbers with decimal points
+str     text
+bool    False, True
+```
+
+Assignment operators
+
+```
+=     assignment not equality
++     addition, also used to concatenate strings
+-     subtraction
+*     multiplication, also used to make copies of strings
+/     division
+**    exponentiation
+%     modulo (remainder after integer divide)
+//    integer divide
+()    parentheses force precedence, just like normal math
++=    auto-increment
+-=    auto-decrement
+*=    auto-multiplication
+/=    auto-division
+```
+
+Comparison operators
+
+```
+==    equals
+!=    not equal
+>=    greater than or equal to
+<=    less than or equal to
+```
+
+Boolean operators
+
+```
+and   true if both sides are true
+or    true if either side is true
+not   reverses Boolean value
+```
+
+Core functions
+
+```
+type()          returns the type of
+int()           converts to integer
+float()         converts to floating point number
+str()           converts to string
+len()           returns the length of an argument
+range()         creates a sequence of numbers
+range(a)          from 0 to a, not including a
+range(a, b)       from a to b, not including b
+range(a, b, c)    from a to b, not including b, with step size c
+```
+
+Slice syntax
+
+```
+s[0]       the first element of the container
+s[0:1]     also the first element of the container
+s[a:b]     a slice starting from a and not including b
+s[a:]      a slice starting from a and going until the end
+s[:b]      a slice starting at the beginning but ending before b
+s[:]       the whole thing
+s[::-1]    the whole thing, in reverse
+```
+
+Printing and f-strings
+
+```
+print('a')          writes to stdout and includes newline
+print('a', end='')  writes to stdout and does not include newline
+h = 'hello'
+w = 'world'
+print('{h} {w}')    f-strings interpolate variables into strings
+print('{len(h)}')   also functions
+```
+
+Math library
+
+```
+math.pi        3.14159...
+math.e         2.71828...
+math.inf       represents infinity
+math.nan       not a number (e.g. log(0))
+math.ceil()    rounds up
+math.floor()   rounds down
+math.log()     transforms to log base e
+math.log2()    transforms to log base 2
+```
+
+Random library
+
+```
+random.randint(a, b)  generates a random number from a to b (inclusive)
+```
+
+Loops
+
+```
+for i in range(a):         iterate from 0 to a, not inclusive
+for i in range(a, b):      iterate from a to b, not inclusive
+for i in range(a, b, c):   as above, but in step size c
+for nt in dna:             iterate over characters in string
+break                      stop the loop now
+continue                   go to the next iteration of the loop
+while (logic):             iterates as long as logic is True
+```
+
+
+## Unit 3: Tuples and Lists ##
+
+len
+
+String methods
+
+```
+str.strip()
+str.lstrip()
+str.rstrip()
+str.replace()
+str.find()
+str.rfind()
+str.upper()
+str.lower()
+str.isupper()
+str.islower()
+str.startswith()
+str.endswith()
+```
+
+List functions and methods
+
+```
+sum()
+min()
+max()
+list.sort()
+list.append()
+```
+
+To concenate lists, you can use `+`
+
+split
+join
+
+list
+chars = list('ABC')
+empty list
+
+enumerate()
+zip()
+
+* to initialize lists
+
+sys.argv
+
+assert
+math.isclose
+try
+except
+raise
+
+
+## Unit 4: Functions and Files ##
+
+in -- not covered
+
+
+
+
+add these?
+random.random()
+random.choice()
+random.seed()
