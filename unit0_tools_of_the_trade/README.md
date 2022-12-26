@@ -17,8 +17,8 @@ Unit 0: Tools of the Trade
 
 Most professional bioinformatics is done in a Unix/Linux environment. You don't
 have to love Unix/Linux, but you do have to be proficient at it. There is
-`UNIX.md` quick reference in the repo that contains all of the Unix commands we
-use in the course.
+`REFERENCE.md` quick reference in the repo that contains all of the Unix
+commands we use in the course.
 
 ### What's the deal with Unix vs. Linux? ###
 
@@ -50,7 +50,9 @@ application. However, you might not have `git` and other developer tools
 installed by default. To install these, type the following in your terminal and
 follow the instructions:
 
-	xcode-select --install
+```
+xcode-select --install
+```
 
 ### Linux on PC ###
 
@@ -73,9 +75,9 @@ This is the current recommendation for Linux on a PC.
 
 A virtual machine (VM) is a _fictional_ computer running inside your normal
 Windows operating system. The virtualization _host_ software (e.g. VirtualBox)
-running on Windows tricks the new _guest_ operating system (Linux) into
-thinking it is attached to its own motherboard, CPU, keyboard, mouse, monitor,
-etc.
+running on the Windows PC (host) tricks the new _guest_ operating system
+(Linux) into thinking it is attached to its own motherboard, CPU, keyboard,
+mouse, monitor, etc.
 
 The upside of virtualization is that it's safe and inexpensive. It's hard to
 destroy data on your computer and you don't have to buy any new hardware.
@@ -83,14 +85,10 @@ VirtualBox is free software that works very well. Other popular virtualization
 products include VMware and Parallels. If you want commercial support, you may
 like those.
 
-The downside of a VM is that your virtual machines will take up some RAM, CPU,
-and storage away from your host OS. RAM is the most critical resource because
-it isn't easily shared. If you have 8 GB RAM, you could set up your VM with
-half. But that means both your real and virtual machines are running on 4 GB
-each. Computers run more efficiently with more RAM, especially if you're the
-type of person to have 20 browser tabs open. Adding more RAM to your computer
-will improve your VM experience. You can also run a VM with less RAM if you use
-a lightweight Linux distribution like Lubuntu or LinuxLite.
+The downside of a VM is that your virtual machines will take away some RAM,
+CPU, and storage from your host OS. RAM is the most critical resource because
+it isn't easily shared. If you have less than 8 GB of RAM in your computer, you
+will probably not want to run a VM.
 
 On the CPU side, your programs running in a VM will run slower than they could.
 The difference is pretty negligible though. We're talking 1-10% slower. You
@@ -99,19 +97,17 @@ downsides, VMs are a great way to run Linux on your PC.
 
 One additional complication is that your BIOS might need to be modified to run
 virtual machines. Some manufacturers ship their products with virtualization
-disabled. This is easily changed by in BIOs. Hold down the F10 key - or
-sometimes it's F1, F2, F12, or DEL to enter BIOS. Navigate to CPU or security.
-Enable virtualization.
+disabled. This is easily changed in BIOs. Hold down the F10 key - or sometimes
+it's F1, F2, F12, or DEL to enter BIOS. Navigate to CPU or security. Enable
+virtualization.
 
 There are many distributions of Linux. The most obvious differences among them
 is the desktop Graphical User Interface (GUI). Some look like old-school
 Windows while others look like Mac OS, and still others offer their own unique
-look and feel. As bioinformatics programmers, we're more interested in the CLI
-than the GUI, so I don't concern myself too much with what the desktop looks
-like. Here are some recommendations for setting up your VM.
+look and feel. Here are some recommendations for setting up your VM.
 
 + Linux: Lubuntu
-+ VM Memory: 2-4 GB but make sure your host OS has at least 6 GB
++ VM Memory: 2 GB (or 4 GB if your computer has more than 8 GB)
 + Disk: use default types, 40G is a good amount
 
 Make sure you read the installation directions fully. There are some
@@ -138,17 +134,15 @@ you can wipe Windows and install Linux instead. All of these methods will give
 you Linux with all of the RAM and CPU. Each one is slightly destructive,
 however, and you may accidentally wipe your Windows partition even if you
 didn't intend to. For these reasons, if you only have 1 computer, I don't
-recommend installing Linux directly. Use VirtualBox, WSL, or Cygwin instead.
-However if you do have a spare computer, installing Linux will give you that
-fully immersive experience that helps you learn Linux faster.
+recommend installing Linux directly. Use VirtualBox or Cygwin instead. However
+if you do have a spare computer, installing Linux will give you that fully
+immersive experience that helps you learn Linux faster.
 
 You can sometimes pick up old PCs for $50. Old Macs make great Linux boxes. I
 have a 2015 iMac and 2012 Mac Mini that are too old to work with the current
 MacOS, but both continue to work flawlessly as Linux machines.
 
 ### Cygwin on Windows ###
-
-Cygwin is a terminal with Unix commands.
 
 Cygwin is not an entire operating system but rather a terminal with POSIX
 commands (POSIX is a standard for portable Unix). It does not come
@@ -162,8 +156,6 @@ Your Windows C drive is mounted at `/cygdrive/c`. Your Cygwin root depends on
 where you chose to install it (probably `C:\cygdrive`).
 
 ### Git Bash on Windows ###
-
-Git Bash is another terminal with Unix commands.
 
 Git Bash is software intended for running git commands on Windows PCs using a
 command line interface. It can be used for more tasks, such as Python
@@ -208,16 +200,16 @@ minutes to install. To get to the Linux CLI, use the Terminal application. This
 takes a little while to launch the first time.
 
 I don't really recommend Chromebooks because it's not a popular platform for
-professional bioinformatics work. However, if that's all you have, it will work
-fine for this course.
+professional bioinformatics work. However, it will work fine for this course.
 
 ### Raspberry Pi ###
 
 The Raspberry Pi is an inexpensive ($50-100) single board computer that is
 about the size of a deck of cards. You can also get one built into a slim
-keyboard. They use Linux as their OS. You just need to provide a mouse and
-monitor. They work great as a learning platform, but can be limiting later on
-as some useful bioinformatics software isn't compiled for the Pi.
+keyboard. They use Linux as their OS. You just need to provide a mouse,
+keyboard, and monitor. They work great as a learning platform, but can be
+limiting later on as some useful bioinformatics software isn't compiled for the
+Pi.
 
 ### Remote Login ###
 
@@ -286,6 +278,7 @@ application. Popular IDEs include:
 
 We will not be using IDEs in this class. One of the goals of the class is for
 you to become Unix savvy, so I want you using the terminal as much as possible.
+If you want to use an IDE solely as an editor, that's fine.
 
 Another useful technology we won't be using is Jupyter. Notebook computing is
 very powerful and intuitive, but it doesn't lend itself to creating
@@ -308,7 +301,7 @@ for the following:
 The CLI always has a **focus**. When you first start up your terminal, the
 focus is your home directory. Your home directory is so important that there is
 a simple shortcut to get to it, the tilde key `~`. If you've never used this
-before, it's probably at the top left of your keyboard.
+before, it's probably at top left of your keyboard.
 
 If you change directories, the focus of your terminal will change to that
 directory. To find out where your focus is, use the `pwd` command to "print
@@ -363,14 +356,6 @@ a huge data file in their home directory. Large data files should be shared in
 a place where everyone can get to them (and also write-protected to prevent
 them from being changed).
 
-Another reason to isolate data is that it shouldn't be indexed by the operating
-system. Most modern operating systems index the contents of files to enable you
-to search stuff contained in them. Honestly, do we really want to be able to
-search for text strings in the human genome? No. So the sane thing to do is to
-isolate the `DATA` directory and prevent the OS from indexing it. We won't
-actually be analyzing large amounts of data, but you should get into good data
-management habits.
-
 Let's make the `DATA` directory now.
 
 ```
@@ -379,8 +364,8 @@ mkdir ~/DATA
 
 Notice that the `DATA` directory is in all caps. Why is this? Because it's
 thematically different from other directories. All the contents should be
-shared, read-only, and not indexed. For now, we'll keep it in our home
-directory but later you might want to move it.
+shared and read-only. For now, we'll keep it in our home directory but later
+you might want to move it.
 
 
 ### File-naming Conventions ###
@@ -441,10 +426,10 @@ button to create a new repo. Name this "homework" because this is where you'll
 be submitting your homework. Make it **public**. Does this mean that students
 can see each others' homework? Yes. You're actually encouraged to work with
 other students in this class. Click the boxes to initialize with a README, add
-a .gitignore and add a license. Scroll through the .gitignore options until you
-get to "Python". Choose whichever license you like. I generally use MIT. Click
-the "Create Repository" and you will be transported to your new mostly empty
-repo.
+a .gitignore, and add a license. Scroll through the .gitignore options until
+you get to "Python". Choose whichever license you like. I generally use MIT.
+Click the "Create Repository" and you will be transported to your new mostly
+empty repo.
 
 ### Personal Access Token ###
 
@@ -547,7 +532,7 @@ git push
 ```
 
 The `add` argument tells `git` we intend to put this file in our repo. Not all
-files in your current directly need to go into your repo. For example, you may
+files in your current directory need to go into your repo. For example, you may
 have some temporary program output you were using for debugging.
 
 The `commit` tells `git` we are done with edits, and the `-m` provides a short
@@ -557,7 +542,7 @@ formatting bug". If you have edited multiple files, they will all get the same
 commit message. If you want different commit tags for different files, `add`
 and `commit` them separately.
 
-Once you're done with all the `add` and `commit` work `push` tells git to
+Once you're done with all the `add` and `commit` work, `git push` tells git to
 upload all of the modified files back to GitHub.
 
 When git prompts you for your username, use your GitHub username. For the
