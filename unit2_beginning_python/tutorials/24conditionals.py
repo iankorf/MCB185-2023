@@ -57,7 +57,7 @@ for i in range(len(dna)):
 
 # Let's print all the positions with a CG di-nucleotide
 # Note the use of 'and'
-# Why is there a -1 in the range() function?
+# Note the -1 in the range() function to prevent running over the end
 
 for i in range(len(dna) -1):
 	if dna[i] == 'C' and dna[i+1] == 'G':
@@ -68,7 +68,26 @@ for i in range(len(dna) -1):
 
 for nt in dna:
 	if not nt == 'G':
-		print(nt)
+		print(nt, end='')
+print()
+
+## You could also use the != operator
+
+for nt in dna:
+	if nt != 'G':
+		print(nt, end='')
+print()
+
+# There is also greater-than-or-equal and less-than-or-equal operators
+# These can be used to comapre characters as well as numbers
+
+for nt in dna:
+	if nt >= 'F': print(nt, end='')
+print()
+
+for nt in dna:
+	if nt <= 'F': print(nt, end='')
+print()
 
 # The 'while' loop mixes a conditional with a loop
 # Note the use of the 'break' statement to prevent this from going forever
@@ -86,5 +105,5 @@ for i in range(10):
 	if i < 8: continue # this skips ahead to next iteration
 	print('skipped until', i)
 
-
 """
+

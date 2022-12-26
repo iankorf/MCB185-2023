@@ -45,7 +45,7 @@ print(i)
 
 import math # import statements normally go at the top of a program
 
-hyp = math.sqrt(a**2 + b**2) # Pythagoras
+hyp = math.sqrt(a**2 + b**2) # Pythagoras, but also (a**2 + b**2)**0.5 works
 print(hyp)
 
 print(math.log2(0.25))
@@ -56,7 +56,7 @@ print(math.inf, math.nan)
 
 # Stirling's approximation of the log factorial
 # Notice the use of \ to split a long line
-# Try experimenting with n, including non-integer values
+# Try experimenting with n, including non-integer values (cool!)
 
 n = 5
 lnfac = 0.5 * math.log(math.tau) + (n + 0.5) * math.log(n) \

@@ -1,15 +1,20 @@
 # 25loopcond.py
 
-import random
-
 # Move the triple quotes downward to uncover each segment of code
 
 """
 
-# You can put loops inside of loops
-# Make sure you have your indentation correct
+# The real power of programming comes from nesting loops and conditionals
 
 dna = 'ATAGCGAATATCTCTCATGAGAGGGAA'
+
+for i in range(len(dna)):
+	codon = dna[i:i+3]
+	if codon == 'ATG':
+		print(f'found potential start codon at {i+1}')
+
+# Loops can be inside loops
+
 for frame in range(3):
 	print(f'reading frame {frame+1}')
 	for position in range(frame, len(dna) -2, 3):
@@ -18,17 +23,16 @@ for frame in range(3):
 	print()
 
 # You can nest loops and condtionals
-# Again, pay attention to your indentation
 
 for frame in range(3):
 	for position in range(frame, len(dna) -2, 3):
 		codon = dna[position:position+3]
 		if codon == 'ATG':
-			print(f'start codon at {position} in frame {frame+1}')
+			print(f'start codon at {position+1} in frame {frame+1}')
 		elif codon == 'TAA' or codon == 'TAG' or codon == 'TGA':
-			print(f'stop codon at {position} in frame {frame+1}')
+			print(f'stop codon at {position+1} in frame {frame+1}')
 
-# Here's a simple scoring matrix you might use for alignment
+# Printing out a simple +1/-1 nucleotide scoring matrix
 
 nts = 'ACGT'
 print('\t', end='')

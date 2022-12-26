@@ -60,14 +60,4 @@ for c in s:
 	i += 1
 print('- end of loop 7')
 
-# Just some fun with loops and math!
-# The following code estimates e with varying levels of precision
-# Of course, you can always get e from math.e
-
-precision = 10
-e = 0
-for n in range(0, precision):
-	e += 1/math.factorial(n)
-	print(e, math.e - e)
-
 """
