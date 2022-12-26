@@ -3,9 +3,11 @@ Unit 3: Methods, Tuples, and Lists
 
 ## Learning Objectives ##
 
-+ Methods - learn about method syntax
++ Methods - function(thing) vs. thing.method() syntax
 + Tuples - immutable containers
 + Lists - mutable containers
++ sys.argv - get values from the command line
++ errors - deal with user error
 
 ------------------------------------------------------------------------------
 
@@ -13,20 +15,9 @@ Unit 3: Methods, Tuples, and Lists
 
 Each of the files in the Tutorials directory is a Python program most of the
 code contained in a giant triple-quoted string. To "play" the tutorial, move
-the triple quotes farther down the file and run the program again. Each time
-you move the quotes, you will see new output. People who just read the tutorial
-don't learn the information very well. Experiment by changing some of the lines
-and see what happens.
+the triple quotes farther down the file and run the program again.
 
 ## Programs ##
 
 The files in the Programs directory are your homework problems. Copy them to
 your homework repo and edit them there.
-
-## Homework ##
-
-+ stats
-+ entropy
-+ xcoverage
-+ birthday
-
