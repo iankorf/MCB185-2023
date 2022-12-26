@@ -27,7 +27,7 @@ for i in range(10):
 	line = fp.readline()
 	print(i, line, end='')
 
-# If you want to read all of the lines in a file, use readlines()
+# If you want to itreate through all of the lines in a file, use readlines()
 
 for line in fp.readlines():
 	print('>', line, end='')
