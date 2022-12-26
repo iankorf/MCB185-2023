@@ -2,30 +2,13 @@
 
 # Make a program that reports the amino acid composition in a file of proteins
 
+# Note: you are not allowed to import any libraries
+
 # Hint: gzip.open(sys.argv[1], 'rt')
 
-# Idea 1: use 20 named variables
-# Idea 2: use a list
+# Variation: use 20 named variables
+# Variation: use a list
 
-import sys
-import gzip
-
-
-aa = 'ACDEFGHIKLMNPQRSTVWY'
-count = [0] * 20
-
-total = 0
-with gzip.open(sys.argv[1], 'rt') as fp:
-	for line in fp.readlines():
-		if line.startswith('>'): continue
-		for c in line:
-			idx = aa.find(c)
-			if idx == -1: continue
-			count[idx] += 1
-			total += 1
-
-for c, n in zip(aa, count):
-	print(c, n, n/total)
 
 """
 python3 40aacomp.py ~/DATA/E.coli/GCF_000005845.2_ASM584v2_protein.faa.gz

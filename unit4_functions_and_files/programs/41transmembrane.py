@@ -1,31 +1,30 @@
 # 41transmembrane.py
 
-import sys
+# Write a program that predicts which proteins in a proteome are transmembrane
 
-# Write a program that predicts if a protein is trans-membrane
+# Transmembrane proteins are characterized by having
+#    1. a hydrophobic signal peptide near the N-terminus
+#    2. other hydrophobic regions to cross the plasma membrane
 
-# Trans-membrane proteins have the following properties
-#	Signal peptide: https://en.wikipedia.org/wiki/Signal_peptide
-#	Hydrophobic regions(s): https://en.wikipedia.org/wiki/Transmembrane_protein
-#	No prolines in hydrophobic regions (alpha helix)
+# Both the signal peptide and the transmembrane domains are alpha-helices
+# Therefore, they do not contain Proline
 
-# Hydrophobicity is measued via Kyte-Dolittle
+# Hydrophobicity can be measured by Kyte-Dolittle
 #	https://en.wikipedia.org/wiki/Hydrophilicity_plot
 
 # For our purposes:
 #	Signal peptide is 8 aa long, KD > 2.5, first 30 aa
 #	Hydrophobic region is 11 aa long, KD > 2.0, after 30 aa
 
-# Hints:
-#   Create a function for KD calculation
-#   Create a function for amphipathic alpha-helix
+# Hint: use the fasta reader in mcb185.py
+# Hint: create a function for KD calculation
+# Hint: create a function for hydrophobic alpha-helix
+# Hint: use the same function for both signal peptide and transmembrane
 
 """
-python3 40transmembrane.py ../Data/at_prots.fa
-AT1G75120.1
-AT1G10950.1
-AT1G75110.1
-AT1G74790.1
-AT1G12660.1
-AT1G75130.1
+python3 41transmembrane.py ~/DATA/E.coli/GCF_000005845.2_ASM584v2_protein.faa.gz
+
+
+
+
 """
