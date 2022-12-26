@@ -9,8 +9,9 @@
 # Input values from the command line
 
 # Hint: make the problem smaller, so it's easier to visualize and debug
-
 # Hint: if you don't understand the context of the problem, ask for help
+# Hint: if you are undersampling the ends, do something about it
+
 
 
 """
