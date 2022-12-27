@@ -4,12 +4,15 @@ Unit 4: Advanced Linux
 ## Learning Objectives ##
 
 + Make your libraries work anywhere
-+ Make your programs into executables
-+ IPC
++ Make your programs into executables that work anywhere
++ Monitor resources
++ Control jobs
++ IPC, exit codes, memory usage, top
++ Reading from stdin
++ Reading from other programs' stdout
+
 
 ------------------------------------------------------------------------------
-
-There is no `programs` or `tutorials` directory in this unit?
 
 ## Library Path ##
 
@@ -316,3 +319,44 @@ This appends your `Code/bin` to the end of whatever was already in `PATH`. Open
 a new terminal and now you can `dust` from anywhere you like.
 
 ------------------------------------------------------------------------------
+
+## Monitoring Resources ##
+
+Bioinformatics data can be huge, so it's important to know how to monitor how
+much of the various computer resources you're using (disk, CPU, RAM, network).
+
+To see how much space you have left on you hard-disk (even though it's an SSD)
+use the "disk free" command `df`. With the `-h` option, you will get human
+readable sizes (like 5G).
+
+```
+df -h
+```
+
+To get the sizes of files and directories, use `du -h`. This can descend very
+deeply into directories, so it's often useful to pass `--max-depth` so you
+don't see a thousand files.
+
+```
+du -h --max-depth ~/Code
+```
+
+The Linux equivalent of "Task Manager" or "System Monitor" is `top` or `htop`.
+These show which processes are currently running on your computer and what
+resources they are using. To get out of either of these, hit "q".
+
+
+du
+cpu
+mem
+
+## Control Jobs ##
+
+
+## Python ##
+
+Now go to `tutorials` for
+
++ reading from stdin
++ reading other programs' stdout
++ exit codes
