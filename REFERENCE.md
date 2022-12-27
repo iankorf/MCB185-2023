@@ -30,6 +30,7 @@ These are all of Unix commands we use in the course.
 | `chmod`   | `chmod 644 f` | change permissions for file f in octal format
 |           | `chmod u+x f` | change permissions for f the hard way
 | `cp`      | `cp f1 f2`    | make a copy of file f1 called f2
+| `cut`     | `cut -f 1 f`  | cut field 1 from file f
 | `df`      | `df -h .`     | display free space on file system
 | `diff`    | `diff f1 f2`  | shows differese between files f1 and f2
 | `du`      | `du -h ~`     | display the sizes of your files
@@ -44,6 +45,7 @@ These are all of Unix commands we use in the course.
 | `head`    | `head f`      | display the first 10 lines of file f
 |           | `head -2 f`   | display the first 2 lines of file f
 | `history` | `history`     | display the recent commands you typed
+| `htop`    | `htop`        | monitor resources, a variant of top
 | `less`    | `less f`      | page through a file
 | `ln`      | `ln -s f1 f2` | make f2 an alias of f1
 | `ls`      | `ls`          | list current directory
@@ -296,3 +298,13 @@ os.getenv()          get environment variable contents
 mcb185.read_fasta()  iterate through a fasta file
 ```
 
+
+## Unit 5: Advanced Linux ##
+
+Python concepts in an otherwise Unix-themed lesson
+
+```
+import argparse
+file.stdin
+subprocess.run()
+```

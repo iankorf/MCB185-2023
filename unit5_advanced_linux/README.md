@@ -6,10 +6,13 @@ Unit 4: Advanced Linux
 + Make your libraries work anywhere
 + Make your programs into executables that work anywhere
 + Monitor resources
-+ Control jobs
+
+
+
 + IPC, exit codes, memory usage, top
++ Running other programs
 + Reading from stdin
-+ Reading from other programs' stdout
++ argparse
 
 
 ------------------------------------------------------------------------------
@@ -345,18 +348,165 @@ The Linux equivalent of "Task Manager" or "System Monitor" is `top` or `htop`.
 These show which processes are currently running on your computer and what
 resources they are using. To get out of either of these, hit "q".
 
+```
+top
+```
 
-du
-cpu
-mem
+To get information about your physical computer, the files `/proc/cpuinfo` and 
+`/proc/meminfo` are available in Linux (not Mac).
 
-## Control Jobs ##
+```
+less /proc/cpuinfo
+less /proc/meminfo
+```
 
+If you want to estimate how long a job is going to take, it's often useful to 
+`time` a subset of the problem. For example, if you were going to align all 
+human genes to all drosophila genes, you might time how long it takes to align 
+100 genes and then multiply that by 200 to estimate the whole time (given that 
+humans have around 20,000 genes). `time` is also useful when benchmarking 
+different algorithms to figure out how much faster one is than another.
+
+```
+time zcat ~/DATA/E.coli/*.gz | wc
+```
+
+This shows the real, wallclock time, as well as user and system time. The 
+amount of CPU used is the user + system time. The real time reported can be 
+longer if the computer is waiting around (e.g. for network). For programs that 
+use multiple CPUs, the user and system times may be much longer than real time.
+
+------------------------------------------------------------------------------
+
+
+## Text Processing ##
+
+Python is a powerful tool for text processing, but Unix has some built-in tools 
+that are so convenient, you'll sometimes use them instead. These include:
+
++ cut - for cutting out columns of a table
++ grep - for finding patterns
++ sort - for sorting
+
+Let's start by making some soft links to keep the command lines a bit shorter.
+
+```
+ln -s ~/DATA/E.coli/GCF_000005845.2_ASM584v2_protein.faa.gz prots.gz
+ln -s ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.gff.gz gff.gz
+```
+
+To print out all the definition lines, we can `grep` for the greater-than sign.
+
+```
+zcat prots.gz | grep ">"
+```
+
+To count how many proteins there are, we pipe to `wc`.
+
+```
+zcat prots.gz | grep ">" | wc
+```
+
+Let's now look at all of the lines that aren't definition lines. This is simply 
+passing the `-v` option to `grep`.
+
+```
+zcat prots.gz | grep -v ">" | less
+```
+
+The `cut` program allows us to get columns of data. The usual delimiter is tab, 
+but we can change that to anything. Let's use a space as the delimiter and grab 
+the database identifiers from the fasta file definition lines. The id is always 
+the first part of the definition line, so "field 1" or `-f 1`.
+
+```
+zcat prots.gz | grep ">" | cut -d " " -f 1
+```
+
+Take a look at the gff file.
+
+```
+zless gff.gz
+```
+
+
+There's a lot of stuff in there. The lines that begin with # are comments. All 
+of the other lines contain tab-delimited information about the genes and other 
+features. The first 6 columns of GFF are the following:
+
+1. sequence name
+2. source
+3. type
+4. begin
+5. end
+6. strand
+
+Let's ignore the comment lines and then pull out all of the sequence names.
+
+```
+zcat gff.gz | grep -v "^#"  | cut -f 1
+```
+
+It looks like all of the values are the same. That makes sense if the genome is 
+described by one circular chromosome and none of the plasmids. To be sure, 
+let's send the output to `sort -u`, which will make a unique list.
+
+```
+zcat gff.gz | grep -v "^#"  | cut -f 1 | sort -u
+```
+
+In fact, there is only one chromosome. How many sources and types are there? 
+This is as simple as changing the argument to `cut`.
+
+```
+zcat gff.gz | grep -v "^#"  | cut -f 2 | sort -u
+zcat gff.gz | grep -v "^#"  | cut -f 3 | sort -u
+```
+
+The source of all features is "RefSeq", however there are many types of 
+features including CDS, exon, gene, pseudogene, etc. If you wanted to count the 
+number of "gene" features, you might be tempted to grep for gene. However, this 
+doesn't really work because the word "gene" occurs in more places that just 
+field 3.
+
+```
+zcat gff.gz | grep -v "^#"  | grep gene | wc
+```
+
+No, E. coli doesn't contain 9477 genes. There are are a number of ways to get 
+the correct number but we will leave this as a cautionary note and move on.
+
+------------------------------------------------------------------------------
+
+## What's Missing ##
+
+There's a lot more we could discuss in an Advanced Linux section. Here are some 
+topics we won't be covering, but you will run into at some point in the future.
+
++ Clusters: nice, nohup, screen, sga, slurm
++ File managemant: curl, find, rsync, scp, sftp, wget
++ Job control: bg, fg, jobs, ps
++ Pipelines: make, snakemake, xargs
++ Scripting quickly: awk, perl, sed
++ Signals and exit codes
+
+------------------------------------------------------------------------------
 
 ## Python ##
 
-Now go to `tutorials` for
+The `dust` program we made previously now works like a typical Unix command, 
+but it doesn't really look like one. All programs should have _usage 
+statements_ that tell users how to interact with the program. Usage statements 
+are a simple form of essential documentation. Usage statements are usually 
+displayed if you give a `-h` or `--help` on the command line.
 
-+ reading from stdin
-+ reading other programs' stdout
-+ exit codes
+```
+gzip -h
+wc --help
+```
+
+Check out the `demos` directory to see some examples of how to make proper 
+usage statements in Python. You will also see how to read from stdin and how
+to read the output from other programs.
+
+There is also homework in the `programs` directory as usual.
