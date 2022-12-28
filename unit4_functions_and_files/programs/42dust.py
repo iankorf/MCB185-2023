@@ -7,6 +7,11 @@
 
 # Output should be a fasta file with sequence wrapped at 60 characters
 
+# Hint: use the mcb185 library
+# Hint: make up some fake sequences for testing
+
+# Note: don't worry about "centering" the entropy on the window (yet)
+
 
 """
 python3 42dust.py ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz 11 1.4

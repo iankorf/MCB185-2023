@@ -16,7 +16,7 @@
 #	Signal peptide is 8 aa long, KD > 2.5, first 30 aa
 #	Hydrophobic region is 11 aa long, KD > 2.0, after 30 aa
 
-# Hint: copy the fasta reader in mcb185.py to your homework repo
+# Hint: copy mcb185.py to your homework repo and import that
 # Hint: create a function for KD calculation
 # Hint: create a function for hydrophobic alpha-helix
 # Hint: use the same function for both signal peptide and transmembrane
