@@ -12,6 +12,7 @@
 # Hint: if you don't understand the context of the problem, ask for help
 # Hint: if you are undersampling the ends, do something about it
 
+# Note: you will not get exactly the same results as the command line below
 
 
 """
