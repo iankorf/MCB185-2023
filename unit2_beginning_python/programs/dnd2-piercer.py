@@ -6,7 +6,7 @@
 # with an initial roll of 1 damage. But what about higher rolls? Your friend
 # Jorg re-rolls 1-5. But Gastin says that's too high and re-rolls 1-3.
 # What is the optimal strategy? Simulate it.
-# Make a table showing reroll threshold and average damage.
+# Make a table showing reroll threshold (use <=) and average damage.
 
 
 """

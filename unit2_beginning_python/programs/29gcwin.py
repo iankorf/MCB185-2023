@@ -5,7 +5,7 @@
 # Output with 4 significant figures
 # Try this with nested loops first
 
-# Also try doing it without nested loops
+# Variation: try programming this without nested loops
 # Instead, count only the first window
 # Then 'move' the window by adding 1 letter on one side
 # And subtracting 1 letter from the other side
