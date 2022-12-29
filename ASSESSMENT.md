@@ -60,61 +60,6 @@ Give yourself 1 point for each molecular biology concept you can explain.
 + translocation
 + vector
 
-## Programming ##
-
-Give yourself 1 point for each programming concept you can explain.
-
-+ abstraction
-+ assertion
-+ binary notation
-+ binary search
-+ Boolean operators
-+ buffer
-+ casting
-+ closure
-+ compiler
-+ const
-+ doc-strings
-+ dynamic linkage
-+ dynamic typing
-+ filo
-+ floating point limits
-+ function protoype
-+ garbage collection
-+ git
-+ hash function
-+ heap
-+ hexadecimal notation
-+ in-lining
-+ inner join
-+ isa
-+ integer types
-+ library
-+ make
-+ malloc
-+ man page
-+ namespace
-+ parent class
-+ pointer arithmetic
-+ pragma
-+ private
-+ recursion
-+ reference
-+ reference count
-+ return value
-+ shared object file
-+ stack
-+ static
-+ struct
-+ swap memory
-+ thread-safe
-+ typedef
-+ unit test
-+ unsigned
-+ usage statement
-+ variable interpolation
-+ vector
-
 ## Bioinformatics ##
 
 The following terms are a mixture of technologies that are often associated
@@ -171,3 +116,57 @@ with bioinformatics. Give yourself 1 point for each item you can explain.
 + YAML
 + Z-score
 
+## Programming ##
+
+Give yourself 1 point for each programming concept you can explain.
+
++ abstraction
++ assertion
++ binary notation
++ binary search
++ Boolean operators
++ buffer
++ casting
++ closure
++ compiler
++ const
++ doc-strings
++ dynamic linkage
++ dynamic typing
++ filo
++ floating point limits
++ function protoype
++ garbage collection
++ git
++ hash function
++ heap
++ hexadecimal notation
++ in-lining
++ inner join
++ isa
++ integer types
++ library
++ make
++ malloc
++ man page
++ namespace
++ parent class
++ pointer arithmetic
++ pragma
++ private
++ recursion
++ reference
++ reference count
++ return value
++ shared object file
++ stack
++ static
++ struct
++ swap memory
++ thread-safe
++ typedef
++ unit test
++ unsigned
++ usage statement
++ variable interpolation
++ vector

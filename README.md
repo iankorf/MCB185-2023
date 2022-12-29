@@ -17,6 +17,16 @@ end at the same place. Your grade will be determined more by your journey than
 your destination. How exactly does that work? Please focus on the journey, not
 the destination.
 
+To give the instructors a better idea about the make-up of the class, there is
+an `ASSESSMENTS.md` file with a bunch of questions in 3 categories: molecular
+biology, programming, and bioinformatics. Since this is a class designed for
+biologists, you should have a decent score in molecular biology, but if you
+don't you'll just have to look some things up. If you score high in
+bioinformatics, that's great, but not necessary. Scoring high in the
+programming category may mean the class will be too easy for you. If this is
+the case, you can move faster through the material and do a more interesting
+final project.
+
 ## Programming Progression ##
 
 Your development as a programmer will not be linear. Some concepts will be easy
