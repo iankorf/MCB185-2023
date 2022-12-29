@@ -188,6 +188,7 @@ Random library
 random.randint(a, b)  generates a random number from a to b (inclusive)
 random.random()       generates a random number 0 <= X < 1
 random.choice()       chooses a random value from a container
+random.seed(a)        sets the random seed to integer a
 ```
 
 Loops
@@ -226,6 +227,7 @@ str.endswith()      True if ends with substring
 List operators
 
 ```
+[]         creates an empty list
 +          concatenates lists
 *          initializes all elements of a list
 in         checks for elements in a list (or other containers)
@@ -308,3 +310,14 @@ import argparse
 file.stdin
 subprocess.run()
 ```
+
+
+## Unit 6: Dictionaries and Regex ##
+
+
+{}
+dict.keys()
+dict.values()
+dict.items()
+del
+in
