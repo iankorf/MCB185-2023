@@ -15,50 +15,6 @@
 
 # Note: your genes should be similar to those in the real genome
 
-import argparse
-import mcb185
-
-parser = argparse.ArgumentParser(
-	description='Count k-mers in a fasta file')
-parser.add_argument('fasta', metavar='<fasta file>', type=str,
-	help='path to file')
-parser.add_argument('--minorf', required=False, type=int, default=300,
-	metavar='<int>', help='minimum ORF length in nt [%(default)i]')
-arg = parser.parse_args()
-
-for name, seq in mcb185.read_fasta(arg.fasta):
-	f = name.split()
-	seqid = f[0]
-
-	stop_used = {}
-	for i in range(len(seq)):
-		if seq[i:i+3] == 'ATG':
-			for j in range(i+3, len(seq), 3):
-				codon = seq[j:j+3]
-				if codon == 'TAA' or codon == 'TGA' or codon == 'TAG':
-					if j in stop_used: break
-					stop_used[j] = True
-					length = j - i + 1
-					if length > arg.minorf:
-						pep = mcb185.translate(seq[i:i+30])
-						print(seqid, i+1, j+3, '+', pep)
-					break
-
-	stop_used = {}
-	anti = mcb185.reverse_complement(seq)
-	for i in range(len(anti)):
-		if anti[i:i+3] == 'ATG':
-			for j in range(i+3, len(anti), 3):
-				codon = anti[j:j+3]
-				if codon == 'TAA' or codon == 'TGA' or codon == 'TAG':
-					if j in stop_used: break
-					stop_used[j] = True
-					length = j - i + 1
-					if length > arg.minorf:
-						pep = mcb185.translate(anti[i:i+30])
-						print(seqid, len(anti)-j-2, len(anti)-i, '-', pep)
-					break
-
 
 """
 python3 62orfs.py ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz
