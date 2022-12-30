@@ -100,7 +100,7 @@ get all the way to the end? FFS journey, not destination.
 + Unit 4: Functions and Files
 + Unit 5: Advanced Linux
 + Unit 6: Dictionaries and Regex
-+ Unit 7: Data Structures
++ Unit 7: Complex Data Structures
 + Unit 8: Final Projects
 
 ## Getting Good ##
