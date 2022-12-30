@@ -338,6 +338,8 @@ re.findall()        get a list of matches
 
 ## Unit 7: Complex Data Structures ##
 
+JSON
+
 ```
 import json
 json.load()
@@ -348,6 +350,7 @@ json.dump()
 ## Unit 8: Final Projects ##
 
 Various final projects ideas of varying difficutly.
+
 
 ## Unit 9: Unfinished Tales ##
 

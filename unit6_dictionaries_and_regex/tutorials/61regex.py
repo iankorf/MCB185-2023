@@ -67,4 +67,19 @@ for match in re.finditer(HinF1, seq):
 
 print(re.findall(HinF1, seq))
 
+# Sometimes you want to terminate a pattern when first found
+# The intent here is to capture gene-b0001
+
+data = 'ID=gene-b0001;Dbxref=ASAP:ABE-0000006,ECOCYC:EG11277,GeneID:944742;Name=thrL;gbkey=Gene;gene=thrL;gene_biotype=protein_coding;gene_synonym=ECK0001;locus_tag=b0001'
+
+match = re.search('ID=(\S+);', data)
+print(match.group(1))
+
+# Unfortunately, the pattern \S+ doesn't terminate on the first semi-colon
+# To change that behavior, we need a non-greedy match indicator
+# This is the question mark symbol
+
+match = re.search('ID=(\S+?);', data)
+print(match.group(1))
+
 """
