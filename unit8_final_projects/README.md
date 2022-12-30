@@ -15,6 +15,7 @@ from low to high.
 | mRNA2protein   | 1          | find the longest ORF in an mRNA
 | pwm_draw       | 2          | draw PWMs as SVGs given FASTA
 | old2new        | 1          | convert old sequence data to fastq
+| overlaps       | 2          | find the overlap of exons and SNPs, for example
 | smith-waterman | 3          | the classic local alignment algorithm
 | uncigar        | 2          | convert CIGAR format to pairwise alignment
 | viterbi        | 3          | the classic HMM decoder
@@ -63,6 +64,17 @@ longest ORF as a protein. The program should optionally report 3-frame or
 
 + Download an mRNA dataset (get help from instructor if needed)
 + Compare your translations to the _official_ translations
+
+## overlaps ##
+
+Genomic features like genes, exons, introns, repeats, SNPs, ChIP-seq peaks,
+etc. are generally represented by chrom, begin, end, and sometimes strand.
+Given a file of exons and SNPs, for example, find out which exons have SNPs in
+them.
+
++ Make up your own data for testing purposes
++ Get real data from an instructor if needed
++ Output a table of exons and their SNPs
 
 ## pwm_draw ##
 

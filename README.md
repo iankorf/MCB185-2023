@@ -102,6 +102,7 @@ get all the way to the end? FFS journey, not destination.
 + Unit 6: Dictionaries and Regex
 + Unit 7: Complex Data Structures
 + Unit 8: Final Projects
++ Unit 9: Unfinished Tales
 
 ## Getting Good ##
 
