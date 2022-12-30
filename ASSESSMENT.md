@@ -72,6 +72,7 @@ with bioinformatics. Give yourself 1 point for each item you can explain.
 + BLOSUM matrix
 + bowtie
 + containerization
++ checksum
 + dynamic programming
 + expectation maximization
 + FASTA
@@ -93,7 +94,6 @@ with bioinformatics. Give yourself 1 point for each item you can explain.
 + multiple alignment
 + Needleman-Wunsch
 + nucleotide ambiguity codes
-+ pairwise alignment
 + PAM matrix
 + pandas
 + peak-calling

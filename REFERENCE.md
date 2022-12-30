@@ -303,7 +303,7 @@ mcb185.read_fasta()  iterate through a fasta file
 
 ## Unit 5: Advanced Linux ##
 
-Python concepts in an otherwise Unix-themed lesson
+New Python concepts in an otherwise Unix-themed lesson
 
 ```
 import argparse
@@ -314,6 +314,7 @@ subprocess.run()
 
 ## Unit 6: Dictionaries and Regex ##
 
+Dictionaries
 
 {}
 dict.keys()
@@ -321,3 +322,14 @@ dict.values()
 dict.items()
 del
 in
+
+Regular expressions
+
+```
+import re         this is how it begins
+re.search()       the usual way to look for patterns
+match.group()     returning strings from matches
+re.finditer()     iterate through matches
+re.findall()      get a list of matches
+```
+
