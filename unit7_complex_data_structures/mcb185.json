@@ -1,0 +1,10 @@
+{
+	"Class": "MCB185",
+	"Title": "Programming for Biologists",
+	"Instructor": "Ian Korf",
+	"Students": [
+		{"Name": "Sue D. Monas", "Year": 3},
+		{"Name": "Mike R. Cocus", "Year": 4},
+		{"Name": "Earl N. Meyer", "Year": 2}
+	]
+}
