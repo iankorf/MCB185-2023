@@ -1,7 +1,7 @@
 Unit 2: Beginning Python
 ========================
 
-## Learning Objectives ##
+## Outline ##
 
 + Variables - different types for different flavors
 + Math - it works like you expect, mostly

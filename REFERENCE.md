@@ -306,9 +306,9 @@ mcb185.read_fasta()  iterate through a fasta file
 New Python concepts in an otherwise Unix-themed lesson
 
 ```
-import argparse
-file.stdin
-subprocess.run()
+import argparse     argparse is the standard CLI library
+file.stdin          the file handle for stdin
+subprocess.run()    run an external program and get its output
 ```
 
 
@@ -316,20 +316,22 @@ subprocess.run()
 
 Dictionaries
 
-{}
-dict.keys()
-dict.values()
-dict.items()
-del
-in
+```
+{}                  the dictionary constructor
+dict.keys()         get only the keys of a dictionary
+dict.values()       get only the values of a dictionary
+dict.items()        iterate through a tuple of (key, value)
+del                 remove a dictionary key (and value)
+in                  check if a key is in a dictionary
+```
 
 Regular expressions
 
 ```
-import re         this is how it begins
-re.search()       the usual way to look for patterns
-match.group()     returning strings from matches
-re.finditer()     iterate through matches
-re.findall()      get a list of matches
+import re           this is how it begins
+re.search()         the usual way to look for patterns
+match.group()       returning strings from matches
+re.finditer()       iterate through matches
+re.findall()        get a list of matches
 ```
 

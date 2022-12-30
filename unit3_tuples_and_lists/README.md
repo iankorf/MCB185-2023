@@ -1,7 +1,7 @@
 Unit 3: Methods, Tuples, and Lists
 ==================================
 
-## Learning Objectives ##
+## Outline ##
 
 + Methods - function(thing) vs. thing.method() syntax
 + Tuples - immutable containers

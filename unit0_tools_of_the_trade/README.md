@@ -1,7 +1,7 @@
 Unit 0: Tools of the Trade
 ==========================
 
-## Learning Objectives ##
+## Outline ##
 
 + Install Linux
 + Explore the Unix CLI with the terminal and shell

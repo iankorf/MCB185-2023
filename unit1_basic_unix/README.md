@@ -1,7 +1,7 @@
 Unit 1: Basic Unix
 ==================
 
-## Learning Objectives ##
+## Outline ##
 
 + Environment variables
 + Viewing files

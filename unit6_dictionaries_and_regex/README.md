@@ -1,9 +1,13 @@
 Unit 6: Dictionaries & Regex
 ============================
 
-## Learning Objectives ##
+## Outline ##
 
-+
++ Learn how to use dictionaries
+	+ For quick look-ups
+	+ To count categories
++ Enter the wild world of regular expressions
++ Get plenty of practice with some challenging homework problems
 
 ------------------------------------------------------------------------------
 

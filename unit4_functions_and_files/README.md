@@ -1,13 +1,13 @@
 Unit 4: Functions & Files
 =========================
 
-## Learning Objectives ##
+## Outline ##
 
-+ create your own functions
-+ open files for reading and writing
-+ use generator functions to save memory
-+ use named parameters with default values
-+ create your own function libraries
++ Create your own functions
++ Open files for reading and writing
++ Use generator functions to save memory
++ Use named parameters with default values
++ Create your own function libraries
 
 ------------------------------------------------------------------------------
 
