@@ -8,6 +8,7 @@ for the aspiring bioinformatics programmer.
 + Unit tests
 + Functional tests
 + Software distribution
++ Object-oriented programming
 
 ## Doc Strings ##
 
@@ -57,3 +58,11 @@ distribute software via package manager like Conda. The Python way to
 distribute programs and libraries is PyPi, the Python Package Index.
 
 This is a much more complex topic than you might imagine.
+
+## Object-Oriented Programming ##
+
+We used objects at various times during the course, but didn't make our own
+classes and objects. It's not necessary, but the syntactic sugar is nice
+for your users. The Python way is a little ugly, but worth discussing...
+some day.
+
