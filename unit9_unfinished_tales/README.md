@@ -62,7 +62,7 @@ This is a much more complex topic than you might imagine.
 ## Object-Oriented Programming ##
 
 We used objects at various times during the course, but didn't make our own
-classes and objects. It's not necessary, but the syntactic sugars is nice
+classes and objects. It's not necessary, but the syntactic sugar is nice
 for your users. The Python way is a little ugly, but worth discussing...
 some day.
 
