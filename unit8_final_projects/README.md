@@ -1,7 +1,6 @@
 Unit 8: Final Projects
 ======================
 
-
 Here are some possible final projects. Feel free to propose something else. You
 are encouraged to work in pairs. Each project below is ranked by difficulty
 from low to high.
@@ -9,6 +8,8 @@ from low to high.
 
 | Name           | Difficulty | Short Description
 |:---------------|:-----------|:---------------------------------------------
+| blosum         | 2          | re-create blosum scoring matrices
+| colorname      | 1          | classify the color spectrum
 | elvish         | 2          | create plausible elvish (or other languages)
 | hgt_detector   | 1          | detect horizontal gene transfer
 | imeter         | 1          | build the IMEter from scratch
@@ -19,6 +20,27 @@ from low to high.
 | smith-waterman | 3          | the classic local alignment algorithm
 | uncigar        | 2          | convert CIGAR format to pairwise alignment
 | viterbi        | 3          | the classic HMM decoder
+
+## blosum ##
+
+Scoring matrices, like BLOSUM and PAM, are created from multiple alignments.
+You can create your own scoring matrices. If you want to try something a little
+different, you could make a nucleotide scoring matrix rather than using
+something like +1 match, -1 mismatch.
+
++ Get some multiple alignment data (e.g. from PFAM)
++ Count observed changes
++ Create all of the Sij values from log(obs/exp)
+
+## colorname ##
+
+The usual representation for colors has 24 bits: 8 bits for each of red, green,
+and blue. This creates 16.7 million colors. In practice, we use only a handful
+of color names. Create a program that converts any of the 16.7 millon colors to
+a list of your favorites by choosing closest matching spectrum.
+
++ Get the hexcodes for your favorite colors
++ Minimize the distance between an input color and your colors
 
 ## elvish ##
 

@@ -7,6 +7,7 @@ Unit 6: Dictionaries & Regex
 	+ For quick look-ups
 	+ To count categories
 + Enter the wild world of regular expressions
++ Use the time.time() function for simple benchmarking
 + Get plenty of practice with some challenging homework problems
 
 ------------------------------------------------------------------------------
