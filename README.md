@@ -3,10 +3,10 @@ MCB185 (2023 version)
 
 ## Intent ##
 
-A lot of the software written by biologists is so poorly written, documented,
-and tested, that it is frankly embarrassing. The reason for this is that nobody
-told them there was a right way to do things. In this course, you will learn
-how to write software that you won't be ashamed to distribute.
+In this course, you will learn computer programming in a biological context.
+This is not so much a science course as a software engineering course with a
+molecular biology theme. Along with programming, you will be introduced to some
+essential bioinformatics skills and standards.
 
 ## Experience, Aptitude, and Grading ##
 
@@ -14,17 +14,17 @@ Some students come to the class with previous programming experience. Some
 students learn programming concepts faster than others. Some students have more
 time to study than others. For these reasons, not every student will start or
 end at the same place. Your grade will be determined more by your journey than
-your destination. How exactly does that work? Please focus on the journey, not
-the destination.
+your destination. How exactly does that work? Let me worry about grading.
+Please focus on the journey, not the destination.
 
-To give the instructors a better idea about the make-up of the class, there is
-an `ASSESSMENTS.md` file with a bunch of questions in 3 categories: molecular
+To give me a better idea about the make-up of the class, there is an
+`ASSESSMENTS.md` file with a bunch of questions in 3 categories: molecular
 biology, programming, and bioinformatics. Since this is a class designed for
 biologists, you should have a decent score in molecular biology, but if you
-don't you'll just have to look some things up. If you score high in
-bioinformatics, that's great, but not necessary. Scoring high in the
-programming category may mean the class will be too easy for you. If this is
-the case, you can move faster through the material and do a more interesting
+don't you'll just have to look some things up or ask a lot of questions. If you
+score high in bioinformatics, that's great, but not necessary. Scoring high in
+the programming category may mean the class will be too easy for you. If this
+is the case, you can move faster through the material and do a more interesting
 final project.
 
 ## Programming Progression ##
@@ -82,7 +82,7 @@ Why is this a rule?
 
 + Helps discourage copy-paste from Internet sources
 + Indentation errors are annoying
-+ Sometimes in life you have to follow arbitrary rules
++ Sometimes in life you have to follow arbitrary rules to succeed
 + The reasons for using spaces are not very convincing
 
 There is a historic convention that source code lines shouldn't be longer than
@@ -114,8 +114,8 @@ re-write of your homework exercises will make you a much better programmer.
 ## Getting Help ##
 
 The instructor and TA monitor the course Discord server, so asking questions in
-the #mcb185 Discord channel will get you the fastest response. You may get
-answers from other students even sooner. Email will also work.
+the #mcb185 channel will get you the fastest response. You may get answers from
+other students even sooner. Email will also work.
 
 ## Rules ##
 
