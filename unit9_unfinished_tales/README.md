@@ -1,8 +1,8 @@
 Unit 9: Unfinished Tales
 ========================
 
-There are several important topics that are not covered, but are very important
-for the aspiring bioinformatics programmer.
+There are several topics that are not covered, but are very important for the
+aspiring bioinformatics programmer.
 
 + Doc strings
 + Unit tests
@@ -18,9 +18,9 @@ should have other forms of documentation such as tutorials. Libraries should
 have application programming interface (API) documentation that describes the
 intent, input, and output of every function.
 
-Doc-strings are big, triple-quoted strings of API documentation that sit right
-next to their function. A doc-string reader then reads all of the doc-strings
-in the library and makes a tidy HTML or PDF book out of it.
+Doc-strings are triple-quoted strings of API documentation that sit right next
+to their function. A doc-string reader then reads all of the doc-strings in the
+library and makes a tidy HTML or PDF book out of it.
 
 There is more than one standard for docs-strings and doc-string processors. At
 some point, this section will have some examples...
@@ -65,4 +65,3 @@ We used objects at various times during the course, but didn't make our own
 classes and objects. It's not necessary, but the syntactic sugar is nice
 for your users. The Python way is a little ugly, but worth discussing...
 some day.
-

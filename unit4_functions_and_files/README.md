@@ -21,4 +21,3 @@ the triple quotes farther down the file and run the program again.
 
 The files in the Programs directory are your homework problems. Copy them to
 your homework repo and edit them there.
-

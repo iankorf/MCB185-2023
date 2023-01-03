@@ -73,8 +73,8 @@ PYTHONPATH=$HOME/Code/lib
 ## Executable Programs ##
 
 So far, all of your python programs have started with `python3 ...`. But most
-Unix programs don't require you to type `python3` before hand. For example,
-`ls` is just what it is, rather than `python3 ls`.
+Unix programs don't require you to type `python3` beforehand. For example, `ls`
+is just what it is, rather than `python3 ls`.
 
 In the last homework, you wrote `42dust.py`. We're going to make this into an
 executable called `dust` that you can run from anywhere on your computer, just
@@ -117,11 +117,11 @@ directories you own. But this isn't always true of files. You may have
 downloaded some important data and want to make sure you can't modify or delete
 it. For example, the files in your `~/DATA` directory should be read-only.
 
-Permissions allow you to modify what actions can be taken by whom. In addition
-to having 3 types of permissions (read, write, execute), every file also has 3
-types of people that can access it: the owner (you), the group you belong to
-(e.g. a laboratory), or the public (everyone else who has access to the
-computer).
+Permissions allow you to modify what actions can be taken, and by whom. In
+addition to having 3 types of permissions (read, write, execute), every file
+also has 3 types of people that can access it: the owner (you), the group you
+belong to (e.g. a laboratory), or the public (everyone else who has access to
+the computer).
 
 Let's examine the file permissions on the directories and files you
 currently have.
@@ -139,7 +139,7 @@ drwxr-xr-x  2 ian ian 4096 Feb 7 10:01 lib/
 drwxr-xr-x  2 ian ian 4096 Feb 7 10:11 MCB185-2023/
 ```
 
-Let's break down what's happening with the first arcane set of symbols. The
+Let's break down what's happening with the first set of arcane symbols. The
 first letter is `d` which indicates that the file is a directory. We can also
 see this because of the trailing slash from the `ls -F`. The next 9 characters
 are 3 triplets.
@@ -171,8 +171,7 @@ After the leading dash, there are 3 triplets of symbols. The first triplet
 shows user permissions `rw-`. I have read and write permission but not execute.
 The next triplets are for group and public. Both have read permission, but not
 write or execute. Let's first turn on all permissions for everyone using the
-`chmod` command and then list again. The numbers below will be explained
-shortly.
+`chmod` command and then list again. The `777` below will be explained shortly.
 
 ```
 chmod 777 00helloworld.py
@@ -249,9 +248,9 @@ it comes to file permissions. Mac and Unix generally play well together, but
 not always with Windows. If you get a file from a flash drive, it will
 generally have all permissions on (i.e. `777`). When working with two different
 operting systems on the same file system, sometimes all of the permissions will
-get set to `000`, meaning no access even by you. If this happens, you can reset
-your permission as `644` or whatever your preference is. One of the reasons
-that WSL is not recommended is because this shit happens all the time.
+get set to `000`, meaning no access, even by you. If this happens, you can
+reset your permission as `644` or whatever your preference is. One of the
+reasons that WSL is not recommended is because this shit happens all the time.
 
 ## Executable Path ##
 
@@ -324,9 +323,9 @@ a new terminal and now you can `dust` from anywhere you like.
 Bioinformatics data can be huge, so it's important to know how to monitor how
 much of the various computer resources you're using (disk, CPU, RAM, network).
 
-To see how much space you have left on you hard-disk (even though it's an SSD)
-use the "disk free" command `df`. With the `-h` option, you will get human
-readable sizes (like 5G).
+To see how much space you have left on you hard-disk (even though it's probably
+an SSD) use the "disk free" command `df`. With the `-h` option, you will get
+human readable sizes (like 5G).
 
 ```
 df -h
@@ -373,7 +372,6 @@ longer if the computer is waiting around (e.g. for network). For programs that
 use multiple CPUs, the user and system times may be much longer than real time.
 
 ------------------------------------------------------------------------------
-
 
 ## Text Processing ##
 
@@ -425,7 +423,6 @@ Take a look at the gff file.
 zless gff.gz
 ```
 
-
 There's a lot of stuff in there. The lines that begin with # are comments. All
 of the other lines contain tab-delimited information about the genes and other
 features. The first 6 columns of GFF are the following:
@@ -469,8 +466,8 @@ field 3.
 zcat gff.gz | grep -v "^#"  | grep gene | wc
 ```
 
-No, E. coli doesn't contain 9477 genes. There are are a number of ways to get
-the correct number but we will leave this as a cautionary note and move on.
+No, E. coli doesn't contain 9477 genes. There are a number of ways to get the
+correct number but we will leave this as a cautionary note and move on.
 
 ------------------------------------------------------------------------------
 
@@ -490,11 +487,11 @@ topics we won't be covering, but you will run into at some point in the future.
 
 ## Python ##
 
-The `dust` program we made previously now works like a typical Unix command,
-but it doesn't really look like one. All programs should have _usage
-statements_ that tell users how to interact with the program. Usage statements
-are a simple form of essential documentation. Usage statements are usually
-displayed if you give a `-h` or `--help` on the command line.
+The `dust` program we made previously now runs like a typical Unix command, but
+it doesn't really work like one. All programs should have _usage statements_
+that tell users how to interact with the program. Usage statements are a simple
+form of essential documentation. Usage statements are usually displayed if you
+give a `-h` or `--help` on the command line.
 
 ```
 gzip -h
@@ -505,4 +502,5 @@ Check out the `demos` directory to see some examples of how to make proper
 usage statements in Python. You will also see how to read from stdin and how
 to read the output from other programs.
 
-There is also homework in the `programs` directory as usual.
+As usual, there is homework in the `programs` directory. You will need to
+understand the demos in order to complete them.
