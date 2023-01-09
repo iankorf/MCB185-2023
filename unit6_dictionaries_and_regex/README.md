@@ -14,9 +14,9 @@ Unit 6: Dictionaries & Regex
 
 ## Tutorials ##
 
-Each of the files in the Tutorials directory is a Python program most of the
-code contained in a giant triple-quoted string. To "play" the tutorial, move
-the triple quotes farther down the file and run the program again.
+Each of the files in the Tutorials directory is a Python program where most of
+the code is contained in a giant triple-quoted string. To "play" the tutorial,
+move the triple quotes farther down the file and run the program again.
 
 ## Programs ##
 
