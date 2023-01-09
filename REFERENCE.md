@@ -14,7 +14,7 @@ These are all of Unix commands we use in the course.
 | `..`  | your parent directory
 | `~`   | your home directory (also $HOME)
 | `*`   | wildcard - matches everything
-| `|`   | pipe output from one command to another
+| `\|`  | pipe output from one command to another
 | `>`   | redirect stdout to file
 | `<`   | send a file as stdin
 
