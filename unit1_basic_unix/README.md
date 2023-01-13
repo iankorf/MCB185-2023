@@ -494,7 +494,7 @@ is really dangerous because it deletes the directory and everything beneath it.
 ```
 rm -rf project
 ls
-tar -zxf project.tar.gz
+tar -zxf p.tar.gz
 ls project/*
 ```
 
