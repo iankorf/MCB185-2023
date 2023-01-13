@@ -4,8 +4,7 @@
 
 # Hint: use the 3 argument form of range()
 
-# your code goes here
-
+# Your code goes here
 
 """
 python3 20loop.py

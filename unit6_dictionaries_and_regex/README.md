@@ -1,13 +1,14 @@
-Unit 3: Methods, Tuples, and Lists
-==================================
+Unit 6: Dictionaries & Regex
+============================
 
 ## Outline ##
 
-+ Methods - function(thing) vs. thing.method() syntax
-+ Tuples - immutable containers
-+ Lists - mutable containers
-+ sys.argv - get values from the command line
-+ errors - deal with user error
++ Learn how to use dictionaries
+	+ For quick look-ups
+	+ To count categories
++ Enter the wild world of regular expressions
++ Use the `time.time()` function for simple benchmarking
++ Get plenty of practice with some challenging homework problems
 
 ------------------------------------------------------------------------------
 

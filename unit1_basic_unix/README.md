@@ -1,7 +1,7 @@
 Unit 1: Basic Unix
 ==================
 
-## Learning Objectives ##
+## Outline ##
 
 + Environment variables
 + Viewing files
@@ -60,7 +60,7 @@ The most common programs for viewing files are these:
 Let's give them a test drive.
 
 ```
-cd ~/Code/MCB1850-2023/Unit1
+cd ~/Code/MCB1850-2023/unit1_basic_unix
 cat README.md
 head README.md
 tail README.md
@@ -83,7 +83,7 @@ catenate. `head` and `tail` are pretty self-explanatory. `more` shows you more
 of a file. `less` does more than `more` because sometimes less is more. If you
 have a choice between a pun and something actually useful, always choose the
 pun. Compressed files often have a "z" suffix so `zless` makes sense as a
-variant of `less`.
+variant of `less` that works with compressed files.
 
 ------------------------------------------------------------------------------
 
@@ -99,7 +99,7 @@ pwd
 When you change directories, your focus will change.
 
 ```
-cd Code/MCB185-2023/Unit1
+cd Code/MCB185-2023/unit1_basic_unix
 pwd
 ```
 
@@ -114,6 +114,8 @@ begin with the `/` character is a **relative path**.
 
 
 + any path that begins with the filesystem root `/` is an absolute path
++ paths that begin with the tilde shortcut `~/` are absolute
++ paths that begin with a variable may or may not be absolute
 + any other path is a relative path
 
 In addition to the various named directories on your filesystem, you also have
@@ -127,14 +129,14 @@ The double dot `..` is a relative path to the parent directory.
 + `./README.md` also relative path to file in current directory
 + `../README.md` relative path to file in parent directory
 
-Let's get some practice using absolute and relative paths. Inside the Unit1
+Let's get some practice using absolute and relative paths. Inside this unit's
 directory you will see another directory called `project`. This is some
-fictious project that involves some document, image, and source files. List
-the contents of the directory using absolute and relative paths.
+fictious project that involves some document, image, and source files. List the
+contents of the directory using absolute and relative paths.
 
 ```
-ls $HOME/Code/MCB185-2023/Unit1
-ls
+ls $HOME/Code/MCB185-2023/unit1_basic_unix/project
+ls project
 ```
 
 In this case, it was a lot simpler to use the relative path than the absolute
@@ -173,19 +175,17 @@ arrows to position the cursor if you want to edit parts of the line. To get out
 of this, and many other situations, type Control-C. That is, hit the control
 key and then the letter "c".
 
-You should use tab completion constantly. Not only does it save you key
-presses and time, it also ensures that your spelling is correct.
+Another way to repeat commands in your history is to use the "bang" syntax. All
+of the history items have a number in front of them. You can get re-do command
+30 by typing an exclamation mark immediately followed by 30: `!30`
 
 ### Wildcards ###
 
 One of the most useful time-saving tricks in the shell is the use of the `*`
 character as a wildcard. The `*` character matches missing characters if it
-can. Inside the Unit1 directory, there is only one thing that starts with the
-letter "p". The `*` will fill in the rest. So here are three ways of doing the
-same thing.
-
-For the exercises that follow, we will be using the "project" subdirectory,
-which contains several subdirectories and files.
+can. Inside the `unit1_basic_unix` directory, there is only one thing that
+starts with the letter "p", the `project` directory. The `*` will fill in the
+rest. So here are three ways of doing the same thing.
 
 ```
 ls project
@@ -226,15 +226,16 @@ ls project/*
 
 Long path names are sometimes laborious to type or even to look at. Let's make
 a shortcut to the E.coli genome in DATA using a symbolic link, which is also
-called a soft-link.
+called a soft-link. Note the use of `./` below. It's not necessary, but makes
+no mistake about which directory you want to link this to: "right here".
 
 ```
 ln -s ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz ./ecoli.fa.gz
 ```
 
 Please tell me you used tab-completion for that and didn't actually type it
-out! Now, we have a file called `ecoli.fa.gz` that appears exactly like the
-original file except that it's just a shortcut.
+out! Also, no copy-paste! Now, we have a file called `ecoli.fa.gz` that appears
+exactly like the original file except that it's just a shortcut.
 
 ```
 zless ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.fna.gz
@@ -243,8 +244,8 @@ zless ecoli.fa.gz
 
 How can you tell the difference between a normal file and a symbolic link? The
 `-F` option gives `ls` some extra formatting. Symbolic links are shown with an
-`@` symbol. Also, if you're using a color terminal, it will have a different
-color.
+`@` symbol. Depending on your shell settings, you may see colored files in your
+terminal too.
 
 ```
 ls -F
@@ -319,24 +320,24 @@ messages rather than data.
 ## Creating and Modifying Files ##
 
 For the exercises in this section, it may be useful to have your graphical
-desktop displaying the contents of your Unit1 directory. That way you can see
-that the CLI does the same things as pointing and clicking.
+desktop displaying the contents of your `unit1_basic_unix` directory. That way
+you can see that the CLI does the same things as pointing and clicking.
 
 There are a number of ways to create a file. The `touch` command, which we saw
 last unit, will create a file or change its modification time (Unix records
 when the last time a file was edited) if it already exists. Let's first make
-sure we are in the Unit1 directory.
+sure we are in the `unit1_basic_unix` directory.
 
 ```
-cd ~/Code/MCB185-2023/Unit1
+cd ~/Code/MCB185-2023/unit1_basic_unix
 touch empty
 ```
 
-If your graphical file browser was open to your Unit1 directory, when you hit
-the return key, you would have seen the file magically appear in the file
-browser. The file "empty" doesn't contain anything at all. To verify this, try
-`ls -l`, which creates a listing with a long format. You'll see a zero in one
-of the columns. That's the file size in bytes.
+If your graphical file browser was open to your `unit1_basic_unix` directory,
+when you hit the return key, you would have seen the file magically appear in
+the file browser. The file `empty` doesn't contain anything at all. To verify
+this, try `ls -l`, which creates a listing with a long format. You'll see a
+zero in one of the columns. That's the file size in bytes.
 
 Lets add some content to the empty file. Most of the time when you create,
 edit, and save files, you'll be using your favorite text editor. But there are
@@ -349,11 +350,16 @@ install `nano` or use your usual text editor.
 nano emtpy
 ```
 
-Your terminal is now a text editor with some menus at the bottom. Type some
-stuff. Try navigating around the document with arrow keys. Write some poetry.
-When you're done, hit ^O to write the changes and then ^X to exit. What the
-heck are those keys? ^O is shorthand for Control-O. Just like when we hit
-Control-C before, hold the control key and then hit the "o" key.
+If the previous command produced an error saying that nano isn't installed, you
+can either install it now (get help if needed) or just open it with your normal
+text editor.
+
+Assuming you have nano, your terminal is now a text editor with some menus at
+the bottom. Type some stuff. Try navigating around the document with arrow
+keys. Write some poetry. When you're done, hit ^O to write the changes and then
+^X to exit. What the heck are those keys? ^O is shorthand for Control-O. Just
+like when we hit Control-C before, hold the control key and then hit the "o"
+key.
 
 Now that "empty" is no longer empty, let's rename it. Weirdly the command used
 to rename files is also the command to move them.
@@ -363,7 +369,8 @@ mv empty full
 ```
 
 If you had your graphical file browser open, you would see that the name
-changed. Try a long listing of the file now: `ls -l full`.
+changed. Try a long listing of the file now: `ls -l full`. You should see that
+the file is bigger than zero bytes now.
 
 To copy a file, use the `cp` command.
 
@@ -428,18 +435,19 @@ To delete files, use the `rm` command. Using wildcards with `rm` is potentially
 dangerous. While the intent of `rm * .txt` looks like you want to remove all
 text files in the current directory, there is a space between the `*` and the
 `.txt`. What this literally means is to delete all files (the wildcard) and
-then the file called `.txt`, which probably doesn't even exist.
+then the file called `.txt`, which probably doesn't even exist. As a general
+rule, don't use `rm` with wildcards.
 
 ------------------------------------------------------------------------------
 
 ## Compression and Archiving ##
 
-Text files tend to be very wasteful of disk space. For starters, they only use
-7 of the 8 possible bits of every byte. This means they are about 2 times
-larger than they need to be. In addition, they tend to be highly repetitive,
-often using the same patterns of characters several times. Taken together, text
-files of genome data can typically be compressed 3-fold or more. The most
-common compression program in Linux is `gzip`. Let's try it.
+Text files tend to be wasteful of disk space. For starters, they only use 7 of
+the 8 possible bits of every byte. This means they are about 2 times larger
+than they need to be. In addition, they tend to be highly repetitive, often
+using the same patterns of characters several times. Taken together, text files
+of genome data can typically be compressed 3-fold or more. The most common
+compression program in Linux is `gzip`. Let's try it.
 
 ```
 ls
@@ -452,6 +460,7 @@ It also removes the old file. To return the file, `gunzip` it.
 
 ```
 gunzip README.md.gz
+ls
 ```
 
 If you want to compress a file and also keep the original, use the `-k` flag.
@@ -465,7 +474,8 @@ If you want to compress an entire directory, you have to first make an archive
 out of it with the `tar` command (short for "tape archive"). We often call tar
 files tarballs. So let's make a tarball out of the project directory. You must
 pass the `-c` option to "create" and the `-f` option to name the "file". Like
-other Unix options, you can put the two letters together.
+many other Unix options, you can put the two letters together as `-cf` instead
+of `-c -f`.
 
 ```
 tar -cf project.tar project
@@ -486,7 +496,7 @@ is really dangerous because it deletes the directory and everything beneath it.
 ```
 rm -rf project
 ls
-tar -xf project.tar
+tar -zxf p.tar.gz
 ls project/*
 ```
 
@@ -497,7 +507,7 @@ symbolic link to the actual file).
 zless ecoli.fa.gz
 ```
 
-What if we want to do `wc` the file? Do we have to decompress it? No, and we
+What if we want to `wc` the file? Do we have to decompress it? No, and we
 shouldn't because then it will take up a lot more space. You can often leave
 compressed files as is, and uncompress their contents on the fly. These two
 commands are the same:
@@ -534,7 +544,7 @@ favorite editor, add these lines at the end, and save.
 alias ls="ls -F"
 alias ll="ls -l"
 alias ..="cd .."
-alias rm="rm -f"
+alias rm="rm -i"
 ```
 
 Now `ls` always does `ls -F`. Meaning, you will always be able to tell a

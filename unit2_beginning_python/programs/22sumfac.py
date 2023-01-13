@@ -6,8 +6,6 @@
 
 # Note: you may not import math or any other library
 
-n = 5
-
 
 """
 python3 22sumfac.py

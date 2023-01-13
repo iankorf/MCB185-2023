@@ -1,13 +1,11 @@
-Unit 3: Methods, Tuples, and Lists
-==================================
+Unit 7: Complex Data Structures
+===============================
 
 ## Outline ##
 
-+ Methods - function(thing) vs. thing.method() syntax
-+ Tuples - immutable containers
-+ Lists - mutable containers
-+ sys.argv - get values from the command line
-+ errors - deal with user error
++ Matrices: lists of lists
++ Records: lists of dictionaries
++ JSON and arbitrarily complex data
 
 ------------------------------------------------------------------------------
 

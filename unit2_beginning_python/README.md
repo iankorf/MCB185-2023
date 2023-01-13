@@ -1,7 +1,7 @@
 Unit 2: Beginning Python
 ========================
 
-## Learning Objectives ##
+## Outline ##
 
 + Variables - different types for different flavors
 + Math - it works like you expect, mostly
@@ -62,4 +62,5 @@ git push
 
 ## Optional ##
 
-There are a few optional practice problems derived from Dungeons & Dragons 5e.
+In addition to the required, numbered homework problems, there are a few
+optional practice problems derived from Dungeons & Dragons 5e.

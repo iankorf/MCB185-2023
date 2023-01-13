@@ -1,7 +1,7 @@
 Unit 0: Tools of the Trade
 ==========================
 
-## Learning Objectives ##
+## Outline ##
 
 + Install Linux
 + Explore the Unix CLI with the terminal and shell
@@ -16,20 +16,21 @@ Unit 0: Tools of the Trade
 ## Unix/Linux ##
 
 Most professional bioinformatics is done in a Unix/Linux environment. You don't
-have to love Unix/Linux, but you do have to be proficient at it. There is
-`REFERENCE.md` quick reference in the repo that contains all of the Unix
-commands we use in the course.
+have to love Unix/Linux, but you do have to be proficient at it. The file,
+`REFERENCE.md`, contains all of the Unix commands we use in the course (also
+all of the Python programming concepts).
 
 ### What's the deal with Unix vs. Linux? ###
 
 Most people about to embark on an adventure in bioinformatics programming will
 be using some flavor of Linux (e.g. Debian, Fedora, LinuxLite, Mint, Ubuntu,
-etc.) and not actually Unix. Is there a difference between Linux and Unix? Unix
-has been around a long time, and is a commerical product. Linux was developed
-as a free alternative to Unix. Linux is designed to behave very much like Unix.
-From a practical standpoint, they are essentially the same. Philosophically,
-they are very different. In this document, the terms _Linux_ and _Unix_ are
-used somewhat interchangeably.
+etc.) and not actually Unix. Is there a difference between Linux and Unix? No
+and yes. Linux was designed to be just like Unix, so from a practical
+standpoint they are very similar. Despite looking the same, they share no
+source code in common. The biggest difference is philosophical. Unix is a
+commercial product and Linux is free open source software (FOSS). From a
+philosophical perspective, they are very different. In this document, the terms
+_Linux_ and _Unix_ are used somewhat interchangeably.
 
 ### Where do I get Linux? ###
 
@@ -62,9 +63,9 @@ disadvantages, which are described in more detail below.
 
 + Virtual machine - recommended
 + Install Linux on a PC - best if you have a spare PC
-+ Cygwin - may be useful for advanced users
-+ Git bash - may be useful for advanced users
-+ Windows Subsystem for Linux - official Microsoft solution but not recommended
++ Cygwin - good for advanced users
++ Git bash - good for advanced users
++ Windows Subsystem for Linux - official Microsoft solution (not recommended)
 + Chromebook - inexpensive and works okay
 + Raspberry Pi - fun little gizmo
 + Remote login - a little inconvenient at times
@@ -98,13 +99,13 @@ downsides, VMs are a great way to run Linux on your PC.
 One additional complication is that your BIOS might need to be modified to run
 virtual machines. Some manufacturers ship their products with virtualization
 disabled. This is easily changed in BIOs. Hold down the F10 key - or sometimes
-it's F1, F2, F12, or DEL to enter BIOS. Navigate to CPU or security. Enable
-virtualization.
+it's F1, F2, F12, or DEL to enter BIOS. Navigate to CPU (sometimes it's in
+security). Enable virtualization, save changes, and reboot.
 
 There are many distributions of Linux. The most obvious differences among them
-is the desktop Graphical User Interface (GUI). Some look like old-school
-Windows while others look like Mac OS, and still others offer their own unique
-look and feel. Here are some recommendations for setting up your VM.
+is the default desktop Graphical User Interface (GUI). Some look like
+old-school Windows while others look like Mac OS, and still others offer their
+own unique look and feel. Here are some recommendations for setting up your VM.
 
 + Linux: Lubuntu
 + VM Memory: 2 GB (or 4 GB if your computer has more than 8 GB)
@@ -145,12 +146,12 @@ MacOS, but both continue to work flawlessly as Linux machines.
 ### Cygwin on Windows ###
 
 Cygwin is not an entire operating system but rather a terminal with POSIX
-commands (POSIX is a standard for portable Unix). It does not come
+commands (POSIX is a standard for portable Unix). Cygwin does not come
 pre-installed with Python, so you will have to run the Cygwin `Setup.exe` to
 install it and possibly other programming tools. For basic Python programming,
-I've found Cygwin to work great. However, installing external libraries can be
-frustrating. We don't use external libraries in this course, so Cygwin will
-work great. Later, it may become a pain.
+I've found Cygwin to work great. However, installing some external libraries
+can be frustrating. Since we don't use external libraries in this course,
+Cygwin will work great. Later, it may become a pain.
 
 Your Windows C drive is mounted at `/cygdrive/c`. Your Cygwin root depends on
 where you chose to install it (probably `C:\cygdrive`).
@@ -192,7 +193,7 @@ your Linux filesystem root from Windows is not so easy.
 ### Linux on Chromebook ###
 
 Chromebooks are some of the least expensive computers you can buy.
-Conveniently, Linux is built right in. Select the time from the lower right
+Conveniently, Linux is built right in. Select the clock from the lower right
 corner and then go to Settings->Advanced->Developers.
 
 Scroll down to "Linux development environment" and turn it on. It takes a few
@@ -200,7 +201,8 @@ minutes to install. To get to the Linux CLI, use the Terminal application. This
 takes a little while to launch the first time.
 
 I don't really recommend Chromebooks because it's not a popular platform for
-professional bioinformatics work. However, it will work fine for this course.
+professional bioinformatics work. However, they will work great for this
+course.
 
 ### Raspberry Pi ###
 
@@ -254,18 +256,19 @@ programming in this course, so the choice of shell doesn't really matter.
 ## Programming Editor ##
 
 You will spend a lot of time using a text editor designed for programming. A
-text editor is not a word processor. We won't be using MS Word or Google Docs.
-Popular text editors include:
+text editor is not a word processor. We won't be using MS Word or Google Docs
+ever. Popular text editors include:
 
 + Sublime Text
 + Atom
-+ Notepad++ (Windows)
-+ BBedit (Mac)
++ Notepad++ (Windows only)
++ BBedit (Mac only)
++ Caret (Chromebook only)
 
-If you're using a VM, the OS will come bundled with an acceptable editor like
-FeatherPad or gedit. However, you're encouraged to explore other editors. You
-will be spending a lot of time editing code, so you might as well use one you
-like.
+If you're using a VM, the Linux distribution will come bundled with an
+acceptable editor like FeatherPad or gedit. However, you're encouraged to
+explore other editors. You will be spending a lot of time editing code, so you
+might as well use one you like.
 
 A lot of programmers use an IDE (integrated development environment). This is
 sort of like having your editor, terminal, and other useful stuff all in one
@@ -290,47 +293,71 @@ Every source code editor has a lot of options. Make sure your editor is set up
 for the following:
 
 + Syntax highlighting for Python
-+ Displays line numbers
++ Displays line numbers (helps when discussing code)
 + Tab key inserts tab character (not spaces)
 + Shows 80-column gutter (we follow the 80-column rule)
+
+In addition, you might want to change the theme. Some people like light
+characters on a dark background while others prefer the reverse. You should
+theme the terminal similarly to the editor.
 
 ------------------------------------------------------------------------------
 
 ## Home Directory ##
 
 The CLI always has a **focus**. When you first start up your terminal, the
-focus is your home directory. Your home directory is so important that there is
-a simple shortcut to get to it, the tilde key `~`. If you've never used this
-before, it's probably at top left of your keyboard.
+focus is your home directory. To examine the contents of your home directory,
+start up your terminal and they type:
 
-If you change directories, the focus of your terminal will change to that
-directory. To find out where your focus is, use the `pwd` command to "print
-working directory".
+```
+ls
+```
+
+The `ls` command lists and sorts your files. You will probably see directories
+(folders) for Desktop, Documents, and Downloads, as well as other directories
+that depend on your operating system. Your home directory is located at a
+specific point in your filesystem. The root of the Unix filesystem is `/`. All
+directories and files are hierarchically under "slash". For example, your home
+directory might be in `/home/your_name`. The exact location depends on your
+operating system. Let's examine the path to your home directory with the `pwd`
+command, which stands for "print working directory".
 
 ```
 pwd
 ```
 
-Like many Unix commands `pwd` is a shortcut to a longer word or phrase.
-Programs generally have short names to save you from having to do a lot of
-typing. If you want to set your focus to your home directory, do any of these
-commands (the last one will be described next unit).
+To change directory, use the `cd` command. Let's change to the `Desktop`
+directory.
+
+```
+cd Desktop
+```
+
+If that last command had an error, make sure you spelled everything correctly.
+Unix is case-sensitive, so `desktop` and `Desktop` are not the same thing
+(except weirdly on Macs where some filesystems are not case-sensitive). Now try
+the `ls` command again and you will see the path to your current focus has
+changed. That's because the current focus of the `ls` command is your `Desktop`
+directory.
+
+```
+ls
+pwd
+```
+
+To get back to your home directory, you have two choices (for now, later you
+will have many more).
 
 ```
 cd
 cd ~
-cd $HOME
 ```
 
-Within your home directory, you will generally see several directories that
-have been created for you by default.
-
-```
-ls ~
-```
-
-You will probably see directories (folders) for Desktop, Documents, and
-Downloads, as well as other directories that depend on your operating system.
+Using `cd` by itself will change focus to your home directory. Your home
+directory is so important that there is a simple shortcut to get to it: the
+tilde key `~`. If you've never used this key before, it's probably at top left
+of your keyboard (depends on where your keyboard was made). Try one of these
+methods and check examine the location of your home with `pwd`.
 
 ### Code Directory ###
 
@@ -370,9 +397,9 @@ you might want to move it.
 
 ### File-naming Conventions ###
 
++ Use lowercase in general
 + Don't put spaces or punctuation in your file names
 + Use underscores to separate words (e.g. `human_genome.fa.gz`)
-+ Use lowercase in general
 + Use Uppercase for directories in your home directory (e.g. `Code`)
 
 ------------------------------------------------------------------------------
@@ -386,7 +413,7 @@ anyone else's work. You will always know who did what and when.
 
 ## GitHub Account ##
 
-GitHub is a website that lets you store you git repositories for free. There
+GitHub is a website that lets you store your git repositories for free. There
 are several similar sites, but GitHub is the most popular. Every bioinformatics
 developer should have a GitHub account. Your repositories and activity are part
 of your CV. If you don't have a GitHub account, it's time to point your web
@@ -425,18 +452,18 @@ Now let's go make a repo. Go to the GitHub website and click on the green "New"
 button to create a new repo. Name this "homework" because this is where you'll
 be submitting your homework. Make it **public**. Does this mean that students
 can see each others' homework? Yes. You're actually encouraged to work with
-other students in this class. Click the boxes to initialize with a README, add
-a .gitignore, and add a license. Scroll through the .gitignore options until
-you get to "Python". Choose whichever license you like. I generally use MIT.
-Click the "Create Repository" and you will be transported to your new mostly
-empty repo.
+other students in this class. Click the checkboxes to initialize with a README,
+add a .gitignore, and add a license. Scroll through the .gitignore options
+until you get to "Python". Choose whichever license you like. I generally use
+MIT. Click the "Create Repository" and you will be transported to your new
+mostly empty repo.
 
 ### Personal Access Token ###
 
 When you interact with the GitHub website, you use a username and password.
-When you interact with GitHub using the Linux CLI, you cannot use your website
-password. Instead you have to use a "personal access token" (PAT). So the first
-thing we need to do is to generate a PAT.
+When you interact with GitHub using the Linux CLI, you **cannot use your
+website password**. Instead you have to use a "personal access token" (PAT). So
+the first thing we need to do is to generate a PAT.
 
 Log into GitHub and then click on the icon in the top right corner. This will
 drop down a menu where you will find "Settings". Follow that link and you will
@@ -451,17 +478,17 @@ again, use the "No expiration" option.
 
 Click on the "repo" checkbox, which will also check the subordinate boxes.
 
-Your personal access token is given to you once. Copy it and save it somewhere
+This personal access token is given to you once. Copy it and save it somewhere
 safe. You can never get to this PAT again. Ever. However, you can generate a
 new one anytime you like, so if you lose your PAT, you can just generate a new
-one. I put my PAT in a personal message to myself in Slack. I also keep it in
-a file on Dropbox.
+one. I put my PAT in a personal message to myself in Slack. I also keep it in a
+file on Dropbox.
 
 ### Cloning Repos from the CLI ###
 
 Your current homework repo is located on GitHub, but not in your Linux
-computer. Type the following commands, substituting YOUR_GITHUB_HANDLE for
-whatever your GitHub user name is.
+computer. Type the following commands in your terminal, substituting
+`YOUR_GITHUB_HANDLE` for whatever your GitHub user name is.
 
 ```
 
@@ -597,9 +624,9 @@ etc.
 
 There are two main types of files you will encounter: text and binary. You can
 view text files with `less` and edit them with `nano`, for example. All of the
-programs we will write will be text files. You can also view and edit binary
-files but they look like gobbledygook, not English. If you want to see what a
-binary file looks like, try the following.
+programs we write in this course will be plain text files. You can also view
+and edit binary files but they look like gobbledygook, not English. If you want
+to see what a binary file looks like, try the following.
 
 ```
 less /bin/ls
@@ -617,13 +644,13 @@ the 2s place and a 0 in the "1s" place, so 2 + 0 = 2. Similarly, the number
 "11" in binary is 3 in decimal and the number "101" in binary is "5" in decimal
 (1 four, 0 two, 1 one).
 
-A byte is 8 bits. Computers usually deal in bytes. So we don't normally talk
-about a number like "101" to represent 5 but rather the 8-digit version of that
-"00000101". So what number is "10000000"? Well that depends if you're working
-in base 2, decimal, or something else entirely. In order to clarify these
-things, people often put two characters at the front to signify the base when
-it's not base-10. Prepending the numerals with "0b" tells people "I'm using
-binary". So "0b10000000" means 128 and not ten million.
+A byte is 8 bits in a row. Computers usually deal in bytes. So we don't
+normally talk about a number like "101" to represent 5 but rather the 8-digit
+version of that "00000101". So what number is "10000000"? Well that depends if
+you're working in base 2, decimal, or something else entirely. In order to
+clarify these things, people often put two characters at the front to signify
+the base when it's not base-10. Prepending the numerals with "0b" tells people
+"I'm using binary". So "0b10000000" means 128 and not ten million.
 
 We actually use the "byte" more frequently than you might guess. However, when
 we do so, it's usually in _hexadecimal_ notation. In base 2, there are 2
@@ -690,20 +717,58 @@ green to come through. If we were to express that in hex it would look like
 ### Back to Binary ###
 
 So now it's time to understand the difference between text and binary files. A
-text file typically uses only the 7 bits defined by ASCII (American Standard
-Code for Information Interchange). That is, each byte is confined to the range
-from 0 to 127. In binary that's "0b00000000" to "0b01111111". In hex, that's
-"0x00" to "0x7F". All of the numbers equal to or greater than than "0b10000000"
-or "0x80" or 128 are outside the ACSII space. Any file using values outside of
-ASCII is binary.
+text file uses only the 7 bits defined by ASCII (American Standard Code for
+Information Interchange). That is, each byte is confined to the range from 0 to
+127. In binary that's "0b00000000" to "0b01111111". In hex, that's "0x00" to
+"0x7F". All of the numbers equal to or greater than than "0b10000000" or "0x80"
+or 128 are outside the ACSII space. Any file using values outside of ASCII is
+binary.
 
 In a plain text file, every symbol (e.g letter or punctuation) has a
 corresponding value in the range of 0-127. For example, capital "A" is
 "0b01000001" or "0x41" or 65 (decimal). Similarly, capital "B" is "0b01000010"
-or "0x42" or 66. The numbers from 0-9 are in ASCII slots 48-57, the capital
-letters are 65-90, the lowercase letters are 97-122, and other symbols are in
-various places (32-47, 58-64, 91-96, 123-127). Everything below 32 is an
-invisible control character of some kind.
+or "0x42" or 66. As you can see in the chart below, the letters and numbers are
+organized neatly if you consider the Hex numbers rather than the decimal
+numbers. In the table below, you can't see 32 or 127 because 32 is space and
+127 is delete. Everything below 32 is an invisible control character of some
+kind.
+
+```
+| Dec | Hex | C | Dec | Hex | C | Dec | Hex | C |
+|:---:|:---:|:-:|:---:|:---:|:-:|:---:|:---:|:-:|
+|  32 |  20 |   |  64 |  40 | @ |  96 |  60 | ` |
+|  33 |  21 | ! |  65 |  41 | A |  97 |  61 | a |
+|  34 |  22 | " |  66 |  42 | B |  98 |  62 | b |
+|  35 |  23 | # |  67 |  43 | C |  99 |  63 | c |
+|  36 |  24 | $ |  68 |  44 | D | 100 |  64 | d |
+|  37 |  25 | % |  69 |  45 | E | 101 |  65 | e |
+|  38 |  26 | & |  70 |  46 | F | 102 |  66 | f |
+|  39 |  27 | ' |  71 |  47 | G | 103 |  67 | g |
+|  40 |  28 | ( |  72 |  48 | H | 104 |  68 | h |
+|  41 |  29 | ) |  73 |  49 | I | 105 |  69 | i |
+|  42 |  2a | * |  74 |  4a | J | 106 |  6a | j |
+|  43 |  2b | + |  75 |  4b | K | 107 |  6b | k |
+|  44 |  2c | , |  76 |  4c | L | 108 |  6c | l |
+|  45 |  2d | - |  77 |  4d | M | 109 |  6d | m |
+|  46 |  2e | . |  78 |  4e | N | 110 |  6e | n |
+|  47 |  2f | / |  79 |  4f | O | 111 |  6f | o |
+|  48 |  30 | 0 |  80 |  50 | P | 112 |  70 | p |
+|  49 |  31 | 1 |  81 |  51 | Q | 113 |  71 | q |
+|  50 |  32 | 2 |  82 |  52 | R | 114 |  72 | r |
+|  51 |  33 | 3 |  83 |  53 | S | 115 |  73 | s |
+|  52 |  34 | 4 |  84 |  54 | T | 116 |  74 | t |
+|  53 |  35 | 5 |  85 |  55 | U | 117 |  75 | u |
+|  54 |  36 | 6 |  86 |  56 | V | 118 |  76 | v |
+|  55 |  37 | 7 |  87 |  57 | W | 119 |  77 | w |
+|  56 |  38 | 8 |  88 |  58 | X | 120 |  78 | x |
+|  57 |  39 | 9 |  89 |  59 | Y | 121 |  79 | y |
+|  58 |  3a | : |  90 |  5a | Z | 122 |  7a | z |
+|  59 |  3b | ; |  91 |  5b | [ | 123 |  7b | { |
+|  60 |  3c | < |  92 |  5c | \ | 124 |  7c | | |
+|  61 |  3d | = |  93 |  5d | ] | 125 |  7d | } |
+|  62 |  3e | > |  94 |  5e | ^ | 126 |  7e | ~ |
+|  63 |  3f | ? |  95 |  5f | _ | 127 |  7f |   |
+```
 
 At this point you may be wondering about other alphabets and how they get
 encoded in a computer. Surely you can't fit all of the symbols in known human
@@ -718,9 +783,9 @@ family, font style, lists, or tables you expect to find in a word processing
 document. However, sometimes you want part of a text file to look like a
 heading, or boldface, or a list. There are lots of ways you can imagine doing
 that from the use of capital letters to punctuation. Markdown is a global
-standard for writing text files. If you follow the standard, you can turn your
-plain text documents into beautifully formatted HTML or PDF that has actual
-headings, hyperlinks, font styles, lists, etc.
+standard for formatting text files. If you follow the standard, you can turn
+your plain text documents into beautifully formatted HTML or PDF that has
+actual headings, hyperlinks, font styles, lists, etc.
 
 To find out how to write Markdown, check out the website linked below. This is
 the official home of vanilla Markdown. There are a few customizations of
@@ -733,26 +798,48 @@ Markdown plain text source document. If you're viewing this document on GitHub,
 you're viewing it formatted as HTML. You can also look at the raw text either
 on the website or in your forked repo.
 
-Let's create our first Markdown document. Open your editor and start typing.
+Here are the basics of Markdown:
+
+# Level 1 Heading - use a single leading hash
+
+## Level 2 Heading - use a double leading hash
+
+### Level 3 Heading - use a triple leading hash
+
+Alternatively, you can underline titles with equals sign or minus sign for
+headings. These look better when viewed as text files.
+
+Level 1 Heading
+===============
+
+Level 2 Heading
+---------------
+
+
+Bulletted lists can use plus, minus, or star (and even mix them).
+
++ Enroll in MCB185
++ Install Linux
++ Get a GitHub account
++ Learn about Markdown
+- Learn some Unix commands
+- Learn some Python
+* Do cool stuff
+
+Formatting text can be _emphasized_ with underline or *stars* or made bold-face
+with **double-stars**. For in-line fixed-width font, such as to indicate code
+or stuff you're supposed type in a terminal, use `backticks`. For longer code
+use triple backticks.
 
 ```
-To Do List
-==========
-
-Here are some of the things I'm working on this week.
-
-+ Learn some Unix commands
-+ Learn how to write in Markdown **now**
-+ Learn how to program in Python
-+ Get my code into GitHub like all _professional_ developers
+your code here
 ```
 
-As you can see, even without the use of headings, font sizes, type faces,
-rulers, etc. we are able to communicate document structure and emphasis. "To Do
-List" is clearly the title. The plus signs are clearly a bulleted list. The use
-of asterisks and underscores clearly show emphasis. Follow a few simple
-Markdown rules and you'll end up with beautiful documents that are easy to
-write and a pleasure to read as text, HTML, PDF, etc.
+Hyperlinks use square brackets for the link followed by parentheses for the
+text of the link. You can also put links in as plain text and make your users
+copy-paste them into their browser.
+
+[https://daringfireball.net/projects/markdown](Markdown)
 
 ------------------------------------------------------------------------------
 
@@ -779,12 +866,14 @@ Save the file. Now run the program.
 python3 00hellworld.py
 ```
 
-If all goes well, you should see your welcome message in the terminal. If this
-doesn't work, get help now!
+If all goes well, you should see your welcome message in the terminal. If you
+don't, stop now and get help. Don't continue on thinking you'll fix this later.
 
 Now let's add your program to your homework repo. `git status` will show that
 this is currently not tracked. So let's `add` it, create a `commit` message,
-and then `push` it back to the website.
+and then `push` it back to the website. Remember, you don't use your website
+password here, but rather you github personal access token (PAT). You'll have
+to copy-paste that, as it's a bit too long to type.
 
 ```
 git add 00helloworld.py

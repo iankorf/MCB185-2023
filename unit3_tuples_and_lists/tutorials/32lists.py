@@ -50,6 +50,10 @@ print(strings)
 stuff = p + strings
 print(stuff)
 
+# you can find the first position of an item in the list with index()
+print(stuff.index('cat'))
+# print(stuff.index('foo')) # it's an error if it doesn't find it
+
 # lists with mixed types don't sort though
 #stuff.sort()
 

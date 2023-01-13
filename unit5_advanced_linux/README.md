@@ -1,19 +1,15 @@
-Unit 4: Advanced Linux
+Unit 5: Advanced Linux
 ======================
 
-## Learning Objectives ##
+## Outline ##
 
 + Make your libraries work anywhere
 + Make your programs into executables that work anywhere
-+ Monitor resources
-
-
-
-+ IPC, exit codes, memory usage, top
-+ Running other programs
-+ Reading from stdin
-+ argparse
-
++ Learn how to monitor computer resources
++ Explore some simple text processing utilities
++ Give your programs a proper Unix CLI
++ Read from stdin
++ Run programs and parse their output from within Python
 
 ------------------------------------------------------------------------------
 
@@ -77,8 +73,8 @@ PYTHONPATH=$HOME/Code/lib
 ## Executable Programs ##
 
 So far, all of your python programs have started with `python3 ...`. But most
-Unix programs don't require you to type `python3` before hand. For example,
-`ls` is just what it is, rather than `python3 ls`.
+Unix programs don't require you to type `python3` beforehand. For example, `ls`
+is just what it is, rather than `python3 ls`.
 
 In the last homework, you wrote `42dust.py`. We're going to make this into an
 executable called `dust` that you can run from anywhere on your computer, just
@@ -121,11 +117,11 @@ directories you own. But this isn't always true of files. You may have
 downloaded some important data and want to make sure you can't modify or delete
 it. For example, the files in your `~/DATA` directory should be read-only.
 
-Permissions allow you to modify what actions can be taken by whom. In addition
-to having 3 types of permissions (read, write, execute), every file also has 3
-types of people that can access it: the owner (you), the group you belong to
-(e.g. a laboratory), or the public (everyone else who has access to the
-computer).
+Permissions allow you to modify what actions can be taken, and by whom. In
+addition to having 3 types of permissions (read, write, execute), every file
+also has 3 types of people that can access it: the owner (you), the group you
+belong to (e.g. a laboratory), or the public (everyone else who has access to
+the computer).
 
 Let's examine the file permissions on the directories and files you
 currently have.
@@ -143,7 +139,7 @@ drwxr-xr-x  2 ian ian 4096 Feb 7 10:01 lib/
 drwxr-xr-x  2 ian ian 4096 Feb 7 10:11 MCB185-2023/
 ```
 
-Let's break down what's happening with the first arcane set of symbols. The
+Let's break down what's happening with the first set of arcane symbols. The
 first letter is `d` which indicates that the file is a directory. We can also
 see this because of the trailing slash from the `ls -F`. The next 9 characters
 are 3 triplets.
@@ -175,8 +171,7 @@ After the leading dash, there are 3 triplets of symbols. The first triplet
 shows user permissions `rw-`. I have read and write permission but not execute.
 The next triplets are for group and public. Both have read permission, but not
 write or execute. Let's first turn on all permissions for everyone using the
-`chmod` command and then list again. The numbers below will be explained
-shortly.
+`chmod` command and then list again. The `777` below will be explained shortly.
 
 ```
 chmod 777 00helloworld.py
@@ -253,9 +248,9 @@ it comes to file permissions. Mac and Unix generally play well together, but
 not always with Windows. If you get a file from a flash drive, it will
 generally have all permissions on (i.e. `777`). When working with two different
 operting systems on the same file system, sometimes all of the permissions will
-get set to `000`, meaning no access even by you. If this happens, you can reset
-your permission as `644` or whatever your preference is. One of the reasons
-that WSL is not recommended is because this shit happens all the time.
+get set to `000`, meaning no access, even by you. If this happens, you can
+reset your permission as `644` or whatever your preference is. One of the
+reasons that WSL is not recommended is because this shit happens all the time.
 
 ## Executable Path ##
 
@@ -328,9 +323,9 @@ a new terminal and now you can `dust` from anywhere you like.
 Bioinformatics data can be huge, so it's important to know how to monitor how
 much of the various computer resources you're using (disk, CPU, RAM, network).
 
-To see how much space you have left on you hard-disk (even though it's an SSD)
-use the "disk free" command `df`. With the `-h` option, you will get human
-readable sizes (like 5G).
+To see how much space you have left on you hard-disk (even though it's probably
+an SSD) use the "disk free" command `df`. With the `-h` option, you will get
+human readable sizes (like 5G).
 
 ```
 df -h
@@ -352,7 +347,7 @@ resources they are using. To get out of either of these, hit "q".
 top
 ```
 
-To get information about your physical computer, the files `/proc/cpuinfo` and 
+To get information about your physical computer, the files `/proc/cpuinfo` and
 `/proc/meminfo` are available in Linux (not Mac).
 
 ```
@@ -360,28 +355,27 @@ less /proc/cpuinfo
 less /proc/meminfo
 ```
 
-If you want to estimate how long a job is going to take, it's often useful to 
-`time` a subset of the problem. For example, if you were going to align all 
-human genes to all drosophila genes, you might time how long it takes to align 
-100 genes and then multiply that by 200 to estimate the whole time (given that 
-humans have around 20,000 genes). `time` is also useful when benchmarking 
+If you want to estimate how long a job is going to take, it's often useful to
+`time` a subset of the problem. For example, if you were going to align all
+human genes to all drosophila genes, you might time how long it takes to align
+100 genes and then multiply that by 200 to estimate the whole time (given that
+humans have around 20,000 genes). `time` is also useful when benchmarking
 different algorithms to figure out how much faster one is than another.
 
 ```
 time zcat ~/DATA/E.coli/*.gz | wc
 ```
 
-This shows the real, wallclock time, as well as user and system time. The 
-amount of CPU used is the user + system time. The real time reported can be 
-longer if the computer is waiting around (e.g. for network). For programs that 
+This shows the real, wallclock time, as well as user and system time. The
+amount of CPU used is the user + system time. The real time reported can be
+longer if the computer is waiting around (e.g. for network). For programs that
 use multiple CPUs, the user and system times may be much longer than real time.
 
 ------------------------------------------------------------------------------
 
-
 ## Text Processing ##
 
-Python is a powerful tool for text processing, but Unix has some built-in tools 
+Python is a powerful tool for text processing, but Unix has some built-in tools
 that are so convenient, you'll sometimes use them instead. These include:
 
 + cut - for cutting out columns of a table
@@ -407,16 +401,16 @@ To count how many proteins there are, we pipe to `wc`.
 zcat prots.gz | grep ">" | wc
 ```
 
-Let's now look at all of the lines that aren't definition lines. This is simply 
+Let's now look at all of the lines that aren't definition lines. This is simply
 passing the `-v` option to `grep`.
 
 ```
 zcat prots.gz | grep -v ">" | less
 ```
 
-The `cut` program allows us to get columns of data. The usual delimiter is tab, 
-but we can change that to anything. Let's use a space as the delimiter and grab 
-the database identifiers from the fasta file definition lines. The id is always 
+The `cut` program allows us to get columns of data. The usual delimiter is tab,
+but we can change that to anything. Let's use a space as the delimiter and grab
+the database identifiers from the fasta file definition lines. The id is always
 the first part of the definition line, so "field 1" or `-f 1`.
 
 ```
@@ -429,9 +423,8 @@ Take a look at the gff file.
 zless gff.gz
 ```
 
-
-There's a lot of stuff in there. The lines that begin with # are comments. All 
-of the other lines contain tab-delimited information about the genes and other 
+There's a lot of stuff in there. The lines that begin with # are comments. All
+of the other lines contain tab-delimited information about the genes and other
 features. The first 6 columns of GFF are the following:
 
 1. sequence name
@@ -447,15 +440,15 @@ Let's ignore the comment lines and then pull out all of the sequence names.
 zcat gff.gz | grep -v "^#"  | cut -f 1
 ```
 
-It looks like all of the values are the same. That makes sense if the genome is 
-described by one circular chromosome and none of the plasmids. To be sure, 
+It looks like all of the values are the same. That makes sense if the genome is
+described by one circular chromosome and none of the plasmids. To be sure,
 let's send the output to `sort -u`, which will make a unique list.
 
 ```
 zcat gff.gz | grep -v "^#"  | cut -f 1 | sort -u
 ```
 
-In fact, there is only one chromosome. How many sources and types are there? 
+In fact, there is only one chromosome. How many sources and types are there?
 This is as simple as changing the argument to `cut`.
 
 ```
@@ -463,24 +456,24 @@ zcat gff.gz | grep -v "^#"  | cut -f 2 | sort -u
 zcat gff.gz | grep -v "^#"  | cut -f 3 | sort -u
 ```
 
-The source of all features is "RefSeq", however there are many types of 
-features including CDS, exon, gene, pseudogene, etc. If you wanted to count the 
-number of "gene" features, you might be tempted to grep for gene. However, this 
-doesn't really work because the word "gene" occurs in more places that just 
+The source of all features is "RefSeq", however there are many types of
+features including CDS, exon, gene, pseudogene, etc. If you wanted to count the
+number of "gene" features, you might be tempted to grep for gene. However, this
+doesn't really work because the word "gene" occurs in more places that just
 field 3.
 
 ```
 zcat gff.gz | grep -v "^#"  | grep gene | wc
 ```
 
-No, E. coli doesn't contain 9477 genes. There are are a number of ways to get 
-the correct number but we will leave this as a cautionary note and move on.
+No, E. coli doesn't contain 9477 genes. There are a number of ways to get the
+correct number but we will leave this as a cautionary note and move on.
 
 ------------------------------------------------------------------------------
 
 ## What's Missing ##
 
-There's a lot more we could discuss in an Advanced Linux section. Here are some 
+There's a lot more we could discuss in an Advanced Linux section. Here are some
 topics we won't be covering, but you will run into at some point in the future.
 
 + Clusters: nice, nohup, screen, sga, slurm
@@ -494,19 +487,20 @@ topics we won't be covering, but you will run into at some point in the future.
 
 ## Python ##
 
-The `dust` program we made previously now works like a typical Unix command, 
-but it doesn't really look like one. All programs should have _usage 
-statements_ that tell users how to interact with the program. Usage statements 
-are a simple form of essential documentation. Usage statements are usually 
-displayed if you give a `-h` or `--help` on the command line.
+The `dust` program we made previously now runs like a typical Unix command, but
+it doesn't really work like one. All programs should have _usage statements_
+that tell users how to interact with the program. Usage statements are a simple
+form of essential documentation. Usage statements are usually displayed if you
+give a `-h` or `--help` on the command line.
 
 ```
 gzip -h
 wc --help
 ```
 
-Check out the `demos` directory to see some examples of how to make proper 
+Check out the `demos` directory to see some examples of how to make proper
 usage statements in Python. You will also see how to read from stdin and how
 to read the output from other programs.
 
-There is also homework in the `programs` directory as usual.
+As usual, there is homework in the `programs` directory. You will need to
+understand the demos in order to complete them.

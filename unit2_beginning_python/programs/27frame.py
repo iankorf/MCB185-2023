@@ -4,6 +4,8 @@
 
 # Variation: try coding this with a single loop and nested loops
 
+# Note: use 0-based indexing for position and frame (biology uses 1-based)
+
 dna = 'ATGGCCTTT'
 
 
