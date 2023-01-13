@@ -338,7 +338,7 @@ Unix is case-sensitive, so `desktop` and `Desktop` are not the same thing
 (except weirdly on Macs where some filesystems are not case-sensitive). Now try
 the `ls` command again and you will see the path to your current focus has
 changed. That's because the current focus of the `ls` command is your `Desktop`
-directory. 
+directory.
 
 ```
 ls
@@ -871,7 +871,9 @@ don't, stop now and get help. Don't continue on thinking you'll fix this later.
 
 Now let's add your program to your homework repo. `git status` will show that
 this is currently not tracked. So let's `add` it, create a `commit` message,
-and then `push` it back to the website.
+and then `push` it back to the website. Remember, you don't use your website
+password here, but rather you github personal access token (PAT). You'll have
+to copy-paste that, as it's a bit too long to type.
 
 ```
 git add 00helloworld.py
