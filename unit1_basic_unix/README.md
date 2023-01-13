@@ -542,7 +542,7 @@ favorite editor, add these lines at the end, and save.
 alias ls="ls -F"
 alias ll="ls -l"
 alias ..="cd .."
-alias rm="rm -f"
+alias rm="rm -i"
 ```
 
 Now `ls` always does `ls -F`. Meaning, you will always be able to tell a
