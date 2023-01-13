@@ -341,7 +341,9 @@ of the columns. That's the file size in bytes.
 Lets add some content to the empty file. Most of the time when you create,
 edit, and save files, you'll be using your favorite text editor. But there are
 also terminal-based editors that you may find useful for remote logins. Let's
-use `nano` to change the contents.
+use `nano` to change the contents. This might not be installed by default if
+you are using Cygwin or Gitbash, so if you get an error, you'll either have to
+install `nano` or use your usual text editor.
 
 ```
 nano emtpy
