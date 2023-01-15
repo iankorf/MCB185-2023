@@ -55,6 +55,9 @@ follow the instructions:
 xcode-select --install
 ```
 
+By default, your home directory might not be shown in your sidebar. If you want
+it there, change that in Finder->Preferences.
+
 ### Linux on PC ###
 
 If your computer is a PC currently running Windows, you will have to install
@@ -148,13 +151,13 @@ MacOS, but both continue to work flawlessly as Linux machines.
 Cygwin is not an entire operating system but rather a terminal with POSIX
 commands (POSIX is a standard for portable Unix). Cygwin does not come
 pre-installed with Python, so you will have to run the Cygwin `Setup.exe` to
-install it and possibly other programming tools. For basic Python programming,
-I've found Cygwin to work great. However, installing some external libraries
-can be frustrating. Since we don't use external libraries in this course,
-Cygwin will work great. Later, it may become a pain.
+install it and possibly other programming tools (git, nanot). For basic Python
+programming, I've found Cygwin to work great. However, installing some external
+libraries can be frustrating. Since we don't use external libraries in this
+course, Cygwin will work great. Later, it may become a pain.
 
 Your Windows C drive is mounted at `/cygdrive/c`. Your Cygwin root depends on
-where you chose to install it (probably `C:\cygdrive`).
+where you chose to install it (probably `C:\cygdrive64`).
 
 ### Git Bash on Windows ###
 
