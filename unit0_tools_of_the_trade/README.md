@@ -420,7 +420,7 @@ GitHub is a website that lets you store your git repositories for free. There
 are several similar sites, but GitHub is the most popular. Every bioinformatics
 developer should have a GitHub account. Your repositories and activity are part
 of your CV. If you don't have a GitHub account, it's time to point your web
-browser to [https://github.com](GitHub) and create an account.
+browser to [GitHub](https://github.com) and create an account.
 
 Choose a username. It's okay to be clever, but don't be silly. Remember, this
 will be part of your CV. I use my full name. After setting your email and
