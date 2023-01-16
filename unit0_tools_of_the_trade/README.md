@@ -55,6 +55,9 @@ follow the instructions:
 xcode-select --install
 ```
 
+By default, your home directory might not be shown in your sidebar. If you want
+it there, change that in Finder->Preferences.
+
 ### Linux on PC ###
 
 If your computer is a PC currently running Windows, you will have to install
@@ -148,13 +151,13 @@ MacOS, but both continue to work flawlessly as Linux machines.
 Cygwin is not an entire operating system but rather a terminal with POSIX
 commands (POSIX is a standard for portable Unix). Cygwin does not come
 pre-installed with Python, so you will have to run the Cygwin `Setup.exe` to
-install it and possibly other programming tools. For basic Python programming,
-I've found Cygwin to work great. However, installing some external libraries
-can be frustrating. Since we don't use external libraries in this course,
-Cygwin will work great. Later, it may become a pain.
+install it and possibly other programming tools (git, nanot). For basic Python
+programming, I've found Cygwin to work great. However, installing some external
+libraries can be frustrating. Since we don't use external libraries in this
+course, Cygwin will work great. Later, it may become a pain.
 
 Your Windows C drive is mounted at `/cygdrive/c`. Your Cygwin root depends on
-where you chose to install it (probably `C:\cygdrive`).
+where you chose to install it (probably `C:\cygdrive64`).
 
 ### Git Bash on Windows ###
 
@@ -338,7 +341,7 @@ Unix is case-sensitive, so `desktop` and `Desktop` are not the same thing
 (except weirdly on Macs where some filesystems are not case-sensitive). Now try
 the `ls` command again and you will see the path to your current focus has
 changed. That's because the current focus of the `ls` command is your `Desktop`
-directory. 
+directory.
 
 ```
 ls
@@ -871,7 +874,9 @@ don't, stop now and get help. Don't continue on thinking you'll fix this later.
 
 Now let's add your program to your homework repo. `git status` will show that
 this is currently not tracked. So let's `add` it, create a `commit` message,
-and then `push` it back to the website.
+and then `push` it back to the website. Remember, you don't use your website
+password here, but rather you github personal access token (PAT). You'll have
+to copy-paste that, as it's a bit too long to type.
 
 ```
 git add 00helloworld.py

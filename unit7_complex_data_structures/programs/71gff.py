@@ -3,7 +3,7 @@
 # Write a program that converts genes in gff into JSON
 # Use the minaturized version of the C. elegans genome (included) this time
 # Organize the genes onto chromosomes
-# Print the number of genes on each chromosome first
+# Print the number of genes on each chromosome to stderr
 # Your code should mimic the output below
 
 # Hint: your outer data structure is a dictionary
