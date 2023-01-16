@@ -791,7 +791,7 @@ To find out how to write Markdown, check out the website linked below. This is
 the official home of vanilla Markdown. There are a few customizations of
 Markdown that add a few more things like tables.
 
-[https://daringfireball.net/projects/markdown](Markdown)
+[Markdown](https://daringfireball.net/projects/markdown)
 
 Another way to learn Markdown is to compare an HTML or PDF file to its original
 Markdown plain text source document. If you're viewing this document on GitHub,
@@ -835,11 +835,11 @@ use triple backticks.
 your code here
 ```
 
-Hyperlinks use square brackets for the link followed by parentheses for the
-text of the link. You can also put links in as plain text and make your users
-copy-paste them into their browser.
+Hyperlinks use square brackets for the text followed by parentheses for the 
+URL. You can also put links in as plain text and make your users copy-paste 
+them into their browser.
 
-[https://daringfireball.net/projects/markdown](Markdown)
+[Markdown](https://daringfireball.net/projects/markdown)
 
 ------------------------------------------------------------------------------
 
@@ -863,7 +863,7 @@ print('hello world')
 Save the file. Now run the program.
 
 ```
-python3 00hellworld.py
+python3 00helloworld.py
 ```
 
 If all goes well, you should see your welcome message in the terminal. If you
