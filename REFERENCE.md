@@ -34,6 +34,8 @@ These are all of Unix commands we use in the course.
 | `df`      | `df -h .`     | display free space on file system
 | `diff`    | `diff f1 f2`  | shows differese between files f1 and f2
 | `du`      | `du -h ~`     | display the sizes of your files
+| `echo`    | `echo hi`     | prints hi to stdout
+| `echo`    | `echo $HOME`  | prints path to home directory
 | `git`     | `git add f`   | start tracking file f
 |           | `git commit`  | finished edits, ready to upload
 |           | `git push`    | put changes into repository
