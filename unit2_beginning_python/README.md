@@ -35,7 +35,7 @@ do as follows for the first program.
 
 ```
 cd ~/Code/homework
-cp ~/Code/MCB185-2023/unit2_beginning_python/20loop.py .
+cp ~/Code/MCB185-2023/unit2_beginning_python/programs/20loop.py .
 git add 20loop.py
 git commit -m init
 git push
@@ -44,7 +44,7 @@ git push
 You could even copy all of the programs in the unit in one `cp` command.
 
 ```
-cp ~/Code/MCB185-2023/unit2_beginning_python/* .
+cp ~/Code/MCB185-2023/unit2_beginning_python/programs/* .
 git add 2*
 git commit -m init
 git push

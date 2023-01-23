@@ -55,6 +55,9 @@ follow the instructions:
 xcode-select --install
 ```
 
+By default, your home directory might not be shown in your sidebar. If you want
+it there, change that in Finder->Preferences.
+
 ### Linux on PC ###
 
 If your computer is a PC currently running Windows, you will have to install
@@ -148,13 +151,13 @@ MacOS, but both continue to work flawlessly as Linux machines.
 Cygwin is not an entire operating system but rather a terminal with POSIX
 commands (POSIX is a standard for portable Unix). Cygwin does not come
 pre-installed with Python, so you will have to run the Cygwin `Setup.exe` to
-install it and possibly other programming tools. For basic Python programming,
-I've found Cygwin to work great. However, installing some external libraries
-can be frustrating. Since we don't use external libraries in this course,
-Cygwin will work great. Later, it may become a pain.
+install it and possibly other programming tools (git, nanot). For basic Python
+programming, I've found Cygwin to work great. However, installing some external
+libraries can be frustrating. Since we don't use external libraries in this
+course, Cygwin will work great. Later, it may become a pain.
 
 Your Windows C drive is mounted at `/cygdrive/c`. Your Cygwin root depends on
-where you chose to install it (probably `C:\cygdrive`).
+where you chose to install it (probably `C:\cygdrive64`).
 
 ### Git Bash on Windows ###
 
@@ -287,6 +290,26 @@ Another useful technology we won't be using is Jupyter. Notebook computing is
 very powerful and intuitive, but it doesn't lend itself to creating
 distributable software. It also isolates you from Unix.
 
+### LF vs CRLF ###
+
+All of the files we use in this course are text files. Text files are just a
+bunch of letters, numbers, and punctation with no real formatting. Text files
+exist in Linux, Mac, and Windows. However, there may be slight differences
+among them.
+
++ Unix uses a linefeed (LF) at the end of a line
++ Windows uses carriage return plus linefeed (CRLF) at the end of a line
++ Mac used to use carriage return (CR) at the end of a line, but now LF
+
+All files should use Unix (LF) line endings. If you're on a Windows computer,
+you may run into some CRLF text files. By default, your programming editor may
+be set up to use CRLF. You'll want to change that as some Linux programs won't
+work with Windows line endings.
+
+Most Mac software has switched over to LF line endings, but check your editor
+to make sure it doesn't use CR.
+
+
 ### Editor Customization ###
 
 Every source code editor has a lot of options. Make sure your editor is set up
@@ -296,10 +319,13 @@ for the following:
 + Displays line numbers (helps when discussing code)
 + Tab key inserts tab character (not spaces)
 + Shows 80-column gutter (we follow the 80-column rule)
++ Saves with Unix line ending (LF) by default, not Windows (CRLF)
 
 In addition, you might want to change the theme. Some people like light
 characters on a dark background while others prefer the reverse. You should
 theme the terminal similarly to the editor.
+
+
 
 ------------------------------------------------------------------------------
 
@@ -417,7 +443,7 @@ GitHub is a website that lets you store your git repositories for free. There
 are several similar sites, but GitHub is the most popular. Every bioinformatics
 developer should have a GitHub account. Your repositories and activity are part
 of your CV. If you don't have a GitHub account, it's time to point your web
-browser to [https://github.com](GitHub) and create an account.
+browser to [GitHub](https://github.com) and create an account.
 
 Choose a username. It's okay to be clever, but don't be silly. Remember, this
 will be part of your CV. I use my full name. After setting your email and
@@ -791,7 +817,7 @@ To find out how to write Markdown, check out the website linked below. This is
 the official home of vanilla Markdown. There are a few customizations of
 Markdown that add a few more things like tables.
 
-[https://daringfireball.net/projects/markdown](Markdown)
+[Markdown](https://daringfireball.net/projects/markdown)
 
 Another way to learn Markdown is to compare an HTML or PDF file to its original
 Markdown plain text source document. If you're viewing this document on GitHub,
@@ -835,11 +861,11 @@ use triple backticks.
 your code here
 ```
 
-Hyperlinks use square brackets for the link followed by parentheses for the
-text of the link. You can also put links in as plain text and make your users
-copy-paste them into their browser.
+Hyperlinks use square brackets for the text followed by parentheses for the
+URL. You can also put links in as plain text and make your users copy-paste
+them into their browser.
 
-[https://daringfireball.net/projects/markdown](Markdown)
+[Markdown](https://daringfireball.net/projects/markdown)
 
 ------------------------------------------------------------------------------
 
@@ -863,7 +889,7 @@ print('hello world')
 Save the file. Now run the program.
 
 ```
-python3 00hellworld.py
+python3 00helloworld.py
 ```
 
 If all goes well, you should see your welcome message in the terminal. If you
