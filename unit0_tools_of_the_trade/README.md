@@ -290,6 +290,26 @@ Another useful technology we won't be using is Jupyter. Notebook computing is
 very powerful and intuitive, but it doesn't lend itself to creating
 distributable software. It also isolates you from Unix.
 
+### LF vs CRLF ###
+
+All of the files we use in this course are text files. Text files are just a
+bunch of letters, numbers, and punctation with no real formatting. Text files
+exist in Linux, Mac, and Windows. However, there may be slight differences
+among them.
+
++ Unix uses a linefeed (LF) at the end of a line
++ Windows uses carriage return plus linefeed (CRLF) at the end of a line
++ Mac used to use carriage return (CR) at the end of a line, but now LF
+
+All files should use Unix (LF) line endings. If you're on a Windows computer,
+you may run into some CRLF text files. By default, your programming editor may
+be set up to use CRLF. You'll want to change that as some Linux programs won't
+work with Windows line endings.
+
+Most Mac software has switched over to LF line endings, but check your editor
+to make sure it doesn't use CR.
+
+
 ### Editor Customization ###
 
 Every source code editor has a lot of options. Make sure your editor is set up
@@ -299,10 +319,13 @@ for the following:
 + Displays line numbers (helps when discussing code)
 + Tab key inserts tab character (not spaces)
 + Shows 80-column gutter (we follow the 80-column rule)
++ Saves with Unix line ending (LF) by default, not Windows (CRLF)
 
 In addition, you might want to change the theme. Some people like light
 characters on a dark background while others prefer the reverse. You should
 theme the terminal similarly to the editor.
+
+
 
 ------------------------------------------------------------------------------
 
@@ -838,8 +861,8 @@ use triple backticks.
 your code here
 ```
 
-Hyperlinks use square brackets for the text followed by parentheses for the 
-URL. You can also put links in as plain text and make your users copy-paste 
+Hyperlinks use square brackets for the text followed by parentheses for the
+URL. You can also put links in as plain text and make your users copy-paste
 them into their browser.
 
 [Markdown](https://daringfireball.net/projects/markdown)
