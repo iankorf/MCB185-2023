@@ -875,6 +875,9 @@ and then `push` it back to the website. Remember, you don't use your website
 password here, but rather you github personal access token (PAT). You'll have
 to copy-paste that, as it's a bit too long to type.
 
+If you get an error, it may be because the copy-paste didn't work. Do a
+right-click-based paste rather than using the keyboard.
+
 ```
 git add 00helloworld.py
 git commit -m new
