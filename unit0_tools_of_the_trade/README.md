@@ -586,6 +586,14 @@ git config --global user.name "username"
 git config --global credential.helper store
 ```
 
+Sometimes you will have to deal with merge conflicts. When this happens, `git`
+may launch `vi` or `vim`, which are difficult to use unless you already know
+how to use them. To make sure you get `nano`, type the following:
+
+```
+git config --global core.editor "nano"
+```
+
 Now let's go to the GitHub website. Look at your `README.md` there and verify
 that the text has chagned. If it has not, you didn't do something right. Ask
 for help and go back and fix it.
@@ -838,8 +846,8 @@ use triple backticks.
 your code here
 ```
 
-Hyperlinks use square brackets for the text followed by parentheses for the 
-URL. You can also put links in as plain text and make your users copy-paste 
+Hyperlinks use square brackets for the text followed by parentheses for the
+URL. You can also put links in as plain text and make your users copy-paste
 them into their browser.
 
 [Markdown](https://daringfireball.net/projects/markdown)
