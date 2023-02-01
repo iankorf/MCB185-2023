@@ -16,7 +16,7 @@ w = 11
 
 
 """
-python3 26gcwin.py
+python3 29gcwin.py
 0 ACGACGCAGGA 0.6364
 1 CGACGCAGGAG 0.7273
 2 GACGCAGGAGG 0.7273
