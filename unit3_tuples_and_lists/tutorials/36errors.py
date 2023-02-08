@@ -45,6 +45,7 @@ for val in probs:
 	try:
 		p = float(val)
 	except:
-		raise ValueError(f'cannot convert {val} to a number')
+		print(f'cannot convert {val} to a number', file=sys.stderr)
+		raise
 
 """
