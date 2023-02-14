@@ -13,7 +13,7 @@ def read_fasta(filename):
 	seqs = []
 
 	while True:
-		line = fp.readline();
+		line = fp.readline()
 		if line == '': break
 		line = line.rstrip()
 		if line.startswith('>'):
