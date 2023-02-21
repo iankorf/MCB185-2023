@@ -24,7 +24,7 @@ to use the PYTHONPATH environment variable.
 In your terminal, type the following line:
 
 ```
-PYTHONPATH=$HOME/Code/homework
+export PYTHONPATH=$HOME/Code/homework
 ```
 
 This sets your PYTHONPATH environment variable to include your homework
@@ -65,7 +65,7 @@ it will be available to any of your future python programs. Edit your login
 script and add the following line.
 
 ```
-PYTHONPATH=$HOME/Code/lib
+export PYTHONPATH=$HOME/Code/lib
 ```
 
 ------------------------------------------------------------------------------
@@ -310,7 +310,7 @@ for executables. Your `Code/bin` isn't there, so we have to add it to your
 login script. Edit your loging script to include:
 
 ```
-PATH=$PATH:$HOME/Code/bin
+export PATH=$PATH:$HOME/Code/bin
 ```
 
 This appends your `Code/bin` to the end of whatever was already in `PATH`. Open
