@@ -226,6 +226,7 @@ str.isupper()         True if everything is uppercase
 str.islower()         True if everything is lowercase
 str.startswith()      True if starts with substring
 str.endswith()        True if ends with substring
+str.join()            creates a string from a list
 ```
 
 List operators
