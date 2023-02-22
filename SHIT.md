@@ -26,7 +26,7 @@ In Python, and pretty much no other language, a file can be both a program
 designed to be run by itself, or imported as a library. To run the file as a
 program, you could do `python3 myprogram.py`. To import the file as a library,
 your code needs an `import myprogram` statement. After such an import, you
-could do something like:
+could do something useful like:
 
 ```
 myprogram.cool_function()
@@ -44,7 +44,7 @@ files **can** be used as both programs and libraries, they **shouldn't** be.
 Programs belong in an executable path and libraries belong in a library path.
 If you have some useful functions you want to share, put them in a library.
 That's what libraries are for. Importing functions from executables breaks all
-kinds of expectations for no good reason.
+kinds of standards for no good reason.
 
 The fact that `main()` is defined in `myprogram.py` suggests that another
 python file could do the following:
