@@ -1,7 +1,7 @@
 Shit Programming Practices
 ==========================
 
-## if name dunder ##
+## if name == main dunder ##
 
 If you're coming from another programming class (or maybe someplace on the
 internet), you might have seen code that looks like the following:
@@ -35,16 +35,17 @@ myprogram.cool_function()
 Some tasks, e.g. processing of command line arguments, should only occur in
 programs and not libraries. You wouldn't want to import a library only to find
 it accidentally mangled your command line. In order to protect such code from
-running amok, you can put it in a `if __name__ == '__main__'` construct. Code
-in this block is only run when the file is run as a program, not a library.
+running amok, you can put it in a `if __name__ == '__main__'` construct. This
+is called a _dunder_ because of the double underscores. Code in this block is
+only run when the file is run as a program, not a library.
 
 All of this sounds quite reasonable, but here's the problem: executables and
 libraries are stored in completely different locations. Even though python
 files **can** be used as both programs and libraries, they **shouldn't** be.
 Programs belong in an executable path and libraries belong in a library path.
 If you have some useful functions you want to share, put them in a library.
-That's what libraries are for. Importing functions from executables breaks all
-kinds of standards for no good reason.
+That's what libraries are for. Importing functions from executables breaks with
+standards for no good reason.
 
 The fact that `main()` is defined in `myprogram.py` suggests that another
 python file could do the following:
@@ -74,7 +75,7 @@ suffix, and we run them as `python3 myprogram.py`. Could these be accidentally
 imported as libraries? Yes. Should we remove the suffix and make them actual
 executables? This is an introductory programming class. We don't have to do
 that. But once you start distributing your code to other people, yes, you
-should make proper executables.
+should make proper executables and drop the suffix.
 
 There is one okay reason to use the `if __name__ == '__main__'` dunder: test
 code for libraries. All libraries should have unit tests. Small libraries can
