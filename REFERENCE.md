@@ -365,7 +365,7 @@ json.dump()          output data in JSON format
 ```
 
 
-## Why we don't use if __name__ == __main__ ##
+## Why we don't use if __name__ == __main__ or def main() ##
 
 If you're coming from another programming class (or maybe someplace on the
 internet), you might have seen code that looks like the following:
