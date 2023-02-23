@@ -333,10 +333,11 @@ df -h
 
 To get the sizes of files and directories, use `du -h`. This can descend very
 deeply into directories, so it's often useful to pass `--max-depth` so you
-don't see a thousand files.
+don't see a thousand files. On a Mac, it's `-d` rather than `--max-depth`.
 
 ```
-du -h --max-depth ~/Code
+du -h --max-depth 1 ~/Code
+du -h -d 1 ~/Code
 ```
 
 The Linux equivalent of "Task Manager" or "System Monitor" is `top` or `htop`.
