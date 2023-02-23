@@ -363,7 +363,7 @@ humans have around 20,000 genes). `time` is also useful when benchmarking
 different algorithms to figure out how much faster one is than another.
 
 ```
-time zcat ~/DATA/E.coli/*.gz | wc
+time gunzip -c ~/DATA/E.coli/*.gz | wc
 ```
 
 This shows the real, wallclock time, as well as user and system time. The
@@ -392,20 +392,20 @@ ln -s ~/DATA/E.coli/GCF_000005845.2_ASM584v2_genomic.gff.gz gff.gz
 To print out all the definition lines, we can `grep` for the greater-than sign.
 
 ```
-zcat prots.gz | grep ">"
+gunzip -c prots.gz | grep ">"
 ```
 
 To count how many proteins there are, we pipe to `wc`.
 
 ```
-zcat prots.gz | grep ">" | wc
+gunzip -c prots.gz | grep ">" | wc
 ```
 
 Let's now look at all of the lines that aren't definition lines. This is simply
 passing the `-v` option to `grep`.
 
 ```
-zcat prots.gz | grep -v ">" | less
+gunzip -c prots.gz | grep -v ">" | less
 ```
 
 The `cut` program allows us to get columns of data. The usual delimiter is tab,
@@ -414,7 +414,7 @@ the database identifiers from the fasta file definition lines. The id is always
 the first part of the definition line, so "field 1" or `-f 1`.
 
 ```
-zcat prots.gz | grep ">" | cut -d " " -f 1
+gunzip -c prots.gz | grep ">" | cut -d " " -f 1
 ```
 
 Take a look at the gff file.
@@ -437,7 +437,7 @@ features. The first 6 columns of GFF are the following:
 Let's ignore the comment lines and then pull out all of the sequence names.
 
 ```
-zcat gff.gz | grep -v "^#"  | cut -f 1
+gunzip -c gff.gz | grep -v "^#"  | cut -f 1
 ```
 
 It looks like all of the values are the same. That makes sense if the genome is
@@ -445,15 +445,15 @@ described by one circular chromosome and none of the plasmids. To be sure,
 let's send the output to `sort -u`, which will make a unique list.
 
 ```
-zcat gff.gz | grep -v "^#"  | cut -f 1 | sort -u
+gunzip -c gff.gz | grep -v "^#"  | cut -f 1 | sort -u
 ```
 
 In fact, there is only one chromosome. How many sources and types are there?
 This is as simple as changing the argument to `cut`.
 
 ```
-zcat gff.gz | grep -v "^#"  | cut -f 2 | sort -u
-zcat gff.gz | grep -v "^#"  | cut -f 3 | sort -u
+gunzip -c gff.gz | grep -v "^#"  | cut -f 2 | sort -u
+gunzip -c gff.gz | grep -v "^#"  | cut -f 3 | sort -u
 ```
 
 The source of all features is "RefSeq", however there are many types of
@@ -463,7 +463,7 @@ doesn't really work because the word "gene" occurs in more places that just
 field 3.
 
 ```
-zcat gff.gz | grep -v "^#"  | grep gene | wc
+gunzip -c gff.gz | grep -v "^#"  | grep gene | wc
 ```
 
 No, E. coli doesn't contain 9477 genes. There are a number of ways to get the
