@@ -3,12 +3,12 @@
 # Write a better version of your 42dust.py program
 # Your program must have the following properties
 
-# 1. the entropy of each window is centered (N's in the middle of windows)
-# 2. has option and default value for window size
-# 3. has option and default value for entropy threshold
-# 4. has a switch for N-based or lowercase (soft) masking
-# 5. works with uppercase or lowercase input files
-# 6. works as an executable
+# 1. has option and default value for window size
+# 2. has option and default value for entropy threshold
+# 3. has a switch for N-based or lowercase (soft) masking
+# 4. works with uppercase or lowercase input files
+# 5. works as an executable
+# 6. outputs a FASTA file wrapped at 60 characters
 
 # Optional: make the algorithm faster (see 29gcwin.py for inspiration)
 # Optional: benchmark your programs with different window sizes using time
