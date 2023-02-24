@@ -43,7 +43,7 @@ These are all of Unix commands we use in the course.
 |           | `git status`  | check on status of repository
 | `grep`    | `grep p f`    | print lines with the letter p in file f
 | `gzip`    | `gzip f`      | compress file f
-| `gunzip`  | `gunzip f.gz` | uncompress file f.gz (see zcat)
+| `gunzip`  | `gunzip f.gz` | uncompress file f.gz
 | `head`    | `head f`      | display the first 10 lines of file f
 |           | `head -2 f`   | display the first 2 lines of file f
 | `history` | `history`     | display the recent commands you typed
@@ -77,7 +77,6 @@ These are all of Unix commands we use in the course.
 | `top`     | `top`         | display processes running on your system
 | `touch`   | `touch f`     | update file f modification time (create if needed)
 | `wc`      | `wc f`        | count the lines, words, and characters in file f
-| `zcat`    | `zcat f.gz`   | stream compressed file f.gz to stdout
 | `zless`   | `zless f.gz`  | page through compressed file f.gz
 
 
@@ -366,7 +365,7 @@ json.dump()          output data in JSON format
 ```
 
 
-## Why we don't use if __name__ == __main__ ##
+## Why we don't use if __name__ == __main__ or def main() ##
 
 If you're coming from another programming class (or maybe someplace on the
 internet), you might have seen code that looks like the following:
