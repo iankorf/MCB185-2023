@@ -51,13 +51,13 @@ else:                print('no')
 
 dna = 'ACGATATACAGATATACYTAT'
 a = dna.count('A')
-c = dna.count('A')
-g = dna.count('A')
-t = dna.count('A')
+c = dna.count('C')
+g = dna.count('G')
+t = dna.count('T')
 print(a, c, g, t)
 
 # An alternative is to count with a dictionary of letters
-# This has the advantage of counting letters you didn't expect
+# This has the advantage of counting letters you didn't expect (like Y)
 
 count = {} # create a blank dictionary
 for nt in dna:
@@ -94,9 +94,9 @@ def kd_cond(seq):
 		elif aa == 'N': kd += -3.5
 		elif aa == 'K': kd += -3.9
 		elif aa == 'R': kd += -4.5
-	return kd
+	return kd/len(seq)
 
-# Here's the list/tuple-based function
+# Here's the parallel container function
 
 aas = 'IVLFCMAGTSWYPHEQDNKR'
 kds = (4.5, 4.2, 3.8, 2.8, 2.5, 1.9, 1.8, -0.4, -0.7, -0.8, -0.9, -1.3,
@@ -107,7 +107,7 @@ def kd_list(seq):
 	for aa in seq:
 		idx = aas.find(aa)
 		kd += kds[idx]
-	return kd
+	return kd/len(seq)
 
 # Here's the dictionary equivalent
 
@@ -120,7 +120,7 @@ aa2kd = {
 def kd_dict(seq):
 	kd = 0
 	for aa in seq: kd += aa2kd[aa]
-	return kd
+	return kd/len(seq)
 
 seq = 'MVQYNFKRITVVPNGKEFVDIILSRTQRQTPTVVHKGYKINRLRQFYMRKVKYTQTNFHA'
 print(kd_cond(seq))
