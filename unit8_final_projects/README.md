@@ -2,35 +2,35 @@ Unit 8: Final Projects
 ======================
 
 Here are some possible final projects. Feel free to propose something else. You
-are encouraged to work in pairs. Each project below is ranked by difficulty
-from low to high.
+are encouraged to work in pairs. Each project below is ranked by difficulty (D)
+from low (1) to high (5).
 
 
-| Name           | Difficulty | Short Description
-|:---------------|:-----------|:---------------------------------------------
-| blosum         | 2          | re-create blosum scoring matrices
-| colorname      | 1          | classify the color spectrum
-| elvish         | 2          | create plausible elvish (or other languages)
-| hgt_detector   | 1          | detect horizontal gene transfer
-| imeter         | 1          | build the IMEter from scratch
-| mRNA2protein   | 1          | find the longest ORF in an mRNA
-| pwm_draw       | 2          | draw PWMs as SVGs given FASTA
-| old2new        | 1          | convert old sequence data to fastq
-| overlaps       | 2          | find the overlap of exons and SNPs, for example
-| smith-waterman | 3          | the classic local alignment algorithm
-| uncigar        | 2          | convert CIGAR format to pairwise alignment
-| viterbi        | 3          | the classic HMM decoder
+| Name                | D | Short Description
+|:--------------------|:--|:---------------------------------------------
+| animate32           | 1 | animate 32xcoverage.py
+| colorname           | 1 | classify the color spectrum
+| hgt_detector        | 2 | detect horizontal gene transfer
+| imeter              | 2 | build the IMEter from scratch
+| life                | 2 | re-create Conway's game of life
+| mRNA2protein        | 2 | find the longest ORF in an mRNA
+| overlaps            | 2 | find the overlap of exons and SNPs, for example
+| overlaps fast       | 3 | as above, but much faster
+| plausible elvish    | 3 | create new languages
+| scoring matrix      | 3 | build your own alignment scoring matrix
+| simulate chemotaxis | 4 | make artificial bacteria find food
+| smith-waterman      | 4 | the classic local alignment algorithm
+| svg pwm             | 4 | draw PWMs as SVGs
+| viterbi             | 5 | the classic HMM decoder
 
-## blosum ##
+## anmiate32 ##
 
-Scoring matrices, like BLOSUM and PAM, are created from multiple alignments.
-You can create your own scoring matrices. If you want to try something a little
-different, you could make a nucleotide scoring matrix rather than using
-something like +1 match, -1 mismatch.
+Make a program that visualizes random genome coverage (like 32xcoverage.py).
+Use the **Processing** environment to draw images in Python.
 
-+ Get some multiple alignment data (e.g. from PFAM)
-+ Count observed changes
-+ Create all of the Sij values from log(obs/exp)
++ Download Processing
++ Install Python mode
++ Animate mapping reads to a genome
 
 ## colorname ##
 
@@ -41,16 +41,6 @@ a list of your favorites by choosing closest matching spectrum.
 
 + Get the hexcodes for your favorite colors
 + Minimize the distance between an input color and your colors
-
-## elvish ##
-
-When writing fantasy novels, authors must somehow come up with new names that
-sound like they come from a different language. Make a language generator using
-Nth-order Markov models. For example, generate Evlish words from a mixture of
-Finnish and Welsh (or whatever you think Elvish is supposed to look like).
-
-+ Read books (e.g. Gutenberg Project) into tables of letter frequencies
-+ Generate new words from the tables of frequencies
 
 ## hgt_detector ##
 
@@ -76,6 +66,15 @@ is. Recreate the code from the description in the paper.
 + Train the IMEter with kmer frequencies
 + Test the IMEter with various experimentally-validated introns
 
+## life ##
+
+John Conways game of life is a famous example of cellular automata. Create a
+python version of the game/simulation using **Processing**
+
++ Download Processing
++ Install Python mode
++ Have the user fill the board by clicking with the mouse
+
 ## mRNA2protein ##
 
 The public sequence database contains millions of proteins. And yet nobody
@@ -98,27 +97,41 @@ them.
 + Get real data from an instructor if needed
 + Output a table of exons and their SNPs
 
-## pwm_draw ##
+## overlaps fast ##
 
-One of the most common ways to represent sequence patterns is the position
-weight matrix (PWM). Make a program that reads a file of sequences and outputs
-a PWM as an SVG (scalable vector graphic).
+As above, but write the algorithm so that it runs much faster by indexing
+chromosomes and/or positions.
 
-+ Download real sequences or make them up yourself (ask for help if needed)
-+ Make a PWM data structure (2D list or list of dict)
-+ Create SVG (without importing an SVG module)
+## plausible elvish ##
 
-## old2new ##
+When writing fantasy novels, authors must somehow come up with new names that
+sound like they come from a different language. Make a language generator using
+Nth-order Markov models. For example, generate Evlish words from a mixture of
+Finnish and Welsh (or whatever you think Elvish is supposed to look like).
 
-Back at the dawn of genome sequencing, Phred quality values were stored as
-spaced-delimited integers in FASTA files. Today, quality values are stored as
-ASCII characters in FASTQ files. Pretend you are working for a company who has
-a lot of old data. Your job is to write a program that converts their old data
-into modern FASTQ.
++ Read books (e.g. Gutenberg Project) into tables of letter frequencies
++ Generate new words from the tables of frequencies
 
-+ Reserarch quality values to understand Phred scores
-+ Read in parallel, sequences and qualifty values
-+ Write FASTQ
+## scoring matrix ##
+
+Scoring matrices, like BLOSUM and PAM, are created from multiple alignments.
+You can create your own scoring matrices. If you want to try something a little
+different, you could make a nucleotide scoring matrix rather than using
+something like +1 match, -1 mismatch.
+
++ Get some multiple alignment data (e.g. from PFAM)
++ Count observed changes
++ Create all of the Sij values from log(obs/exp)
+
+## simulate chemotaxis ##
+
+Bacteria move using very simple rules. If the concentration of food is
+increasing, they swim straight. Otherwise they tumble. Animate this behavior
+using **Processing**.
+
++ Download Processing
++ Install Python mode
++ Make bacteria find food by swimming straight or tumbling
 
 ## smith-waterman ##
 
@@ -131,15 +144,15 @@ Alternatively, you might do the very similar Needleman-Wunsch algorithm.
 + Report the score of the maximum alignment
 + Report the aligned sequences
 
-## uncigar ##
+## svg pwm ##
 
-The CIGAR format is used to describe pairwise alignment in a compressed format
-that isn't very human-readable. Write a program that turns CIGAR strings in
-SAM files into something like a BLAST report.
+One of the most common ways to represent sequence patterns is the position
+weight matrix (PWM). Make a program that reads a file of sequences and outputs
+a PWM as an SVG (scalable vector graphic).
 
-+ Get SAM files from the instructor if you can't find them yourself
-+ Learn about CIGAR format and BLAST output
-+ Convert CIGAR to BLAST
++ Download real sequences or make them up yourself (ask for help if needed)
++ Make a PWM data structure (2D list or list of dict)
++ Create SVG (without importing an SVG module)
 
 ## viterbi ##
 
