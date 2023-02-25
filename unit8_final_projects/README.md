@@ -11,7 +11,7 @@ from low (1) to high (5).
 | animate32           | 1 | animate 32xcoverage.py
 | colorname           | 1 | classify the color spectrum
 | fasta stats         | 1 | report information about a fasta file
-| hgt_detector        | 2 | detect horizontal gene transfer
+| hgt detector        | 2 | predict horizontal gene transfer
 | imeter              | 2 | build the IMEter from scratch
 | life                | 2 | re-create Conway's game of life
 | mRNA2protein        | 2 | find the longest ORF in an mRNA
@@ -56,7 +56,7 @@ information:
 + N50 length
 + Composition of each letter in the sequence
 
-## hgt_detector ##
+## hgt detector ##
 
 One way to find genes that have been recently added to a bacterial genome is to
 look for outliers in codon usage. Using a GenBank file for a complete bacterial
