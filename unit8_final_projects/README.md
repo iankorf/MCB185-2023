@@ -10,6 +10,7 @@ from low (1) to high (5).
 |:--------------------|:--|:---------------------------------------------
 | animate32           | 1 | animate 32xcoverage.py
 | colorname           | 1 | classify the color spectrum
+| fasta stats         | 1 | report information about a fasta file
 | hgt_detector        | 2 | detect horizontal gene transfer
 | imeter              | 2 | build the IMEter from scratch
 | life                | 2 | re-create Conway's game of life
@@ -41,6 +42,19 @@ a list of your favorites by choosing closest matching spectrum.
 
 + Get the hexcodes for your favorite colors
 + Minimize the distance between an input color and your colors
+
+## fasta stats ##
+
+Write a program the reads in a FASTA file and reports the following
+information:
+
++ Number of sequences
++ Total length
++ Shortest sequence
++ Longest sequence
++ Median sequence length
++ N50 length
++ Composition of each letter in the sequence
 
 ## hgt_detector ##
 
