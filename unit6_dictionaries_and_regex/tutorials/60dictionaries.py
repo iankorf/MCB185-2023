@@ -5,6 +5,7 @@ import random
 
 # Move the triple quotes downward to uncover each segment of code
 
+"""
 
 # A dictionary is like a list, but with text instead of numeric indicies
 
@@ -125,9 +126,9 @@ def kd_dict(seq):
 seq = 'MVQYNFKRITVVPNGKEFVDIILSRTQRQTPTVVHKGYKINRLRQFYMRKVKYTQTNFHA'
 print(kd_cond(seq))
 print(kd_list(seq))
-print(kd_dict(seq))
+print(kd_dict(seq, aa2k2))
 
-"""
+
 # Now here's a thought question for you
 # Where should the aa2kd dictionary be defined?
 #    1. outside the function and used globally (as it is here)
@@ -142,7 +143,7 @@ for k in sorted(aa2kd):
 	print(k)
 
 # If you want to sort by value, it's only a little more complicated
-for k, v in sorted(aa2kd.items(), key=lambda item: item[1]):
+for k, v in sorted(aa2kd.items(), key=lambda item: len(item[1][pets])):
 	print(k, v)
 
 """
