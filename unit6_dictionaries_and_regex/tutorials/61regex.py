@@ -4,7 +4,7 @@ import re
 
 # Move the triple quotes downward to uncover each segment of code
 
-"""
+
 
 string1 = "0123456789"
 
@@ -81,5 +81,5 @@ print(match.group(1))
 
 match = re.search('ID=(\S+?);', data)
 print(match.group(1))
-
+"""
 """

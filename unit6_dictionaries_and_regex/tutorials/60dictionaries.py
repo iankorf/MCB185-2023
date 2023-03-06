@@ -5,7 +5,6 @@ import random
 
 # Move the triple quotes downward to uncover each segment of code
 
-"""
 
 # A dictionary is like a list, but with text instead of numeric indicies
 
@@ -63,6 +62,7 @@ count = {} # create a blank dictionary
 for nt in dna:
 	if nt not in count: count[nt] = 0
 	count[nt] += 1
+
 print(count)
 
 # Dictionaries are really good for looking up values
@@ -127,7 +127,7 @@ print(kd_cond(seq))
 print(kd_list(seq))
 print(kd_dict(seq))
 
-
+"""
 # Now here's a thought question for you
 # Where should the aa2kd dictionary be defined?
 #    1. outside the function and used globally (as it is here)
